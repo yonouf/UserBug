@@ -85,11 +85,10 @@ def register(**args):
                 if not disable_errors:
                     date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
-                    text = "**USERBOT ERROR REPORT**\n"
-                    link = "[OUB Support Chat](https://t.me/PPE_Support)"
-                    text += "If you want to, you can report it"
-                    text += f"- just forward this message to {link}.\n"
-                    text += "Nothing is logged except the fact of error and date\n"
+                    text = "**E R R O R**\n"
+                    link = "[𝐁𝐋𝟒𝐂𝐊_𝐈𝐃](https://t.me/BL4CK_ID)"
+                    text += f"Please Dont Forward This Report to {link}.\n"
+                    text += "Cause I'm Just a NooB.lol"
 
                     ftext = "========== DISCLAIMER =========="
                     ftext += "\nThis file uploaded ONLY here,"
