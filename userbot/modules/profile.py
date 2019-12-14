@@ -114,7 +114,7 @@ async def update_username(username):
         await username.edit(USERNAME_TAKEN)
 
 
-@register(outgoing=True, pattern="^.co$")
+@register(outgoing=True, pattern="^.count$")
 async def count(event):
     """ For .count command, get profile stats. """
     u = 0
@@ -176,7 +176,18 @@ async def remove_profilepic(delpfp):
     await delpfp.client(DeletePhotosRequest(id=input_photos))
     await delpfp.edit(
         f"`Successfully deleted {len(input_photos)} profile picture(s).`")
+		
+@register(outgoing=True, pattern="^.info$")
+async def dumler(dumger):
+    await dumger.edit("Profile : `.dc .speed .w .sys .bv .pip .al .rl .who .ran .sleep .com \n.sup .rp .ra .u .dvc .cn .spc .git .rsd .co`")
 
+CMD_HELP.update({
+    "info":
+	".dc Datacentre | .speed Speed Test | .w Weather | .sys System | .bv Bot Version | .pip Search Pip\
+	\n.al Change User | .rl Reset Alive | .who Whois | .ran Random | .sleep Bot Sleep | .com Community\
+	\n.sup Support | .ra Raw | .u Update | .dvc Device | .cn Codename | .spc Specs | .git Search Git\
+	\n.rsd Reserved Username | .co Count Username."
+	})
 
 """CMD_HELP.update({
     "profile":
@@ -194,5 +205,4 @@ async def remove_profilepic(delpfp):
 \nUsage: Shows usernames reserved by you.\
 \n\n.count\
 \nUsage: Counts your groups, chats, bots etc..."
-})
-"""
+})"""
