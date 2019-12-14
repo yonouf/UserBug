@@ -43,7 +43,7 @@ async def get_weather(weather):
 
     if not OWM_API:
         await weather.edit(
-            "`Get an API key from` https://openweathermap.org/ `first.`")
+            "Get an API key from [here](https://openweathermap.org/) first.")
         return
 
     APPID = OWM_API
