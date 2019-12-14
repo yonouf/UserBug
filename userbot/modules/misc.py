@@ -78,7 +78,7 @@ async def killdabot(event):
 async def bot_community(community):
     """ For .community command, just returns OG Paperplane's group link. """
     await community.edit(
-        "Join RaphielGang's awesome userbot community: @userbot_support"
+        "Join the [UserBug Community](https://t.me/userbotindo)"
         "\nDo note that Paperplane Extended is an unoficial fork of their "
         "Paperplane project and it may get limited or no support for bugs.")
 
@@ -87,13 +87,12 @@ async def bot_community(community):
 async def bot_support(wannahelp):
     """ For .support command, just returns the group link. """
     await wannahelp.edit(
-        "Join the OpenUserBot Channel: @PaperPlaneExtended_news \
-        \nJoin the OpenUserBot Chat: @PPE_Support")
+        "Join the [UserBug Community](https://t.me/userbotindo) | [𝐁𝐋𝟒𝐂𝐊_𝐈𝐃](https://t.me/BL4CK_ID)")
 
 
 @register(outgoing=True, pattern="^.creator$")
 async def creator(e):
-    await e.edit("[TeKnoways](https://t.me/Three_Cube_TeKnoways)")
+    await e.edit("Edited by [𝐁𝐋𝟒𝐂𝐊_𝐈𝐃](https://t.me/BL4CK_ID)")
 
 
 @register(outgoing=True, pattern="^.readme$")
@@ -107,28 +106,12 @@ async def reedme(e):
         "\n[Video Tutorial - 576p](https://mega.nz/#!ErwCESbJ!1ZvYAKdTEfb6y1FnqqiLhHH9vZg4UB2QZNYL9fbQ9vs)"
         "\n[Video Tutorial - 1080p](https://mega.nz/#!x3JVhYwR!u7Uj0nvD8_CyyARrdKrFqlZEBFTnSVEiqts36HBMr-o)"
         "\n[Special - Note](https://telegra.ph/Special-Note-11-02)")
-    
-
-# Copyright (c) Gegham Zakaryan | 2019
-@register(outgoing=True, pattern="^.rep (.*)")
-async def repeat(rep):
-    cnt, txt = rep.pattern_match.group(1).split(' ', 1)
-    replyCount = int(cnt)
-    toBeRepeated = txt
-
-    replyText = toBeRepeated + "\n"
-
-    for i in range(0, replyCount - 1):
-        replyText += toBeRepeated + "\n"
-
-    await rep.edit(replyText)
-
 
 @register(outgoing=True, pattern="^.rp$")
 async def repo_is_here(wannasee):
     """ For .repo command, just returns the repo URL. """
     await wannasee.edit(
-        "Click [here](https://github.com/mkaraniya/OpenUserBot) to open OpenUserBot's GitHub page."
+        "I'm Currently Using [𝐁𝐋𝟒𝐂𝐊_𝐈𝐃](https://github.com/BL4CKID/BL4CKID) Github's Repository."
     )
 
 
