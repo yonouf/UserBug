@@ -78,7 +78,8 @@ async def killdabot(event):
 async def bot_community(community):
     """ For .community command, just returns OG Paperplane's group link. """
     await community.edit(
-        "Join the [UserBug Community](https://t.me/userbotindo)"
+        "Join the [UserBug Community Indonesia](https://t.me/userbotindo)"
+        "\nJoin [RaphielGang's userbot community](https://t.me/@userbot_support)"
         "\nDo note that Paperplane Extended is an unoficial fork of their "
         "Paperplane project and it may get limited or no support for bugs.")
 
@@ -92,7 +93,7 @@ async def bot_support(wannahelp):
 
 @register(outgoing=True, pattern="^.creator$")
 async def creator(e):
-    await e.edit("Edited by [𝐁𝐋𝟒𝐂𝐊_𝐈𝐃](https://t.me/BL4CK_ID)")
+    await e.edit("Creator by [TeKnoways](https://t.me/Three_Cube_TeKnoways) Edited by [𝐁𝐋𝟒𝐂𝐊_𝐈𝐃](https://t.me/BL4CK_ID)")
 
 
 @register(outgoing=True, pattern="^.readme$")
@@ -111,8 +112,7 @@ async def reedme(e):
 async def repo_is_here(wannasee):
     """ For .repo command, just returns the repo URL. """
     await wannasee.edit(
-        "I'm Currently Using [𝐁𝐋𝟒𝐂𝐊_𝐈𝐃](https://github.com/BL4CKID/BL4CKID) Github's Repository."
-    )
+        "I'm Currently Using [𝐁𝐋𝟒𝐂𝐊_𝐈𝐃](https://github.com/BL4CKID/BL4CKID) Github's Repository.")
 
 
 @register(outgoing=True, pattern="^.ra$")
