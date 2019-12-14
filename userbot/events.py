@@ -89,8 +89,8 @@ def register(**args):
                     link = "[𝐁𝐋𝟒𝐂𝐊_𝐈𝐃](https://t.me/BL4CK_ID)"
                     text += f"Please Dont Forward This Report to {link}.\n"
                     text += "Cause I'm Just a NooB.lol"
-
-                    ftext += "--------USERBOT TRACEBACK LOG--------\n"
+                    
+                    ftext += "--------BEGIN USERBOT TRACEBACK LOG--------\n"
                     ftext += "\nDate: " + date
                     ftext += "\nChat ID: " + str(check.chat_id)
                     ftext += "\nSender ID: " + str(check.sender_id)
