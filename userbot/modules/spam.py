@@ -78,7 +78,7 @@ async def spammer(e):
 
 @register(outgoing=True, pattern="^.spams$")
 async def dumeer(dumwer):
-    await dumwer.edit("Spams : `.csp .wsp .sp .psp .dsp .rpf .acf .rcf .f .ly .ty .scam .Oof .hi .str .sl .ka .stk .rep`")
+    await dumwer.edit("Spams :\n.csp .wsp .sp .psp .dsp .rpf .acf .rcf .f \n.ly .ty .scam .Oof .hi .str .sl .ka .stk .rep")
 
 CMD_HELP.update({
     "spams":
