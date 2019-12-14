@@ -38,7 +38,7 @@ aria2 = aria2p.API(aria2p.Client(host="http://localhost", port=6800,
                                  secret=""))
 
 
-@register(outgoing=True, pattern="^.amag(?: |$)(.*)")
+@register(outgoing=True, pattern="^.am(?: |$)(.*)")
 async def magnet_download(event):
     magnet_uri = event.pattern_match.group(1)
     # Add Magnet URI Into Queue
@@ -55,7 +55,7 @@ async def magnet_download(event):
     await check_progress_for_dl(gid=new_gid, event=event, previous=None)
 
 
-@register(outgoing=True, pattern="^.ator(?: |$)(.*)")
+@register(outgoing=True, pattern="^.at(?: |$)(.*)")
 async def torrent_download(event):
     torrent_file_path = event.pattern_match.group(1)
     # Add Torrent Into Queue
@@ -71,7 +71,7 @@ async def torrent_download(event):
     await check_progress_for_dl(gid=gid, event=event, previous=None)
 
 
-@register(outgoing=True, pattern="^.aurl(?: |$)(.*)")
+@register(outgoing=True, pattern="^.au(?: |$)(.*)")
 async def magnet_download(event):
     uri = [event.pattern_match.group(1)]
     try:  # Add URL Into Queue
@@ -88,7 +88,7 @@ async def magnet_download(event):
         await progress_status(gid=new_gid, event=event, previous=None)
 
 
-@register(outgoing=True, pattern="^.aclear(?: |$)(.*)")
+@register(outgoing=True, pattern="^.ac(?: |$)(.*)")
 async def remove_all(event):
     try:
         removed = aria2.remove_all(force=True)
@@ -103,7 +103,7 @@ async def remove_all(event):
     await sleep(2.5)
 
 
-@register(outgoing=True, pattern="^.apause(?: |$)(.*)")
+@register(outgoing=True, pattern="^.ap(?: |$)(.*)")
 async def pause_all(event):
     # Pause ALL Currently Running Downloads.
     paused = aria2.pause_all(force=True)
@@ -113,7 +113,7 @@ async def pause_all(event):
     await sleep(2.5)
 
 
-@register(outgoing=True, pattern="^.aresume(?: |$)(.*)")
+@register(outgoing=True, pattern="^.ar(?: |$)(.*)")
 async def resume_all(event):
     resumed = aria2.resume_all()
     await event.edit("`Resuming downloads...`")
@@ -123,7 +123,7 @@ async def resume_all(event):
     await event.delete()
 
 
-@register(outgoing=True, pattern="^.ashow(?: |$)(.*)")
+@register(outgoing=True, pattern="^.aw(?: |$)(.*)")
 async def show_all(event):
     output = "output.txt"
     downloads = aria2.get_downloads()
@@ -202,7 +202,7 @@ async def check_progress_for_dl(gid, event, previous):
                     .format(file.name))
 
 
-CMD_HELP.update({
+"""CMD_HELP.update({
     "aria":
     ".aurl [URL] (or) .amag [Magnet Link] (or) .ator [path to torrent file]\
     \nUsage: Downloads the file into your userbot server storage.\
@@ -212,4 +212,4 @@ CMD_HELP.update({
     \nUsage: Clears the download queue, deleting all on-going downloads.\
     \n\n.ashow\
     \nUsage: Shows progress of the on-going downloads."
-})
+})"""

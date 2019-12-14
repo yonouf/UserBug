@@ -39,7 +39,7 @@ parent_id = GDRIVE_FOLDER_ID
 G_DRIVE_DIR_MIME_TYPE = "application/vnd.google-apps.folder"
 
 
-@register(pattern=r"^.gdrive(?: |$)(.*)", outgoing=True)
+@register(pattern=r"^.gd(?: |$)(.*)", outgoing=True)
 async def gdrive_upload_function(dryb):
     """ For .gdrive command, upload files to google drive. """
     await dryb.edit("Processing ...")
@@ -181,7 +181,7 @@ async def upload_dir_to_gdrive(event):
         await event.edit(f"Directory {input_str} does not seem to exist")
 
 
-@register(pattern=r"^.list(?: |$)(.*)", outgoing=True)
+@register(pattern=r"^.li(?: |$)(.*)", outgoing=True)
 async def gdrive_search_list(event):
     await event.edit("Processing ...")
     if CLIENT_ID is None or CLIENT_SECRET is None:
@@ -439,8 +439,20 @@ async def gdrive_search(http, search_query):
     msg = f"**Google Drive Query**:\n`{search_query}`\n\n**Results**\n\n{res}"
     return msg
 
+@register(outgoing=True, pattern="^.download$")
+async def dumoer(dumocer):
+    await dumber.edit("Download : .gd .li .di .am .at .au .ac \n.ap .ar .aw .dw .upd .up .uas .ra .rv")
 
 CMD_HELP.update({
+	"download":
+	".ra Rip Audio | .rv Rip Video\
+	\n.dw Download | .upd Uploadir | .up Upload | .uas Uploadas\
+	\n.gd Upload to GD | .li List files GD | .ra Rip Audio | .rv Rip Video\
+	\n.au URL | .at Torrent | .am Magnet | .ac Clear | .ap Pause | .ar Resume | .aw Show\
+	\n.di Direct URLs GDrive Mega CMail Yandex AFH Zippy MediaFire SourceForge OSDN GitHub."
+	})
+
+"""CMD_HELP.update({
     "gdrive":
     ".gdrive <file_path / reply / URL|file_name>\
     \nUsage: Uploads the file in reply , URL or file path in server to your Google Drive.\
@@ -454,4 +466,4 @@ CMD_HELP.update({
     \nUsage: Looks for files and folders in your Google Drive.\
     \n\n.ggd <path_to_folder_in_server>\
     \nUsage: Uploads all the files in the directory to a folder in Google Drive."
-})
+})"""

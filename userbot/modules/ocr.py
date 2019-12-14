@@ -42,7 +42,7 @@ async def ocr_space_file(filename,
     return r.json()
 
 
-@register(pattern=r".ocr (.*)", outgoing=True)
+@register(pattern=r".oc (.*)", outgoing=True)
 async def ocr(event):
     await event.edit("`Reading...`")
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
@@ -62,7 +62,4 @@ async def ocr(event):
     os.remove(downloaded_file_name)
 
 
-CMD_HELP.update({
-    'ocr':
-    ".ocr <language>\nUsage: Reply to an image or sticker to extract text from it.\n\nGet language codes from [here](https://ocr.space/ocrapi)"
-})
+

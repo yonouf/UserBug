@@ -14,7 +14,7 @@ from userbot.events import register
 DOGBIN_URL = "https://del.dog/"
 
 
-@register(outgoing=True, pattern=r"^.paste(?: |$)([\s\S]*)")
+@register(outgoing=True, pattern=r"^.dog(?: |$)([\s\S]*)")
 async def paste(pstl):
     """ For .paste command, pastes the text directly to dogbin. """
     dogbin_final_url = ""
@@ -72,7 +72,7 @@ async def paste(pstl):
         )
 
 
-@register(outgoing=True, pattern="^.getpaste(?: |$)(.*)")
+@register(outgoing=True, pattern="^.dop(?: |$)(.*)")
 async def get_dogbin_content(dog_url):
     """ For .getpaste command, fetches the content of a dogbin URL. """
     textx = await dog_url.get_reply_message()
@@ -122,10 +122,3 @@ async def get_dogbin_content(dog_url):
         )
 
 
-CMD_HELP.update({
-    "dogbin":
-    ".paste <text/reply>\
-\nUsage: Create a paste or a shortened url using dogbin (https://del.dog/)\
-\n\n.getpaste\
-\nUsage: Gets the content of a paste or shortened url from dogbin (https://del.dog/)"
-})

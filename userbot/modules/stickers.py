@@ -32,7 +32,7 @@ KANGING_STR = [
 ]
 
 
-@register(outgoing=True, pattern="^.kang")
+@register(outgoing=True, pattern="^.ka")
 async def kang(args):
     """ For .kang command, kangs stickers or creates new ones. """
     user = await bot.get_me()
@@ -266,7 +266,7 @@ async def resize_photo(photo):
     return image
 
 
-@register(outgoing=True, pattern="^.stkrinfo$")
+@register(outgoing=True, pattern="^.stk$")
 async def get_pack_info(event):
     if not event.is_reply:
         await event.edit("`I can't fetch info from nothing, can I ?!`")
@@ -309,7 +309,7 @@ async def get_pack_info(event):
     await event.edit(OUTPUT)
 
 
-CMD_HELP.update({
+"""CMD_HELP.update({
     "stickers":
     ".kang\
 \nUsage: Reply .kang to a sticker or an image to kang it to your userbot pack.\
@@ -321,4 +321,4 @@ CMD_HELP.update({
 \nUsage: Kang's the sticker/image to the specified pack and uses the emoji('s) you picked.\
 \n\n.stkrinfo\
 \nUsage: Gets info about the sticker pack."
-})
+})"""

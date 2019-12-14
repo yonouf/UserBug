@@ -10,7 +10,7 @@ from userbot.events import register
 from userbot.modules.admin import get_user_from_event
 
 
-@register(outgoing=True, pattern="^.userid$")
+@register(outgoing=True, pattern="^.user$")
 async def useridgetter(target):
     """ For .userid command, returns the ID of the target user. """
     message = await target.get_reply_message()
@@ -45,7 +45,7 @@ async def permalink(mention):
         await mention.edit(f"[{tag}](tg://user?id={user.id})")
 
 
-@register(outgoing=True, pattern="^.chatid$")
+@register(outgoing=True, pattern="^.ci$")
 async def chatidgetter(chat):
     """ For .chatid, returns the ID of the chat you are in at that moment. """
     await chat.edit("Chat ID: `" + str(chat.chat_id) + "`")
@@ -72,7 +72,7 @@ async def log(log_text):
     await log_text.delete()
 
 
-@register(outgoing=True, pattern="^.kickme$")
+@register(outgoing=True, pattern="^.km$")
 async def kickme(leave):
     """ Basically it's .kickme command """
     await leave.edit("Nope, no, no, I go away")
@@ -93,7 +93,7 @@ async def unmute_chat(unm_e):
     await unm_e.delete()
 
 
-@register(outgoing=True, pattern="^.mutechat$")
+@register(outgoing=True, pattern="^.mc$")
 async def mute_chat(mute_e):
     """ For .mutechat command, mute any chat. """
     try:
@@ -138,7 +138,7 @@ async def sedNinja(event):
         await event.delete()
 
 
-@register(outgoing=True, pattern="^.regexninja (on|off)$")
+@register(outgoing=True, pattern="^.ninja (on|off)$")
 async def sedNinjaToggle(event):
     """ Enables or disables the regex ninja module. """
     global regexNinja
@@ -154,7 +154,7 @@ async def sedNinjaToggle(event):
         await event.delete()
 
 
-CMD_HELP.update({
+"""CMD_HELP.update({
     "chat":
     ".chatid\
 \nUsage: Fetches the current chat's ID\
@@ -173,4 +173,4 @@ CMD_HELP.update({
 \n\n.regexninja on/off\
 \nUsage: Globally enable/disables the regex ninja module.\
 \nRegex Ninja module helps to delete the regex bot's triggering messages."
-})
+})"""

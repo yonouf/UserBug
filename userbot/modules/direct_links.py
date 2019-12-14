@@ -18,7 +18,7 @@ from userbot import CMD_HELP
 from userbot.events import register
 
 
-@register(outgoing=True, pattern=r"^.direct(?: |$)([\s\S]*)")
+@register(outgoing=True, pattern=r"^.di(?: |$)([\s\S]*)")
 async def direct_link_generator(request):
     """ direct links generator """
     await request.edit("`Processing...`")
@@ -346,7 +346,7 @@ def useragent():
     return user_agent.text
 
 
-CMD_HELP.update({
+"""CMD_HELP.update({
     "direct":
     ".direct <url>\n"
     "Usage: Reply to a link or paste a URL to\n"
@@ -354,4 +354,4 @@ CMD_HELP.update({
     "List of supported URLs:\n"
     "`Google Drive - MEGA.nz - Cloud Mail - Yandex.Disk - AFH - "
     "ZippyShare - MediaFire - SourceForge - OSDN - GitHub`"
-})
+})"""

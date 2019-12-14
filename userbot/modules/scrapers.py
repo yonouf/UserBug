@@ -43,18 +43,18 @@ from telethon.tl.types import DocumentAttributeAudio
 from userbot.modules.upload_download import progress, humanbytes, time_formatter
 
 CARBONLANG = "auto"
-TTS_LANG = "en"
-TRT_LANG = "en"
+TTS_LANG = "ID"
+TRT_LANG = "ID"
 
 
-@register(outgoing=True, pattern="^.crblang (.*)")
+@register(outgoing=True, pattern="^.cr (.*)")
 async def setlang(prog):
     global CARBONLANG
     CARBONLANG = prog.pattern_match.group(1)
     await prog.edit(f"Language for carbon.now.sh set to {CARBONLANG}")
 
 
-@register(outgoing=True, pattern="^.carbon")
+@register(outgoing=True, pattern="^.ca")
 async def carbon_api(e):
     """ A Wrapper for carbon.now.sh """
     await e.edit("`Processing..`")
@@ -120,7 +120,7 @@ async def carbon_api(e):
     await e.delete()  # Deleting msg
 
 
-@register(outgoing=True, pattern="^.img (.*)")
+@register(outgoing=True, pattern="^.i (.*)")
 async def img_sampler(event):
     """ For .img command, search and return images matching the query. """
     await event.edit("Processing...")
@@ -151,7 +151,7 @@ async def img_sampler(event):
     await event.delete()
 
 
-@register(outgoing=True, pattern="^.currency (.*)")
+@register(outgoing=True, pattern="^.cu (.*)")
 async def moni(event):
     input_str = event.pattern_match.group(1)
     input_sgra = input_str.split(" ")
@@ -179,7 +179,7 @@ async def moni(event):
         return
 
 
-@register(outgoing=True, pattern=r"^.google (.*)")
+@register(outgoing=True, pattern=r"^.g (.*)")
 async def gsearch(q_event):
     """ For .google command, do a Google search. """
     match = q_event.pattern_match.group(1)
@@ -213,7 +213,7 @@ async def gsearch(q_event):
         )
 
 
-@register(outgoing=True, pattern=r"^.wiki (.*)")
+@register(outgoing=True, pattern=r"^.wi (.*)")
 async def wiki(wiki_q):
     """ For .wiki command, fetch content from Wikipedia. """
     match = wiki_q.pattern_match.group(1)
@@ -285,7 +285,7 @@ async def urban_dict(ud_e):
         await ud_e.edit("No result found for **" + query + "**")
 
 
-@register(outgoing=True, pattern=r"^.tts(?: |$)([\s\S]*)")
+@register(outgoing=True, pattern=r"^.tt(?: |$)([\s\S]*)")
 async def text_to_speech(query):
     """ For .tts command, a wrapper for Google Text-to-Speech. """
     textx = await query.get_reply_message()
@@ -331,7 +331,7 @@ async def text_to_speech(query):
 
 
 # kanged from Blank-x ;---;
-@register(outgoing=True, pattern="^.imdb (.*)")
+@register(outgoing=True, pattern="^.im (.*)")
 async def imdb(e):
     try:
         movie_name = e.pattern_match.group(1)
@@ -414,7 +414,7 @@ async def imdb(e):
         await e.edit("Plox enter **Valid movie name** kthx")
 
 
-@register(outgoing=True, pattern=r"^.trt(?: |$)([\s\S]*)")
+@register(outgoing=True, pattern=r"^.tr(?: |$)([\s\S]*)")
 async def translateme(trans):
     """ For .trt command, translate the given text using Google Translate. """
     translator = Translator()
@@ -446,11 +446,11 @@ async def translateme(trans):
         )
 
 
-@register(pattern=".lang (trt|tts) (.*)", outgoing=True)
+@register(pattern=".la (tr|tt) (.*)", outgoing=True)
 async def lang(value):
     """ For .lang command, change the default langauge of userbot scrapers. """
     util = value.pattern_match.group(1).lower()
-    if util == "trt":
+    if util == "tr":
         scraper = "Translator"
         global TRT_LANG
         arg = value.pattern_match.group(2).lower()
@@ -462,7 +462,7 @@ async def lang(value):
                 f"`Invalid Language code !!`\n`Available language codes for TRT`:\n\n`{LANGUAGES}`"
             )
             return
-    elif util == "tts":
+    elif util == "tt":
         scraper = "Text to Speech"
         global TTS_LANG
         arg = value.pattern_match.group(2).lower()
@@ -481,7 +481,7 @@ async def lang(value):
             f"`Language for {scraper} changed to {LANG.title()}.`")
 
 
-@register(outgoing=True, pattern="^.yt (.*)")
+@register(outgoing=True, pattern="^.y (.*)")
 async def yt_search(video_q):
     """ For .yt command, do a YouTube search from Telegram. """
     query = video_q.pattern_match.group(1)
@@ -544,7 +544,7 @@ async def youtube_search(query,
         return (nexttok, videos)
 
 
-@register(outgoing=True, pattern=r".rip(audio|video) (.*)")
+@register(outgoing=True, pattern=r".r(a|v) (.*)")
 async def download_video(v_url):
     """ For .rip command, download media from YouTube and many other sites. """
     url = v_url.pattern_match.group(2)
@@ -552,7 +552,7 @@ async def download_video(v_url):
 
     await v_url.edit("`Preparing to download...`")
 
-    if type == "audio":
+    if type == "a":
         opts = {
             'format':
             'bestaudio',
@@ -583,7 +583,7 @@ async def download_video(v_url):
         video = False
         song = True
 
-    elif type == "video":
+    elif type == "v":
         opts = {
             'format':
             'best',
@@ -685,47 +685,18 @@ def deEmojify(inputString):
     """ Remove emojis and other non-safe characters from string """
     return get_emoji_regexp().sub(u'', inputString)
 
+@register(outgoing=True, pattern="^.apps$")
+async def dumcer(dumder):
+    await dumber.edit("Admin : `.i .g .im .wi .ca .cu .ud. ex .te .tt .tr .la .y .lf \n.lb .ll .rv .s .sn .si .rs .hs .rb .ss .dec .bar .oc .bs .mqr .dog .dop .ev`")
+
 
 CMD_HELP.update({
-    'img':
-    '.img <search_query>\
-        \nUsage: Does an image search on Google and shows 5 images.'
-})
-CMD_HELP.update({
-    'currency':
-    '.currency <amount> <from> <to>\
-        \nUsage: Converts various currencies for you.'
-})
-CMD_HELP.update({
-    'carbon':
-    '.carbon <text> [or reply]\
-        \nUsage: Beautify your code using carbon.now.sh\nUse .crblang <text> to set language for your code.'
-})
-CMD_HELP.update(
-    {'google': '.google <query>\
-        \nUsage: Does a search on Google.'})
-CMD_HELP.update(
-    {'wiki': '.wiki <query>\
-        \nUsage: Does a search on Wikipedia.'})
-CMD_HELP.update(
-    {'ud': '.ud <query>\
-        \nUsage: Does a search on Urban Dictionary.'})
-CMD_HELP.update({
-    'tts':
-    '.tts <text> [or reply]\
-        \nUsage: Translates text to speech for the language which is set.\nUse .lang tts <language code> to set language for tts. (Default is English.)'
-})
-CMD_HELP.update({
-    'trt':
-    '.trt <text> [or reply]\
-        \nUsage: Translates text to the language which is set.\nUse .lang trt <language code> to set language for trt. (Default is English)'
-})
-CMD_HELP.update({'yt': '.yt <text>\
-        \nUsage: Does a YouTube search.'})
-CMD_HELP.update(
-    {"imdb": ".imdb <movie-name>\nShows movie info and other stuff."})
-CMD_HELP.update({
-    'rip':
-    '.ripaudio <url> or ripvideo <url>\
-        \nUsage: Download videos and songs from YouTube (and [many other sites](https://ytdl-org.github.io/youtube-dl/supportedsites.html)).'
-})
+	"apps":
+	"`.i Image | .g Google | .im Imdb | .wi Wikipedia | .ca Carbon\
+	\n.cu Currency .ud Urban Dictionary  | .ex Exec | .te Terminal\
+	\n.tt Text To Speech |.tr Translate | .la Language | .y YouTube\
+	\n.lf LastFM | .lb LastBio | .ll Lastlog | .rv Reverse | .s Sed\
+	\n.sn Snip .si Snips | .rs Remove Snips | .hs Hash | .rb Remove BG\
+	\n.ss ScreenShot | .dec Decode | .bar Barcode | .oc Ocr | .bs Base64\
+	\n.mqr Make QR  | .dog Dogbin | .dop Get Dogbin | .ev Evaluators."
+	})

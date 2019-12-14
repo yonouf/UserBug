@@ -58,8 +58,8 @@ async def shalom(e):
         "\n☁️⭐️⭐️⭐️⭐️⭐️⭐️⭐️☁️"
         "\n☁️☁️☁️☁️☁️☁️☁️☁️☁️")
     
-    CMD_HELP.update({
+"""CMD_HELP.update({
     'shalom':
     '.shalom\
 \nUsage: gives a nice SHALOM as output.'
-})
+})"""

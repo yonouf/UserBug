@@ -18,13 +18,13 @@ from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot
 from userbot.events import register
 
 
-@register(outgoing=True, pattern="^.random")
+@register(outgoing=True, pattern="^.ran")
 async def randomise(items):
     """ For .random command, get a random item from the list of items. """
     itemo = (items.text[8:]).split()
     if len(itemo) < 2:
         await items.edit(
-            "`2 or more items are required! Check .help random for more info.`"
+            "`2 or more items are required! Check .h random for more info.`"
         )
         return
     index = randint(1, len(itemo) - 1)
@@ -74,7 +74,7 @@ async def killdabot(event):
     exit()
 
 
-@register(outgoing=True, pattern="^.community$")
+@register(outgoing=True, pattern="^.com$")
 async def bot_community(community):
     """ For .community command, just returns OG Paperplane's group link. """
     await community.edit(
@@ -83,7 +83,7 @@ async def bot_community(community):
         "Paperplane project and it may get limited or no support for bugs.")
 
 
-@register(outgoing=True, pattern="^.support$")
+@register(outgoing=True, pattern="^.sup$")
 async def bot_support(wannahelp):
     """ For .support command, just returns the group link. """
     await wannahelp.edit(
@@ -110,7 +110,7 @@ async def reedme(e):
     
 
 # Copyright (c) Gegham Zakaryan | 2019
-@register(outgoing=True, pattern="^.repeat (.*)")
+@register(outgoing=True, pattern="^.rep (.*)")
 async def repeat(rep):
     cnt, txt = rep.pattern_match.group(1).split(' ', 1)
     replyCount = int(cnt)
@@ -124,7 +124,7 @@ async def repeat(rep):
     await rep.edit(replyText)
 
 
-@register(outgoing=True, pattern="^.repo$")
+@register(outgoing=True, pattern="^.rp$")
 async def repo_is_here(wannasee):
     """ For .repo command, just returns the repo URL. """
     await wannasee.edit(
@@ -132,7 +132,7 @@ async def repo_is_here(wannasee):
     )
 
 
-@register(outgoing=True, pattern="^.raw$")
+@register(outgoing=True, pattern="^.ra$")
 async def raw(event):
     the_real_message = None
     reply_to_id = None
@@ -156,7 +156,7 @@ async def raw(event):
             caption="`Here's the decoded message data !!`")
 
 
-CMD_HELP.update({
+"""CMD_HELP.update({
     'random':
     '.random <item1> <item2> ... <itemN>\
 \nUsage: Get a random item from the list of items.'
@@ -215,3 +215,4 @@ CMD_HELP.update({
     ".raw\
 \nUsage: Get detailed JSON-like formatted data about replied message."
 })
+"""

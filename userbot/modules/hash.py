@@ -12,7 +12,7 @@ from userbot import CMD_HELP
 from userbot.events import register
 
 
-@register(outgoing=True, pattern="^.hash (.*)")
+@register(outgoing=True, pattern="^.ha (.*)")
 async def gethash(hash_q):
     """ For .hash command, find the md5, sha1, sha256, sha512 of the string. """
     hashtxt_ = hash_q.pattern_match.group(1)
@@ -44,7 +44,7 @@ async def gethash(hash_q):
         await hash_q.reply(ans)
 
 
-@register(outgoing=True, pattern="^.base64 (en|de) (.*)")
+@register(outgoing=True, pattern="^.bs (en|de) (.*)")
 async def endecrypt(query):
     """ For .base64 command, find the base64 encoding of the given string. """
     if query.pattern_match.group(1) == "en":
@@ -57,11 +57,3 @@ async def endecrypt(query):
             pybase64.b64decode(bytes(query.pattern_match.group(2), "utf-8"),
                                validate=True))[2:]
         await query.reply("Decoded: `" + lething[:-1] + "`")
-
-
-CMD_HELP.update({"base64": "Find the base64 encoding of the given string"})
-
-CMD_HELP.update({
-    "hash":
-    "Find the md5, sha1, sha256, sha512 of the string when written into a txt file."
-})

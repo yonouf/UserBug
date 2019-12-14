@@ -40,7 +40,7 @@ USERNAME_TAKEN = "```This username is already taken.```"
 # ===============================================================
 
 
-@register(outgoing=True, pattern="^.reserved$")
+@register(outgoing=True, pattern="^.rsd$")
 async def mine(event):
     """ For .reserved command, get a list of your reserved usernames. """
     result = await bot(GetAdminedPublicChannelsRequest())

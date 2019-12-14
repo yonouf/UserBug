@@ -276,11 +276,22 @@ async def unblockpm(unblock):
             f"[{name0}](tg://user?id={replied_user.id})"
             " was unblocc'd!.",
         )
-
+@register(outgoing=True, pattern="^.chats$")
+async def dumver(dumyer):
+    await dumber.edit("Chats : .ntf .nto .app .dap .bl .ubl .fi .st .rmf .fs \n.sw .cw .rw .user .link .ci .log .km .umc .mc .ninja")
 
 CMD_HELP.update({
-    "pmpermit":
-    "\
+    "chats":
+	".ntf Notif PM Off | .nto Notif PM On | .app Approves PM | .dap Disapproves PM | .bl Blocks PM | .ubl Unblocks PM\
+	\n.fi Filter | .st Stop Filter | .fs List Filters | .rmf Remove Bot Filters\
+	\n.sw Set Welcome | .cw Check Welcome | .rw Remove Welcome\
+	\n.user Fetches ID on Reply | .link custom ID | .ci Fetches ID | .log Forward Logs Bot Group | .km Leave | .um Unmute chat | .mc Mute Chat\
+	\n.ninja Regex Ninja module helps to delete the regex bot's triggering messages\
+	\n.pu Purge | .pum Purge Me | .d Delete | .e Edit | .sd Self Destruction\
+	\n.notes List Notes | .clear Clear Notes | .save Save Notes | .rmn Removes All Bot Notes."
+	})
+
+"""
 .approve\
 \nUsage: Approves the mentioned/replied person to PM.\
 \n\n.disapprove\
@@ -293,4 +304,4 @@ CMD_HELP.update({
 \nUsage: Clears/Disables any notifications of unapproved PMs.\
 \n\n.notifon\
 \nUsage: Allows notifications for unapproved PMs."
-})
+})"""

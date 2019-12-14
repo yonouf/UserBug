@@ -20,7 +20,7 @@ if LYDIA_API_KEY:
     api_key = LYDIA_API_KEY
     api_client = coffeehouse.API(api_key)
 
-@register(outgoing=True, pattern="^.repcf$")
+@register(outgoing=True, pattern="^.rcf$")
 async def repcf(event):
     if event.fwd_from:
         return
@@ -35,7 +35,7 @@ async def repcf(event):
     except Exception as e:
         await event.edit(str(e))
 
-@register(outgoing=True, pattern="^.addcf$")
+@register(outgoing=True, pattern="^.acf$")
 async def addcf(event):
     if event.fwd_from:
         return
@@ -52,7 +52,7 @@ async def addcf(event):
     else:
         await event.edit("Reply to a user to activate Lydia AI on them")
 
-@register(outgoing=True, pattern="^.remcf$")
+@register(outgoing=True, pattern="^.rcf$")
 async def remcf(event):
     if event.fwd_from:
         return

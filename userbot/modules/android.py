@@ -38,7 +38,7 @@ async def magisk(request):
                     f'[Uninstaller]({data["uninstaller"]["link"]})\n'
     await request.edit(releases)
 
-@register(outgoing=True, pattern=r"^.device(?: |$)(\S*)")
+@register(outgoing=True, pattern=r"^.dvc(?: |$)(\S*)")
 async def device_info(request):
     """ get android device basic info from its codename """
     textx = await request.get_reply_message()
@@ -48,7 +48,7 @@ async def device_info(request):
     elif textx:
         device = textx.text
     else:
-        await request.edit("`Usage: .device <codename> / <model>`")
+        await request.edit("`Usage: .dvc <codename> / <model>`")
         return
     found = [
         i for i in get(DEVICES_DATA).json()
@@ -69,7 +69,7 @@ async def device_info(request):
     await request.edit(reply)
 
 
-@register(outgoing=True, pattern=r"^.codename(?: |)([\S]*)(?: |)([\s\S]*)")
+@register(outgoing=True, pattern=r"^.cn(?: |)([\S]*)(?: |)([\s\S]*)")
 async def codename_info(request):
     """ search for android codename """
     textx = await request.get_reply_message()
@@ -81,7 +81,7 @@ async def codename_info(request):
         brand = textx.text.split(' ')[0]
         device = ' '.join(textx.text.split(' ')[1:])
     else:
-        await request.edit("`Usage: .codename <brand> <device>`")
+        await request.edit("`Usage: .cn <brand> <device>`")
         return
     found = [
         i for i in get(DEVICES_DATA).json()
@@ -104,7 +104,7 @@ async def codename_info(request):
     await request.edit(reply)
 
 
-@register(outgoing=True, pattern=r"^.specs(?: |)([\S]*)(?: |)([\s\S]*)")
+@register(outgoing=True, pattern=r"^.spc(?: |)([\S]*)(?: |)([\s\S]*)")
 async def devices_specifications(request):
     """ Mobile devices specifications """
     textx = await request.get_reply_message()
@@ -116,7 +116,7 @@ async def devices_specifications(request):
         brand = textx.text.split(' ')[0]
         device = ' '.join(textx.text.split(' ')[1:])
     else:
-        await request.edit("`Usage: .specs <brand> <device>`")
+        await request.edit("`Usage: .spc <brand> <device>`")
         return
     all_brands = BeautifulSoup(
         get('https://www.devicespecifications.com/en/brand-more').content,
@@ -186,7 +186,7 @@ async def twrp(request):
     await request.edit(reply)
 
 
-CMD_HELP.update({
+"""CMD_HELP.update({
     "android":
     ".magisk\
 \nGet latest Magisk releases\
@@ -198,4 +198,4 @@ CMD_HELP.update({
 \nUsage: Get device specifications info.\
 \n\n.twrp <codename>\
 \nUsage: Get latest twrp download for android device."
-})
+})"""

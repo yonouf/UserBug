@@ -118,7 +118,7 @@ async def incom_note(getnt):
         pass
 
 
-@register(outgoing=True, pattern="^.rmbotnotes (.*)")
+@register(outgoing=True, pattern="^.rmn (.*)")
 async def kick_marie_notes(kick):
     """ For .rmbotnotes command, allows you to kick all \
         Marie(or her clones) notes from a chat. """
@@ -144,7 +144,7 @@ async def kick_marie_notes(kick):
             BOTLOG_CHATID, "I cleaned all Notes at " + str(kick.chat_id))
 
 
-CMD_HELP.update({
+"""CMD_HELP.update({
     "notes":
     "\
 #<notename>\
@@ -157,4 +157,4 @@ CMD_HELP.update({
 \nUsage: Deletes the specified note.\
 \n\n.rmbotnotes <marie/rose>\
 \nUsage: Removes all notes of admin bots (Currently supported: Marie, Rose and their clones.) in the chat."
-})
+})"""
