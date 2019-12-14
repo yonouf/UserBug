@@ -78,13 +78,13 @@ async def spammer(e):
 
 @register(outgoing=True, pattern="^.spams$")
 async def dumeer(dumwer):
-    await dumwer.edit("Spams : `.csp .wsp .sp .psp .dsp .rpf .acf .rcf .f .ly .ty .scam .Oof .hi .str .sl .ka .stk`")
+    await dumwer.edit("Spams : `.csp .wsp .sp .psp .dsp .rpf .acf .rcf .f .ly .ty .scam .Oof .hi .str .sl .ka .stk .rep`")
 
 CMD_HELP.update({
     "spams":
 	".csp Spam Text | .wsp Spam Word | .sp Flood Text | .psp Spam Pic | .dsp Delay Spam\
 	\n.rpf Lydia reply | .acf Lydia add | .rcf Lydia Remove | .ly Fake Link | .ty Type\
-	\n.sl Slaps | .str Stretch | .scam Scam | .f Big f**k | .hi Say Hai"
+	\n.sl Slaps | .str Stretch | .scam Scam | .f Big f**k | .hi Say Hai | .rep Repeat"
 	})
 	
 """.cspam <text>\
