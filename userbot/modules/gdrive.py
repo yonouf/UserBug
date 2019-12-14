@@ -441,7 +441,7 @@ async def gdrive_search(http, search_query):
 
 @register(outgoing=True, pattern="^.download$")
 async def dumoer(dumocer):
-    await dumber.edit("Download : .gd .li .di .am .at .au .ac \n.ap .ar .aw .dw .upd .up .uas .ra .rv")
+    await dumocer.edit("Download : .gd .li .di .am .at .au .ac \n.ap .ar .aw .dw .upd .up .uas .ra .rv")
 
 CMD_HELP.update({
 	"download":
