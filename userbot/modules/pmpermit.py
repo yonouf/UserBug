@@ -17,7 +17,7 @@ from userbot.events import register
 
 # ========================= CONSTANTS ============================
 UNAPPROVED_MSG = (
-    "`HeY! This is an automated message.\n\n`"
+    "`Hey! This is an automated message.\n\n`"
     "`I haven't approved you to PM yet.`"
     "`Please wait for me to look in, I mostly approve PMs.\n\n`"
     "`Until then, please don't spam my Mastor's PM, you'll get blocked and reported if you do so!`")
@@ -278,17 +278,17 @@ async def unblockpm(unblock):
         )
 @register(outgoing=True, pattern="^.chats$")
 async def dumver(dumyer):
-    await dumyer.edit("Chats : .ntf .nto .app .dap .bl .ubl .fi .st .rmf .fs \n.sw .cw .rw .user .link .ci .log .km .umc .mc .ninja")
+    await dumyer.edit("Chats :\n.ntf .nto .app .dap .bl .ubl .fi .st .rmf .fs \n.sw .cw .rw .user .link .ci .log .km .umc .mc .ninja")
 
 CMD_HELP.update({
     "chats":
-	".ntf Notif PM Off | .nto Notif PM On | .app Approves PM | .dap Disapproves PM | .bl Blocks PM | .ubl Unblocks PM\
-	\n.fi Filter | .st Stop Filter | .fs List Filters | .rmf Remove Bot Filters\
-	\n.sw Set Welcome | .cw Check Welcome | .rw Remove Welcome\
-	\n.user Fetches ID on Reply | .link custom ID | .ci Fetches ID | .log Forward Logs Bot Group | .km Leave | .um Unmute chat | .mc Mute Chat\
-	\n.ninja Regex Ninja module helps to delete the regex bot's triggering messages\
-	\n.pu Purge | .pum Purge Me | .d Delete | .e Edit | .sd Self Destruction\
-	\n.notes List Notes | .clear Clear Notes | .save Save Notes | .rmn Removes All Bot Notes."
+	".pu Purge | .pum Purge Me | .d Delete | .e Edit | .sd Self Destruction\
+	\n.ntf Notif PM Off | .nto Notif PM On | .app Approves PM | .dap Disapproves PM | .bl Blocks PM\
+	\n.ubl Unblocks PM | .fi Filter | .st Stop Filter | .fs List Filters | .rmf Remove Bot Filters\
+	\n.sw Set Welcome | .cw Check Welcome | .rw Remove Welcome | .user Fetches ID on Reply\
+	\n.notes List Notes | .clear Clear Notes | .save Save Notes | .rmn Removes All Bot Notes\
+	\n.link custom ID | .ci Fetches ID | .log Forward Logs Bot Group | .km Leave | .um Unmute chat\
+	\n.mc Mute Chat | .ninja Regex Ninja module helps to delete the regex bot's triggering messages."
 	})
 
 """
