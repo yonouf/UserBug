@@ -179,14 +179,14 @@ async def remove_profilepic(delpfp):
 		
 @register(outgoing=True, pattern="^.info$")
 async def dumler(dumger):
-    await dumger.edit("Profile : `.dc .speed .w .sys .bv .pip .al .rl .who .ran .sleep .com \n.sup .rp .ra .u .dvc .cn .spc .git .rsd .co`")
+    await dumger.edit("Profile :\n.dc .speed .w .sys .bv .pip .al .rl .who .ran .sleep \n.com .sup .rp .ra .u .dvc .cn .spc .git .rsd .co")
 
 CMD_HELP.update({
     "info":
-	".dc Datacentre | .speed Speed Test | .w Weather | .sys System | .bv Bot Version | .pip Search Pip\
-	\n.al Change User | .rl Reset Alive | .who Whois | .ran Random | .sleep Bot Sleep | .com Community\
-	\n.sup Support | .ra Raw | .u Update | .dvc Device | .cn Codename | .spc Specs | .git Search Git\
-	\n.rsd Reserved Username | .co Count Username."
+	".dc Datacentre | .speed Test | .w Weather | .sys System | .bv Bot Version\
+	\n.pip Search | .al Change User | .rl Reset Alive | .who Whois | .ran Random\
+	\n.sleep Bot Sleep | .com Community |. sup Support | .ra Raw | .dvc Device\
+	\n.cn Codename | .spc Specs | .git Search | .rsd Reserved | .co Count Username."
 	})
 
 """CMD_HELP.update({
