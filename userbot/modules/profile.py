@@ -114,7 +114,7 @@ async def update_username(username):
         await username.edit(USERNAME_TAKEN)
 
 
-@register(outgoing=True, pattern="^.count$")
+@register(outgoing=True, pattern="^.co$")
 async def count(event):
     """ For .count command, get profile stats. """
     u = 0
@@ -178,7 +178,7 @@ async def remove_profilepic(delpfp):
         f"`Successfully deleted {len(input_photos)} profile picture(s).`")
 
 
-CMD_HELP.update({
+"""CMD_HELP.update({
     "profile":
     ".username <new_username>\
 \nUsage: Changes your Telegram username.\
@@ -195,3 +195,4 @@ CMD_HELP.update({
 \n\n.count\
 \nUsage: Counts your groups, chats, bots etc..."
 })
+"""
