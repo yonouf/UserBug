@@ -687,7 +687,7 @@ def deEmojify(inputString):
 
 @register(outgoing=True, pattern="^.apps$")
 async def dumcer(dumder):
-    await dumder.edit("Apps :\n.i .g .im .wi .ca .cu .ud. ex .te .tt .tr .la .y .lf \n.lb .ll .rv .s .sn .si .rs .hs .rb .ss .dec .bar .oc .bs .mqr .dog .dop .ev")
+    await dumder.edit("Apps :\n.i .g .im .wi .ca .cu .ud. ex .te .tt .tr .la .y .lf .lb .ll .rv .s \n.sn .si .rs .hs .rb .ss .dec .bar .oc .bs .mqr .dog .dop .ev")
 
 
 CMD_HELP.update({
