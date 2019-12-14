@@ -917,7 +917,7 @@ async def get_bots(show):
 
 @register(outgoing=True, pattern="^.admin$")
 async def dumper(dumber):
-    await dumber.edit("Admin :\n .k .b .ub .del .gp .pin .m .um .lo \n.ul .pro .dem .zo .ads .uss .gm .ugm")
+    await dumber.edit("Admin :\n.k .b .ub .del .gp .pin .m .um .lo \n.ul .pro .dem .zo .ads .uss .gm .ugm")
 
 CMD_HELP.update({
     "admin":
@@ -925,6 +925,6 @@ CMD_HELP.update({
 	\n.pro .dem : Promote & Demote | .zo : Scan & Clean Zombies\
 	\n.gp : Set Group DP | .pin : Pin Messages | .m .um : Mute & Unmute\
 	\n.ads .us : Admins & Users Lists | .gm .ugm : Global Mute & Unmute\
-	\n.lo .ul : Lock & Unlock. Types : all, msg, media,\
-	\nsticker, gif, game, inline, poll, invite, pin, info."
+	\n.lo .ul : Lock & Unlock. Types : all, msg, media, sticker, gif, game,\
+	\ninline, poll, invite, pin, info."
 })
