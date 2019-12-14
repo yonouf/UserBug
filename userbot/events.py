@@ -90,14 +90,7 @@ def register(**args):
                     text += f"Please Dont Forward This Report to {link}.\n"
                     text += "Cause I'm Just a NooB.lol"
 
-                    ftext = "========== DISCLAIMER =========="
-                    ftext += "\nThis file uploaded ONLY here,"
-                    ftext += "\nwe logged only fact of error and date,"
-                    ftext += "\nwe respect your privacy,"
-                    ftext += "\nyou may not report this error if you've"
-                    ftext += "\nany confidential data here, no one will see your data\n"
-                    ftext += "================================\n\n"
-                    ftext += "--------BEGIN USERBOT TRACEBACK LOG--------\n"
+                    ftext += "--------USERBOT TRACEBACK LOG--------\n"
                     ftext += "\nDate: " + date
                     ftext += "\nChat ID: " + str(check.chat_id)
                     ftext += "\nSender ID: " + str(check.sender_id)
@@ -128,8 +121,7 @@ def register(**args):
 
                     if LOGSPAMMER:
                         await check.client.respond(
-                            "`Sorry, my userbot has crashed.\
-                        \nThe error logs are stored in the userbot's log chat.`"
+                            "Sorry, I'm Crashed."
                         )
 
                     await check.client.send_file(send_to,
