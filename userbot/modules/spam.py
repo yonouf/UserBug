@@ -87,7 +87,7 @@ CMD_HELP.update({
 	\n.sl Slaps | .str Stretch | .scam Scam | .f Big f**k | .hi Say Hai"
 	})
 	
-"""    ".cspam <text>\
+""".cspam <text>\
 \nUsage: Spam the text letter by letter.\
 \n\n.spam <count> <text>\
 \nUsage: Floods text in the chat !!\
