@@ -78,7 +78,7 @@ async def spammer(e):
 
 @register(outgoing=True, pattern="^.spams$")
 async def dumeer(dumwer):
-    await dumber.edit("Spams : `.csp .wsp .sp .psp .dsp .rpf .acf .rcf .f .ly .ty .scam .Oof .hi .str .sl .ka .stk`")
+    await dumwer.edit("Spams : `.csp .wsp .sp .psp .dsp .rpf .acf .rcf .f .ly .ty .scam .Oof .hi .str .sl .ka .stk`")
 
 CMD_HELP.update({
     "spams":
@@ -97,4 +97,5 @@ CMD_HELP.update({
 \nUsage: As if text spam was not enough !!\
 \n\n.delayspam <delay> <count> <text>\
 \nUsage: .bigspam but with custom delay.\
-\n\n\nNOTE : Spam at your own risk !!"""
+\n\n\nNOTE : Spam at your own risk !!
+"""
