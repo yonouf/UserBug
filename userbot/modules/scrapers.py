@@ -693,10 +693,10 @@ async def dumcer(dumder):
 CMD_HELP.update({
 	"apps":
 	".i Image | .g Google | .im Imdb | .wi Wikipedia | .ca Carbon\
-	\n.cu Currency .ud Urban Dictionary  | .ex Exec | .te Terminal\
-	\n.tt Text To Speech |.tr Translate | .la Language | .y YouTube\
+	\n.cu Currency | .ud Urban Dictionary  | .ex Exec | .te Terminal\
+	\n.tt Text To Speech | .tr Translate | .la Language | .y YouTube\
 	\n.lf LastFM | .lb LastBio | .ll Lastlog | .rv Reverse | .s Sed\
-	\n.sn Snip .si Snips | .rs Remove Snips | .hs Hash | .rb Remove BG\
+	\n.sn Snip | .si Snips | .rs Remove Snips | .hs Hash | .rb Remove BG\
 	\n.ss ScreenShot | .dec Decode | .bar Barcode | .oc Ocr | .bs Base64\
 	\n.mqr Make QR  | .dog Dogbin | .dop Get Dogbin | .ev Evaluators."
 	})
