@@ -278,7 +278,7 @@ async def unblockpm(unblock):
         )
 @register(outgoing=True, pattern="^.chats$")
 async def dumver(dumyer):
-    await dumber.edit("Chats : .ntf .nto .app .dap .bl .ubl .fi .st .rmf .fs \n.sw .cw .rw .user .link .ci .log .km .umc .mc .ninja")
+    await dumyer.edit("Chats : .ntf .nto .app .dap .bl .ubl .fi .st .rmf .fs \n.sw .cw .rw .user .link .ci .log .km .umc .mc .ninja")
 
 CMD_HELP.update({
     "chats":
