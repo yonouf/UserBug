@@ -917,7 +917,7 @@ async def get_bots(show):
 
 @register(outgoing=True, pattern="^.admin$")
 async def dumper(dumber):
-    await dumber.edit("Admin : .k .b .ub .del .gp .pin .m .um .lo \n.ul .pro .dem .zo .ads .uss .gm .ugm")
+    await dumber.edit("Admin :\n .k .b .ub .del .gp .pin .m .um .lo \n.ul .pro .dem .zo .ads .uss .gm .ugm")
 
 CMD_HELP.update({
     "admin":
