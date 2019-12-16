@@ -298,6 +298,17 @@ async def typewriter(typew):
         await sleep(sleep_time)
 
 
+
+@register(outgoing=True, pattern="^.memes$")
+async def dumeer(dumwer):
+    await dumwer.edit("Spams :\n.rpf .acf .rcf .f .ly .ty .scam .Oof .hi .str .sl .ka .stk")
+
+CMD_HELP.update({
+    "memes":
+	".rpf Lydia reply | .acf Lydia add | .rcf Lydia Remove | .ly Fake Link\
+	\n.ty Type | .sl Slaps | .str Stretch | .scam Scam | .f Big f**k | .hi Say Hai."
+	})
+
 """CMD_HELP.update({
     "memes":
     ".cowsay\
