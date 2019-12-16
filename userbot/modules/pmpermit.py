@@ -134,7 +134,7 @@ async def auto_accept(event):
                     )
 
 
-@register(outgoing=True, pattern="^.ntf$")
+@register(outgoing=True, pattern="^.ntfoooooooooooo$")
 async def notifoff(noff_event):
     """ For .notifoff command, stop getting notifications from unapproved PMs. """
     try:
@@ -146,7 +146,7 @@ async def notifoff(noff_event):
     await noff_event.edit("`Notifications from unapproved PM's are silenced!`")
 
 
-@register(outgoing=True, pattern="^.nto$")
+@register(outgoing=True, pattern="^.ntooooooooo$")
 async def notifon(non_event):
     """ For .notifoff command, get notifications from unapproved PMs. """
     try:
@@ -278,17 +278,16 @@ async def unblockpm(unblock):
         )
 @register(outgoing=True, pattern="^.chats$")
 async def dumver(dumyer):
-    await dumyer.edit("Chats :\n.pu .d .e .sd .bl .ntf .nto .app .dap .ubl .fi .st .fs .rmf .sw .cw \n.rw .user .notes .clear .save .rmn .link .ci .log .km .umc .mc .ninja ")
+    await dumyer.edit("Chats :\n.pu .d .sd .bl .app .dap .ubl .fi .st .fs .rmf \n.sw .cw .rw .user .notes .clear .save .rmn .ninja ")
 
 CMD_HELP.update({
     "chats":
-	".pu Purge | .d Delete | .e Edit | .sd Self Destruction | .bl Blocks PM\
+	".pu Purge | .d Delete | .sd Self Destruction\
+	\n.sw Set Welcome | .cw Check Welcome | .rw Remove Welcome\
 	\n.notes Notes | .clear Notes | .save Notes | .rmn Removes All Bot Notes\
-	\n.ntf Notif PM Off | .nto Notif PM On | .app Approves PM | .dap Disapproves PM\
-	\n.sw Set Welcome | .cw Check Welcome | .rw Remove Welcome | .user Fetches ID on Reply\
-	\n.link custom ID | .ci Fetches ID | .log Forward Logs Bot Group | .km Leave | .umc Unmute\
-	\n.ubl Unblocks PM | .fi Filter | .st Stop Filter | .fs List Filters | .rmf Remove Bot Filters\
-	\n.mc Mute | .ninja Regex Ninja module helps to delete the regex bot's triggering messages."
+	\n.app Approves PM | .dap Disapproves PM | .bl Blocks PM | ubl Unblocks PM\
+	\n.fi Filter | .st Stop Filter | .fs List Filters | .rmf Remove Bot Filters\
+	\n.ninja Regex Ninja module helps to delete the regex bot's triggering messages."
 	})
 
 """
