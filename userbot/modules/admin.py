@@ -68,7 +68,7 @@ UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 # ================================================
 
 
-@register(outgoing=True, pattern="^.gp$")
+@register(outgoing=True, pattern="^.gppppppppp$")
 async def set_group_photo(gpic):
     """ For .setgpic command, changes the picture of a group """
     if not gpic.is_group:
@@ -433,7 +433,7 @@ async def muter(moot):
             await moot.delete()
 
 
-@register(outgoing=True, pattern="^.ugm(?: |$)(.*)")
+@register(outgoing=True, pattern="^.ugmmmmmmm(?: |$)(.*)")
 async def ungmoot(un_gmute):
     """ For .ungmute command, ungmutes the target in the userbot """
     # Admin or creator check
@@ -476,7 +476,7 @@ async def ungmoot(un_gmute):
                 f"CHAT: {un_gmute.chat.title}(`{un_gmute.chat_id}`)")
 
 
-@register(outgoing=True, pattern="^.gm(?: |$)(.*)")
+@register(outgoing=True, pattern="^.gmmmmmmm(?: |$)(.*)")
 async def gspider(gspdr):
     """ For .gmute command, globally mutes the replied/tagged person """
     # Admin or creator check
@@ -789,7 +789,7 @@ async def get_user_from_id(user, event):
     return user_obj
 
   
-@register(outgoing=True, pattern="^.del ?(.*)")
+@register(outgoing=True, pattern="^.deleeeeeeeeeee ?(.*)")
 async def get_usersdel(show):
     """ For .usersdel command, list all of the deleted users in a chat. """
     info = await show.client.get_entity(show.chat_id)
@@ -878,7 +878,7 @@ async def get_userdel_from_id(user, event):
 
     return user_obj
 
-@register(outgoing=True, pattern="^.bots$", groups_only=True)
+@register(outgoing=True, pattern="^.botssssssssssssssss$", groups_only=True)
 async def get_bots(show):
     """ For .bots command, list all of the bots of the chat. """
     info = await show.client.get_entity(show.chat_id)
@@ -917,14 +917,13 @@ async def get_bots(show):
 
 @register(outgoing=True, pattern="^.admin$")
 async def dumper(dumber):
-    await dumber.edit("Admin :\n.k .b .ub .del .gp .pin .m .um .lo \n.ul .pro .dem .zo .ads .uss .gm .ugm")
+    await dumber.edit("Admin :\n.k .b .ub .pin .m .um .lo \n.ul .pro .dem .zo .ads .uss")
 
 CMD_HELP.update({
     "admin":
-	".k : Kick | .b .ub : Ban & Unban | .del : Remove User\
+	".ads .us : Admins & Users Lists | .b .ub : Ban & Unban\
+	\n.k : Kick | .pin : Pin Messages | .m .um : Mute & Unmute\
 	\n.pro .dem : Promote & Demote | .zo : Scan & Clean Zombies\
-	\n.gp : Set Group DP | .pin : Pin Messages | .m .um : Mute & Unmute\
-	\n.ads .us : Admins & Users Lists | .gm .ugm : Global Mute & Unmute\
 	\n.lo .ul : Lock & Unlock. Types : all, msg, media, sticker, gif, game,\
 	\ninline, poll, invite, pin, info."
 })
