@@ -278,7 +278,7 @@ async def unblockpm(unblock):
         )
 @register(outgoing=True, pattern="^.chats$")
 async def dumver(dumyer):
-    await dumyer.edit("Chats :\n.pu .d .e .sd .bl .ntf .nto .app .dap .ubl .fi .st .fs .rmf .sw .cw \n.rw .user .notes .clear .save .rmn .link .ci .log .km .um .mc .ninja ")
+    await dumyer.edit("Chats :\n.pu .d .e .sd .bl .ntf .nto .app .dap .ubl .fi .st .fs .rmf .sw .cw \n.rw .user .notes .clear .save .rmn .link .ci .log .km .umc .mc .ninja ")
 
 CMD_HELP.update({
     "chats":
@@ -286,7 +286,7 @@ CMD_HELP.update({
 	\n.notes Notes | .clear Notes | .save Notes | .rmn Removes All Bot Notes\
 	\n.ntf Notif PM Off | .nto Notif PM On | .app Approves PM | .dap Disapproves PM\
 	\n.sw Set Welcome | .cw Check Welcome | .rw Remove Welcome | .user Fetches ID on Reply\
-	\n.link custom ID | .ci Fetches ID | .log Forward Logs Bot Group | .km Leave | .um Unmute\
+	\n.link custom ID | .ci Fetches ID | .log Forward Logs Bot Group | .km Leave | .umc Unmute\
 	\n.ubl Unblocks PM | .fi Filter | .st Stop Filter | .fs List Filters | .rmf Remove Bot Filters\
 	\n.mc Mute | .ninja Regex Ninja module helps to delete the regex bot's triggering messages."
 	})
