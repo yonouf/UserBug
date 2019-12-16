@@ -91,7 +91,7 @@ async def delete_it(delme):
                     BOTLOG_CHATID, "Well, I can't delete a message")
 
 
-@register(outgoing=True, pattern="^.e")
+@register(outgoing=True, pattern="^.eeeeeeeeee")
 async def editer(edit):
     """ For .editme command, edit your last message. """
     message = edit.text
