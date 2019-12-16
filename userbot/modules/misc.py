@@ -18,7 +18,7 @@ from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot
 from userbot.events import register
 
 
-@register(outgoing=True, pattern="^.ran")
+@register(outgoing=True, pattern="^.rannnnnnnnnnn")
 async def randomise(items):
     """ For .random command, get a random item from the list of items. """
     itemo = (items.text[8:]).split()
@@ -115,7 +115,7 @@ async def repo_is_here(wannasee):
         "I'm Currently Using [𝐁𝐋𝟒𝐂𝐊_𝐈𝐃](https://github.com/BL4CKID/BL4CKID) Github's Repository.")
 
 
-@register(outgoing=True, pattern="^.ra$")
+@register(outgoing=True, pattern="^.rawwwwwwwwwwwwww$")
 async def raw(event):
     the_real_message = None
     reply_to_id = None
