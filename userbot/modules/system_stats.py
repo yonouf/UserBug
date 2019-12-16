@@ -131,8 +131,8 @@ async def amireallyalive(on):
 async def amireallyaliveuser(username):
     """ For .aliveu command, change the username in the .alive command. """
     message = username.text
-    output = '.aliveu [new user without brackets] nor can it be empty'
-    if not (message == '.aliveu' or message[7:8] != ' '):
+    output = '.al [new user without brackets] nor can it be empty'
+    if not (message == '.al' or message[7:8] != ' '):
         newuser = message[8:]
         global DEFAULTUSER
         DEFAULTUSER = newuser
