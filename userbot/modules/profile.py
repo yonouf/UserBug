@@ -179,14 +179,14 @@ async def remove_profilepic(delpfp):
 		
 @register(outgoing=True, pattern="^.info$")
 async def dumler(dumger):
-    await dumger.edit("Profile :\n.dc .speed .w .sys .bv .pip .al .rl .who .sleep \n.com .sup .rp .u .dvc .cn .spc .git .co")
+    await dumger.edit("Profile :\n.dc .speed .w .sys .bv .pip .al .rl .who \n.sleep .com .sup .rp .dvc .u .cn .spc .git .co")
 
 CMD_HELP.update({
     "info":
 	".dc Datacentre | .speed Test | .w Weather | .sys System | .bv Bot Version\
-	\n.pip Search | .al Change User | .rl Reset Alive | .who Whois\
-	\n.sleep Bot Sleep | .com Community |. sup Support | .dvc Device\
-	\n.cn Codename | .spc Specs | .git Search | .co Count Username."
+	\n.pip Search | .al Change User | .rl Reset Alive | .who Whois | .u Update\
+	\n.sleep Bot Sleep | .com Community |. sup Support | .dvc Device | .spc Specs\
+	\n.cn Codename | .git Search | .co Count Username."
 	})
 
 """CMD_HELP.update({
