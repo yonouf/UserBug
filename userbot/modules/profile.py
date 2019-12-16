@@ -40,7 +40,7 @@ USERNAME_TAKEN = "```This username is already taken.```"
 # ===============================================================
 
 
-@register(outgoing=True, pattern="^.rsd$")
+@register(outgoing=True, pattern="^.rsddddd$")
 async def mine(event):
     """ For .reserved command, get a list of your reserved usernames. """
     result = await bot(GetAdminedPublicChannelsRequest())
@@ -114,7 +114,7 @@ async def update_username(username):
         await username.edit(USERNAME_TAKEN)
 
 
-@register(outgoing=True, pattern="^.count$")
+@register(outgoing=True, pattern="^.co$")
 async def count(event):
     """ For .count command, get profile stats. """
     u = 0
@@ -179,14 +179,14 @@ async def remove_profilepic(delpfp):
 		
 @register(outgoing=True, pattern="^.info$")
 async def dumler(dumger):
-    await dumger.edit("Profile :\n.dc .speed .w .sys .bv .pip .al .rl .who .ran .sleep \n.com .sup .rp .ra .u .dvc .cn .spc .git .rsd .co")
+    await dumger.edit("Profile :\n.dc .speed .w .sys .bv .pip .al .rl .who .sleep \n.com .sup .rp .u .dvc .cn .spc .git .co")
 
 CMD_HELP.update({
     "info":
 	".dc Datacentre | .speed Test | .w Weather | .sys System | .bv Bot Version\
-	\n.pip Search | .al Change User | .rl Reset Alive | .who Whois | .ran Random\
-	\n.sleep Bot Sleep | .com Community |. sup Support | .ra Raw | .dvc Device\
-	\n.cn Codename | .spc Specs | .git Search | .rsd Reserved | .co Count Username."
+	\n.pip Search | .al Change User | .rl Reset Alive | .who Whois\
+	\n.sleep Bot Sleep | .com Community |. sup Support | .dvc Device\
+	\n.cn Codename | .spc Specs | .git Search | .co Count Username."
 	})
 
 """CMD_HELP.update({
