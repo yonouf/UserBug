@@ -687,7 +687,7 @@ def deEmojify(inputString):
 
 @register(outgoing=True, pattern="^.apps$")
 async def dumcer(dumder):
-    await dumder.edit("Apps :\n.i .g .im .wi .ca .cu .ud. ex .te .tt .tr .la .y .lf .lb .ll .rv .s \n.sn .si .rs .hs .rb .ss .dec .bar .oc .bs .mqr .dog .dop .ev")
+    await dumder.edit("Apps :\n.i .g .im .wi .ca .cu .ud. ex .te .tt .tr .la .y .lf .lb .ll .rv \n.sn .si .rs .hs .rb .ss .dec .bar .oc .bs .mqr .dog .dop .ev")
 
 
 CMD_HELP.update({
@@ -695,8 +695,8 @@ CMD_HELP.update({
 	".i Image | .g Google | .im Imdb | .wi Wikipedia | .ca Carbon\
 	\n.cu Currency | .ud Urban Dictionary  | .ex Exec | .te Terminal\
 	\n.tt Text To Speech | .tr Translate | .la Language | .y YouTube\
-	\n.lf LastFM | .lb LastBio | .ll Lastlog | .rv Reverse | .s Sed\
+	\n.lf LastFM | .lb LastBio | .ll Lastlog | .rv Reverse | .bs Base64\
 	\n.sn Snip | .si Snips | .rs Remove Snips | .hs Hash | .rb Remove BG\
-	\n.ss ScreenShot | .dec Decode | .bar Barcode | .oc Ocr | .bs Base64\
-	\n.mqr Make QR  | .dog Dogbin | .dop Get Dogbin | .ev Evaluators."
+	\n.ss ScreenShot | .dec Decode | .bar Barcode | .oc Ocr | .ev Evaluators\
+	\n.mqr Make QR  | .dog Dogbin | .dop Get Dogbin."
 	})
