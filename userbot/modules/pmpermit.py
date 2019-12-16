@@ -286,8 +286,7 @@ CMD_HELP.update({
 	\n.sw Set Welcome | .cw Check Welcome | .rw Remove Welcome\
 	\n.notes Notes | .clear Notes | .save Notes | .rmn Removes All Bot Notes\
 	\n.app Approves PM | .dap Disapproves PM | .bl Blocks PM | ubl Unblocks PM\
-	\n.fi Filter | .st Stop Filter | .fs List Filters | .rmf Remove Bot Filters\
-	\n.ninja Regex Ninja module helps to delete the regex bot's triggering messages."
+	\n.fi Filter | .st Stop Filter | .fs List Filters | .rmf Remove Bot Filters."
 	})
 
 """
