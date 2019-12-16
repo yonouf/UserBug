@@ -79,7 +79,7 @@ async def kickme(leave):
     await leave.client.kick_participant(leave.chat_id, 'me')
 
 
-@register(outgoing=True, pattern="^.unmutechat$")
+@register(outgoing=True, pattern="^.umc$")
 async def unmute_chat(unm_e):
     """ For .unmutechat command, unmute a muted chat. """
     try:
