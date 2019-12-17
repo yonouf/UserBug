@@ -185,7 +185,7 @@ CMD_HELP.update({
     "info":
 	".dc Datacentre | .speed Test | .w Weather | .sys System | .bv Bot Version\
 	\n.pip Search | .al Change User | .rl Reset Alive | .who Whois | .u Update\
-	\n.sleep Bot Sleep | .com Community |. sup Support | .dvc Device | .spc Specs\
+	\n.sleep Bot Sleep | .com Community | . sup Support | .dvc Device | .spc Specs\
 	\n.cn Codename | .git Search | .co Count Username."
 	})
 
