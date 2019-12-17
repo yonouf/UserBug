@@ -38,7 +38,7 @@ async def upstream(ups):
     "For .update command, check if the bot is up to date, update if specified"
     await ups.edit("`Checking for updates, please wait....`")
     conf = ups.pattern_match.group(1).lower()
-    off_repo = 'https://github.com/mkaraniya/OpenUserBot.git'
+    off_repo = 'https://github.com/BL4CKID/BL4CKID.git'
 
     try:
         txt = "`Oops.. Updater cannot continue due to some problems occured`\n\n**LOGTRACE:**\n"
@@ -110,8 +110,6 @@ async def upstream(ups):
     execl(sys.executable, sys.executable, *sys.argv)
     # Shut the existing one down
     exit()
-
-
 """CMD_HELP.update({
     'update':
     ".update\
