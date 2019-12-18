@@ -136,7 +136,7 @@ WHERE = ["in the chest", "on the head", "on the butt", "on the crotch"]
 
 
 
-@register(pattern="^.slap(?: |$)(.*)", outgoing=True)
+@register(pattern="^.sl(?: |$)(.*)", outgoing=True)
 async def who(event):
     """ slaps a user, or get slapped if not a reply. """
     replied_user = await get_user_from_event(event)
@@ -238,40 +238,6 @@ async def let_me_google_that_for_you(lmgtfy_q):
     \n[{query}]({r.json()['shorturl']})")
 
 
-@register(pattern=r".scam(?: |$)(.*)", outgoing=True)
-async def scam(event):
-    """ Just a small command to fake chat actions for fun !! """
-    options = [
-        'typing', 'contact', 'game', 'location', 'voice', 'round', 'video',
-        'photo', 'document', 'cancel'
-    ]
-    input_str = event.pattern_match.group(1)
-    args = input_str.split()
-    if len(args) is 0:  # Let bot decide action and time
-        scam_action = choice(options)
-        scam_time = randint(30, 60)
-    elif len(args) is 1:  # User decides time/action, bot decides the other.
-        try:
-            scam_action = str(args[0]).lower()
-            scam_time = randint(30, 60)
-        except ValueError:
-            scam_action = choice(options)
-            scam_time = int(args[0])
-    elif len(args) is 2:  # User decides both action and time
-        scam_action = str(args[0]).lower()
-        scam_time = int(args[1])
-    else:
-        await event.edit("`Invalid Syntax !!`")
-        return
-    try:
-        if (scam_time > 0):
-            await event.delete()
-            async with event.client.action(event.chat_id, scam_action):
-                await sleep(scam_time)
-    except BaseException:
-        return
-
-
 @register(pattern=r".ty(?: |$)(.*)", outgoing=True)
 async def typewriter(typew):
     """ Just a small command to make your keyboard become a typewriter! """
@@ -301,12 +267,12 @@ async def typewriter(typew):
 
 @register(outgoing=True, pattern="^.memes$")
 async def dumeer(dumwer):
-    await dumwer.edit("Memes :\n.rpf .acf .rcf .f .ly .ty .scam .Oof .hi .str .sl .ka .stk")
+    await dumwer.edit("Memes :\n.rpf .acf .rcf .f .ly .ty .Oof .hi .str .sl .ka .stk")
 
 CMD_HELP.update({
     "memes":
 	".rpf Lydia reply | .acf Lydia add | .rcf Lydia Remove | .ly Fake Link\
-	\n.ty Type | .sl Slaps | .str Stretch | .scam Scam | .f Big f**k | .hi Say Hai."
+	\n.ty Type | .sl Slaps | .str Stretch | .f Big f**k | .hi Say Hai."
 	})
 
 """CMD_HELP.update({
