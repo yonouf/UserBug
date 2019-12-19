@@ -148,8 +148,7 @@ async def terminal_runner(term):
         return
 
     if not command:
-        await term.edit(" Give a command or use .help term for \
-            an example.")
+        await term.edit(" Give a command.")
         return
 
     if command in ("userbot.session", "config.env"):
