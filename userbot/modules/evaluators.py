@@ -17,17 +17,17 @@ from userbot.events import register
 async def evaluate(query):
     """ For .eval command, evaluates the given Python expression. """
     if query.is_channel and not query.is_group:
-        await query.edit("`Eval isn't permitted on channels`")
+        await query.edit("Eval isn't permitted on channels")
         return
 
     if query.pattern_match.group(1):
         expression = query.pattern_match.group(1)
     else:
-        await query.edit("``` Give an expression to evaluate. ```")
+        await query.edit(" Give an expression to evaluate. ")
         return
 
     if expression in ("userbot.session", "config.env"):
-        await query.edit("`That's a dangerous operation! Not Permitted!`")
+        await query.edit("That's a dangerous operation! Not Permitted!")
         return
 
     try:
@@ -42,24 +42,24 @@ async def evaluate(query):
                         query.chat_id,
                         "output.txt",
                         reply_to=query.id,
-                        caption="`Output too large, sending as file`",
+                        caption="Output too large, sending as file",
                     )
                     remove("output.txt")
                     return
-                await query.edit("**Query: **\n`"
+                await query.edit("**Query: **\n"
                                  f"{expression}"
-                                 "`\n**Result: **\n`"
+                                 "\n**Result: **\n"
                                  f"{evaluation}"
-                                 "`")
+                                 "")
         else:
-            await query.edit("**Query: **\n`"
+            await query.edit("**Query: **\n"
                              f"{expression}"
-                             "`\n**Result: **\n`No Result Returned/False`")
+                             "\n**Result: **\nNo Result Returned/False")
     except Exception as err:
-        await query.edit("**Query: **\n`"
+        await query.edit("**Query: **\n"
                          f"{expression}"
-                         "`\n**Exception: **\n"
-                         f"`{err}`")
+                         "\n**Exception: **\n"
+                         f"{err}")
 
     if BOTLOG:
         await query.client.send_message(
@@ -73,16 +73,16 @@ async def run(run_q):
     code = run_q.pattern_match.group(1)
 
     if run_q.is_channel and not run_q.is_group:
-        await run_q.edit("`Exec isn't permitted on channels!`")
+        await run_q.edit("Exec isn't permitted on channels!")
         return
 
     if not code:
-        await run_q.edit("``` At least a variable is required to \
-execute. Use .help exec for an example.```")
+        await run_q.edit(" At least a variable is required to \
+execute. Use .help exec for an example.")
         return
 
     if code in ("userbot.session", "config.env"):
-        await run_q.edit("`That's a dangerous operation! Not Permitted!`")
+        await run_q.edit("That's a dangerous operation! Not Permitted!")
         return
 
     if len(code.splitlines()) <= 5:
@@ -112,19 +112,19 @@ execute. Use .help exec for an example.```")
                 run_q.chat_id,
                 "output.txt",
                 reply_to=run_q.id,
-                caption="`Output too large, sending as file`",
+                caption="Output too large, sending as file",
             )
             remove("output.txt")
             return
-        await run_q.edit("**Query: **\n`"
+        await run_q.edit("**Query: **\n"
                          f"{codepre}"
-                         "`\n**Result: **\n`"
+                         "\n**Result: **\n"
                          f"{result}"
-                         "`")
+                         "")
     else:
-        await run_q.edit("**Query: **\n`"
+        await run_q.edit("**Query: **\n"
                          f"{codepre}"
-                         "`\n**Result: **\n`No Result Returned/False`")
+                         "\n**Result: **\nNo Result Returned/False")
 
     if BOTLOG:
         await run_q.client.send_message(
@@ -144,16 +144,16 @@ async def terminal_runner(term):
         uid = "This ain't it chief!"
 
     if term.is_channel and not term.is_group:
-        await term.edit("`Term commands aren't permitted on channels!`")
+        await term.edit("Term commands aren't permitted on channels!")
         return
 
     if not command:
-        await term.edit("``` Give a command or use .help term for \
-            an example.```")
+        await term.edit(" Give a command or use .help term for \
+            an example.")
         return
 
     if command in ("userbot.session", "config.env"):
-        await term.edit("`That's a dangerous operation! Not Permitted!`")
+        await term.edit("That's a dangerous operation! Not Permitted!")
         return
 
     process = await asyncio.create_subprocess_shell(
@@ -172,15 +172,15 @@ async def terminal_runner(term):
             term.chat_id,
             "output.txt",
             reply_to=term.id,
-            caption="`Output too large, sending as file`",
+            caption="Output too large, sending as file",
         )
         remove("output.txt")
         return
 
     if uid is 0:
-        await term.edit("`" f"{curruser}:~# {command}" f"\n{result}" "`")
+        await term.edit("" f"{curruser}:~# {command}" f"\n{result}" "")
     else:
-        await term.edit("`" f"{curruser}:~$ {command}" f"\n{result}" "`")
+        await term.edit("" f"{curruser}:~$ {command}" f"\n{result}" "")
 
     if BOTLOG:
         await term.client.send_message(
