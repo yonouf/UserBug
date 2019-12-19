@@ -46,7 +46,7 @@ async def magnet_download(event):
         download = aria2.add_magnet(magnet_uri)
     except Exception as e:
         LOGS.info(str(e))
-        await event.edit("Error:\n`" + str(e) + "`")
+        await event.edit("Error:\n" + str(e) + "")
         return
     gid = download.gid
     await check_progress_for_dl(gid=gid, event=event, previous=None)
@@ -78,7 +78,7 @@ async def magnet_download(event):
         download = aria2.add_uris(uri, options=None, position=None)
     except Exception as e:
         LOGS.info(str(e))
-        await event.edit("Error :\n`{}`".format(str(e)))
+        await event.edit("Error :\n{}".format(str(e)))
         return
     gid = download.gid
     await check_progress_for_dl(gid=gid, event=event, previous=None)
@@ -97,9 +97,9 @@ async def remove_all(event):
         pass
     if not removed:  # If API returns False Try to Remove Through System Call.
         system("aria2p remove-all")
-    await event.edit("`Clearing on-going downloads... `")
+    await event.edit("Clearing on-going downloads...")
     await sleep(2.5)
-    await event.edit("`Successfully cleared all downloads.`")
+    await event.edit("Cleared all downloads.")
     await sleep(2.5)
 
 
@@ -107,18 +107,18 @@ async def remove_all(event):
 async def pause_all(event):
     # Pause ALL Currently Running Downloads.
     paused = aria2.pause_all(force=True)
-    await event.edit("`Pausing downloads...`")
+    await event.edit("Pausing downloads...")
     await sleep(2.5)
-    await event.edit("`Successfully paused on-going downloads.`")
+    await event.edit("Paused on-going downloads.")
     await sleep(2.5)
 
 
 @register(outgoing=True, pattern="^.ar(?: |$)(.*)")
 async def resume_all(event):
     resumed = aria2.resume_all()
-    await event.edit("`Resuming downloads...`")
+    await event.edit("Resuming downloads...")
     await sleep(1)
-    await event.edit("`Downloads resumed.`")
+    await event.edit("Downloads resumed.")
     await sleep(2.5)
     await event.delete()
 
@@ -129,18 +129,18 @@ async def show_all(event):
     downloads = aria2.get_downloads()
     msg = ""
     for download in downloads:
-        msg = msg + "File: `" + str(download.name) + "`\nSpeed: " + str(
+        msg = msg + "File: " + str(download.name) + "\nSpeed: " + str(
             download.download_speed_string()) + "\nProgress: " + str(
                 download.progress_string()) + "\nTotal Size: " + str(
                     download.total_length_string()) + "\nStatus: " + str(
                         download.status) + "\nETA:  " + str(
                             download.eta_string()) + "\n\n"
     if len(msg) <= 4096:
-        await event.edit("`On-going Downloads: `\n" + msg)
+        await event.edit("On-going Downloads: \n" + msg)
         await sleep(5)
         await event.delete()
     else:
-        await event.edit("`Output is too big, sending it as a file...`")
+        await event.edit("Output is too big, sending it as a file...")
         with open(output, 'w') as f:
             f.write(msg)
         await sleep(2)
@@ -169,7 +169,7 @@ async def check_progress_for_dl(gid, event, previous):
         complete = file.is_complete
         try:
             if not complete and not file.error_message:
-                msg = f"\nDownloading File: `{file.name}`"
+                msg = f"\nDownloading File: {file.name}"
                 msg += f"\nSpeed: {file.download_speed_string()}"
                 msg += f"\nProgress: {file.progress_string()}"
                 msg += f"\nTotal Size: {file.total_length_string()}"
@@ -180,25 +180,25 @@ async def check_progress_for_dl(gid, event, previous):
                     msg = previous
             else:
                 LOGS.info(str(file.error_message))
-                await event.edit(f"`{msg}`")
+                await event.edit(f"{msg}")
             await sleep(5)
             await check_progress_for_dl(gid, event, previous)
             file = aria2.get_download(gid)
             complete = file.is_complete
             if complete:
-                await event.edit(f"File Downloaded Successfully: `{file.name}`"
+                await event.edit(f"File Downloaded: {file.name}"
                                  )
                 return False
         except Exception as e:
             if " not found" in str(e) or "'file'" in str(e):
-                await event.edit("Download Canceled :\n`{}`".format(file.name))
+                await event.edit("Download Canceled :\n{}".format(file.name))
                 await sleep(2.5)
                 await event.delete()
                 return
             elif " depth exceeded" in str(e):
                 file.remove(force=True)
                 await event.edit(
-                    "Download Auto Canceled :\n`{}`\nYour Torrent/Link is Dead."
+                    "Download Auto Canceled :\n{}\nYour Torrent/Link is Dead."
                     .format(file.name))
 
 
