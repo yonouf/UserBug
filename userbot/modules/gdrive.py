@@ -147,7 +147,7 @@ async def gdrive_upload_function(dryb):
                                              file_name, mime_type, dryb,
                                              parent_id)
             await dryb.edit(
-                f"File: {required_file_name} Uploaded to [𝐆𝐃𝐑𝐈𝐕𝐄]({g_drive_link})!"
+                f"[This files]({required_file_name}) Uploaded to [𝐆𝐃𝐑𝐈𝐕𝐄]({g_drive_link})!"
             )
         except Exception as e:
             await dryb.edit(
