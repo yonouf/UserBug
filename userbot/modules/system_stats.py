@@ -35,9 +35,9 @@ async def sysdetails(sysd):
         result = str(stdout.decode().strip()) \
             + str(stderr.decode().strip())
 
-        await sysd.edit("`" + result + "`")
+        await sysd.edit("" + result + "")
     except FileNotFoundError:
-        await sysd.edit("`Install neofetch first !!`")
+        await sysd.edit("Install neofetch first !!")
 
 
 @register(outgoing=True, pattern="^.bv$")
@@ -64,12 +64,11 @@ async def bot_ver(event):
         revout = str(stdout.decode().strip()) \
             + str(stderr.decode().strip())
 
-        await event.edit("`Userbot Version: "
+        await event.edit("Userbot Version: "
                          f"{verout}"
-                         "` \n"
-                         "`Revision: "
+                         "Revision: "
                          f"{revout}"
-                         "`")
+                         "")
     else:
         await event.edit(
             "Shame that you don't have git, You're running 5.0 - 'Extended' anyway"
@@ -81,7 +80,7 @@ async def pipcheck(pip):
     """ For .pip command, do a pip search. """
     pipmodule = pip.pattern_match.group(1)
     if pipmodule:
-        await pip.edit("`Searching . . .`")
+        await pip.edit("Searching . . .")
         invokepip = f"pip3 search {pipmodule}"
         pipc = await asyncrunapp(
             invokepip,
@@ -95,7 +94,7 @@ async def pipcheck(pip):
 
         if pipout:
             if len(pipout) > 4096:
-                await pip.edit("`Output too large, sending as file`")
+                await pip.edit("Output too large, sending as file")
                 file = open("output.txt", "w+")
                 file.write(pipout)
                 file.close()
@@ -106,26 +105,26 @@ async def pipcheck(pip):
                 )
                 remove("output.txt")
                 return
-            await pip.edit("**Query: **\n`"
+            await pip.edit("**Query: **\n"
                            f"{invokepip}"
-                           "`\n**Result: **\n`"
+                           "\n**Result: **\n"
                            f"{pipout}"
-                           "`")
+                           "")
         else:
-            await pip.edit("**Query: **\n`"
+            await pip.edit("**Query: **\n"
                            f"{invokepip}"
-                           "`\n**Result: **\n`No Result Returned/False`")
+                           "\n**Result: **\nNo Result Returned/False")
     else:
-        await pip.edit("`Use .help pip to see an example`")
+        await pip.edit("Use .help pip to see an example")
 
 
 @register(outgoing=True, pattern="^.on$")
 async def amireallyalive(on):
     """ For .on command, check if the bot is running.  """
-    await on.edit("⊙ I'm Alive on\n"
-                  f"⊙ Telethon : {version.__version__} \n"
-                  f"⊙ Python   : {python_version()} \n\n"
-                  f"⊙ {DEFAULTUSER} ⊙")
+    await on.edit("⊙ I'm Alive on ⊙\n"
+                  f"⊙ Telethon ⊙ : ⊙ {version.__version__} ⊙\n"
+                  f"⊙ Python   ⊙ : ⊙ {python_version()} ⊙\n\n"
+                  f"⊙ User     ⊙ : ⊙ {DEFAULTUSER} ⊙")
 
 @register(outgoing=True, pattern="^.al")
 async def amireallyaliveuser(username):
@@ -137,7 +136,7 @@ async def amireallyaliveuser(username):
         global DEFAULTUSER
         DEFAULTUSER = newuser
         output = 'Successfully changed user to ' + newuser + '!'
-    await username.edit("`" f"{output}" "`")
+    await username.edit("" f"{output}" "")
 
 
 @register(outgoing=True, pattern="^.rl$")
@@ -145,7 +144,7 @@ async def amireallyalivereset(ureset):
     """ For .resetalive command, reset the username in the .alive command. """
     global DEFAULTUSER
     DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
-    await ureset.edit("`" "Successfully reset user for alive!" "`")
+    await ureset.edit("" "Successfully reset user for alive!" "")
 
 
 """CMD_HELP.update(
