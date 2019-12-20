@@ -20,7 +20,7 @@ async def help(event):
             await event.edit("Invalid CMD...!!! Are u Blind ???")
     else:
         await event.edit(".h <module name> for Detail or .<module> Retrieves All Available CMD.")
-        #string = ""
+        string = ""
         for i in CMD_HELP:
             string += ""
             string += " ⊙ "
