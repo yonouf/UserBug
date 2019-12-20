@@ -17,10 +17,10 @@ from userbot.events import register
 
 # ========================= CONSTANTS ============================
 UNAPPROVED_MSG = (
-    "`Hey! This is an automated message.\n\n`"
-    "`I haven't approved you to PM yet.`"
-    "`Please wait for me to look in, I mostly approve PMs.\n`"
-    "`Until then, please don't spam my Mastor's PM, you'll get blocked and reported if you do so!`")
+    "𝐇𝐨𝐥𝐥𝐚...!\n\nThis is an automated message.\n"
+    "I haven't approved you to PM yet.\n"
+    "Please wait for me to approve your PM.\n"
+    "Until then, please 𝐃𝐎𝐍'𝐓 send any messages to me.\nYou'll get 𝐁𝐋𝐎𝐂𝐊𝐄𝐃 and 𝐑𝐄𝐏𝐎𝐑𝐓𝐄𝐃 if you do so!")
 # =================================================================
 
 
@@ -69,8 +69,8 @@ async def permitpm(event):
 
                 if COUNT_PM[event.chat_id] > 4:
                     await event.respond(
-                        "`You were spamming my Mastor's PM, which I didn't like.`\n"
-                        "`You have been BLOCKED and reported as SPAM, until further notice.`"
+                        "You were 𝐒𝐏𝐀𝐌𝐌𝐄𝐑, which I didn't like.\n"
+                        "You have been 𝐁𝐋𝐎𝐂𝐊𝐄𝐃 and 𝐑𝐄𝐏𝐎𝐑𝐓𝐄𝐃 as 𝐒𝐏𝐀𝐌.\n𝐇𝐀𝐕𝐄 𝐀 𝐍𝐈𝐂𝐄 𝐃𝐀𝐘."
                     )
 
                     try:
@@ -95,7 +95,7 @@ async def permitpm(event):
                             BOTLOG_CHATID,
                             "[" + name0 + "](tg://user?id=" +
                             str(event.chat_id) + ")" +
-                            " was just another retarded nibba",
+                            " was just another 𝐑𝐄𝐓𝐀𝐑𝐓𝐄𝐃.",
                         )
 
 
@@ -140,10 +140,10 @@ async def notifoff(noff_event):
     try:
         from userbot.modules.sql_helper.globals import addgvar
     except AttributeError:
-        await noff_event.edit("`Running on Non-SQL mode!`")
+        await noff_event.edit("Running on Non-SQL mode!")
         return
     addgvar("NOTIF_OFF", True)
-    await noff_event.edit("`Notifications from unapproved PM's are silenced!`")
+    await noff_event.edit("Notifications from unapproved PM's are silenced!")
 
 
 @register(outgoing=True, pattern="^.ntooooooooo$")
@@ -152,10 +152,10 @@ async def notifon(non_event):
     try:
         from userbot.modules.sql_helper.globals import delgvar
     except AttributeError:
-        await non_event.edit("`Running on Non-SQL mode!`")
+        await non_event.edit("Running on Non-SQL mode!")
         return
     delgvar("NOTIF_OFF")
-    await non_event.edit("`Notifications from unapproved PM's unmuted!`")
+    await non_event.edit("Notifications from unapproved PM's unmuted!")
 
 
 @register(outgoing=True, pattern="^.app$")
@@ -164,7 +164,7 @@ async def approvepm(apprvpm):
     try:
         from userbot.modules.sql_helper.pm_permit_sql import approve
     except AttributeError:
-        await apprvpm.edit("`Running on Non-SQL mode!`")
+        await apprvpm.edit("Non-SQL mode ON")
         return
 
     if apprvpm.reply_to_msg_id:
@@ -182,10 +182,10 @@ async def approvepm(apprvpm):
     try:
         approve(uid)
     except IntegrityError:
-        await apprvpm.edit("`User may already be approved.`")
+        await apprvpm.edit("User already 𝐀𝐏𝐏𝐑𝐎𝐕𝐄𝐃.")
         return
 
-    await apprvpm.edit(f"[{name0}](tg://user?id={uid}) `approved to PM!`")
+    await apprvpm.edit(f"[{name0}](tg://user?id={uid}) 𝐀𝐏𝐏𝐑𝐎𝐕𝐄𝐃 to PM!")
 
     async for message in apprvpm.client.iter_messages(apprvpm.chat_id,
                                                       from_user='me',
@@ -204,7 +204,7 @@ async def disapprovepm(disapprvpm):
     try:
         from userbot.modules.sql_helper.pm_permit_sql import dissprove
     except BaseException:
-        await disapprvpm.edit("`Running on Non-SQL mode!`")
+        await disapprvpm.edit("Non-SQL mode ON")
         return
 
     if disapprvpm.reply_to_msg_id:
@@ -219,13 +219,13 @@ async def disapprovepm(disapprvpm):
         name0 = str(aname.first_name)
 
     await disapprvpm.edit(
-        f"[{name0}](tg://user?id={disapprvpm.chat_id}) `Disaproved to PM!`")
+        f"[{name0}](tg://user?id={disapprvpm.chat_id}) 𝐃𝐈𝐒𝐀𝐏𝐏𝐑𝐎𝐕𝐄𝐃 to PM!")
 
     if BOTLOG:
         await disapprvpm.client.send_message(
             BOTLOG_CHATID,
             f"[{name0}](tg://user?id={disapprvpm.chat_id})"
-            " was disapproved to PM you.",
+            " was 𝐃𝐈𝐒𝐀𝐏𝐏𝐑𝐎𝐕𝐄𝐃 to PM.",
         )
 
 
@@ -238,12 +238,12 @@ async def blockpm(block):
         aname = replied_user.id
         name0 = str(replied_user.first_name)
         await block.client(BlockRequest(replied_user.id))
-        await block.edit("`You've been blocked!`")
+        await block.edit("You've been 𝐁𝐋𝐎𝐂𝐊𝐄𝐃!")
         uid = replied_user.id
     else:
         await block.client(BlockRequest(block.chat_id))
         aname = await block.client.get_entity(block.chat_id)
-        await block.edit("`You've been blocked!`")
+        await block.edit("You've been 𝐁𝐋𝐎𝐂𝐊𝐄𝐃!")
         name0 = str(aname.first_name)
         uid = block.chat_id
 
@@ -268,17 +268,17 @@ async def unblockpm(unblock):
         replied_user = await unblock.client.get_entity(reply.from_id)
         name0 = str(replied_user.first_name)
         await unblock.client(UnblockRequest(replied_user.id))
-        await unblock.edit("`You have been unblocked.`")
+        await unblock.edit(" 𝐔𝐍𝐁𝐋𝐎𝐂𝐊𝐄𝐃 ")
 
     if BOTLOG:
         await unblock.client.send_message(
             BOTLOG_CHATID,
             f"[{name0}](tg://user?id={replied_user.id})"
-            " was unblocc'd!.",
+            " was 𝐔𝐍𝐁𝐋𝐎𝐂𝐊𝐄𝐃.",
         )
 @register(outgoing=True, pattern="^.chats$")
 async def dumver(dumyer):
-    await dumyer.edit("Chats :\n.pu .d .sd .bl .app .dap .ubl .fi .st .fs .rmf \n.sw .cw .rw .user .notes .clear .save .rmn .ninja ")
+    await dumyer.edit("𝐂𝐇𝐀𝐓𝐒 :\n.pu .d .sd .bl .app .dap .ubl .fi .st .fs .rmf \n.sw .cw .rw .user .notes .clear .save .rmn .ninja ")
 
 CMD_HELP.update({
     "chats":
