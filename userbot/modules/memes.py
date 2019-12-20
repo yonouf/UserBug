@@ -267,7 +267,7 @@ async def typewriter(typew):
 
 @register(outgoing=True, pattern="^.memes$")
 async def dumeer(dumwer):
-    await dumwer.edit("Memes :\n.rpf .acf .rcf .f .ly .ty .Oof .hi .str .sl .ka .stk")
+    await dumwer.edit("𝐌𝐄𝐌𝐄𝐒 :\n.rpf .acf .rcf .f .ly .ty .Oof .hi .str .sl .ka .stk")
 
 CMD_HELP.update({
     "memes":
