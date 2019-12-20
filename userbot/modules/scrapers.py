@@ -57,7 +57,7 @@ async def setlang(prog):
 @register(outgoing=True, pattern="^.ca")
 async def carbon_api(e):
     """ A Wrapper for carbon.now.sh """
-    await e.edit("`Processing..`")
+    await e.edit("Processing..")
     CARBON = 'https://carbon.now.sh/?l={lang}&code={code}'
     global CARBONLANG
     textx = await e.get_reply_message()
@@ -67,7 +67,7 @@ async def carbon_api(e):
     elif textx:
         pcode = str(textx.message)  # Importing message to module
     code = quote_plus(pcode)  # Converting to urlencoded
-    await e.edit("`Processing..\n25%`")
+    await e.edit("Processing..\n25%")
     if os.path.isfile("./carbon.png"):
         os.remove("./carbon.png")
     url = CARBON.format(code=code, lang=CARBONLANG)
@@ -83,7 +83,7 @@ async def carbon_api(e):
     driver = webdriver.Chrome(executable_path=CHROME_DRIVER,
                               options=chrome_options)
     driver.get(url)
-    await e.edit("`Processing..\n50%`")
+    await e.edit("Processing..\n50%")
     download_path = './'
     driver.command_executor._commands["send_command"] = (
         "POST", '/session/$sessionId/chromium/send_command')
@@ -98,13 +98,13 @@ async def carbon_api(e):
     driver.find_element_by_xpath("//button[contains(text(),'Export')]").click()
     driver.find_element_by_xpath("//button[contains(text(),'4x')]").click()
     driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
-    await e.edit("`Processing..\n75%`")
+    await e.edit("Processing..\n75%")
     # Waiting for downloading
     while not os.path.isfile("./carbon.png"):
         await sleep(0.5)
-    await e.edit("`Processing..\n100%`")
+    await e.edit("Processing..\n100%")
     file = './carbon.png'
-    await e.edit("`Uploading..`")
+    await e.edit("Uploading..")
     await e.client.send_file(
         e.chat_id,
         file,
@@ -170,12 +170,12 @@ async def moni(event):
                     number, currency_from, rebmun, currency_to))
             else:
                 await event.edit(
-                    "`This seems to be some alien currency, which I can't convert right now.`"
+                    "This seems to be some alien currency, which I can't convert right now."
                 )
         except Exception as e:
             await event.edit(str(e))
     else:
-        await event.edit("`Invalid syntax.`")
+        await event.edit("Invalid syntax.")
         return
 
 
@@ -199,17 +199,17 @@ async def gsearch(q_event):
             title = gresults["titles"][i]
             link = gresults["links"][i]
             desc = gresults["descriptions"][i]
-            msg += f"[{title}]({link})\n`{desc}`\n\n"
+            msg += f"[{title}]({link})\n{desc}\n\n"
         except IndexError:
             break
-    await q_event.edit("**Search Query:**\n`" + match + "`\n\n**Results:**\n" +
+    await q_event.edit("**Search Query:**\n" + match + "\n\n**Results:**\n" +
                        msg,
                        link_preview=False)
 
     if BOTLOG:
         await q_event.client.send_message(
             BOTLOG_CHATID,
-            "Google Search query `" + match + "` was executed successfully",
+            "Google Search query " + match + " was executed successfully",
         )
 
 
@@ -234,15 +234,15 @@ async def wiki(wiki_q):
             wiki_q.chat_id,
             "output.txt",
             reply_to=wiki_q.id,
-            caption="`Output too large, sending as file`",
+            caption="Output too large, sending as file",
         )
         if os.path.exists("output.txt"):
             os.remove("output.txt")
         return
-    await wiki_q.edit("**Search:**\n`" + match + "`\n\n**Result:**\n" + result)
+    await wiki_q.edit("**Search:**\n" + match + "\n\n**Result:**\n" + result)
     if BOTLOG:
         await wiki_q.client.send_message(
-            BOTLOG_CHATID, f"Wiki query `{match}` was executed successfully")
+            BOTLOG_CHATID, f"Wiki query {match} was executed successfully")
 
 
 @register(outgoing=True, pattern="^.ud (.*)")
@@ -261,7 +261,7 @@ async def urban_dict(ud_e):
     meanlen = deflen + exalen
     if int(meanlen) >= 0:
         if int(meanlen) >= 4096:
-            await ud_e.edit("`Output too large, sending as file.`")
+            await ud_e.edit("Output too large, sending as file.")
             file = open("output.txt", "w+")
             file.write("Text: " + query + "\n\nMeaning: " + mean[0]["def"] +
                        "\n\n" + "Example: \n" + mean[0]["example"])
@@ -269,7 +269,7 @@ async def urban_dict(ud_e):
             await ud_e.client.send_file(
                 ud_e.chat_id,
                 "output.txt",
-                caption="`Output was too large, sent it as a file.`")
+                caption="Output was too large, sent it as a file.")
             if os.path.exists("output.txt"):
                 os.remove("output.txt")
             await ud_e.delete()
@@ -280,7 +280,7 @@ async def urban_dict(ud_e):
         if BOTLOG:
             await ud_e.client.send_message(
                 BOTLOG_CHATID,
-                "ud query `" + query + "` executed successfully.")
+                "ud query " + query + " executed successfully.")
     else:
         await ud_e.edit("No result found for **" + query + "**")
 
@@ -296,7 +296,7 @@ async def text_to_speech(query):
         message = textx.text
     else:
         await query.edit(
-            "`Give a text or reply to a message for Text-to-Speech!`")
+            "Give a text or reply to a message for Text-to-Speech!")
         return
 
     try:
@@ -425,7 +425,7 @@ async def translateme(trans):
     elif textx:
         message = textx.text
     else:
-        await trans.edit("`Give a text or reply to a message to translate!`")
+        await trans.edit("Give a text or reply to a message to translate!")
         return
 
     try:
@@ -459,7 +459,7 @@ async def lang(value):
             LANG = LANGUAGES[arg]
         else:
             await value.edit(
-                f"`Invalid Language code !!`\n`Available language codes for TRT`:\n\n`{LANGUAGES}`"
+                f"Invalid Language code !!\nAvailable language codes for TRT:\n\n{LANGUAGES}"
             )
             return
     elif util == "tt":
@@ -471,14 +471,14 @@ async def lang(value):
             LANG = tts_langs()[arg]
         else:
             await value.edit(
-                f"`Invalid Language code !!`\n`Available language codes for TTS`:\n\n`{tts_langs()}`"
+                f"Invalid Language code !!\nAvailable language codes for TTS:\n\n{tts_langs()}"
             )
             return
-    await value.edit(f"`Language for {scraper} changed to {LANG.title()}.`")
+    await value.edit(f"Language for {scraper} changed to {LANG.title()}.")
     if BOTLOG:
         await value.client.send_message(
             BOTLOG_CHATID,
-            f"`Language for {scraper} changed to {LANG.title()}.`")
+            f"Language for {scraper} changed to {LANG.title()}.")
 
 
 @register(outgoing=True, pattern="^.y (.*)")
@@ -489,11 +489,11 @@ async def yt_search(video_q):
 
     if not YOUTUBE_API_KEY:
         await video_q.edit(
-            "`Error: YouTube API key missing! Add it to environment vars or config.env.`"
+            "Error: YouTube API key missing! Add it to environment vars or config.env."
         )
         return
 
-    await video_q.edit("```Processing...```")
+    await video_q.edit("Processing...")
 
     full_response = await youtube_search(query)
     videos_json = full_response[1]
@@ -503,7 +503,7 @@ async def yt_search(video_q):
         link = f"https://youtu.be/{video['id']['videoId']}"
         result += f"{title}\n{link}\n\n"
 
-    reply_text = f"**Search Query:**\n`{query}`\n\n**Results:**\n\n{result}"
+    reply_text = f"**Search Query:**\n{query}\n\n**Results:**\n\n{result}"
 
     await video_q.edit(reply_text)
 
@@ -550,7 +550,7 @@ async def download_video(v_url):
     url = v_url.pattern_match.group(2)
     type = v_url.pattern_match.group(1).lower()
 
-    await v_url.edit("`Preparing to download...`")
+    await v_url.edit("Preparing to download...")
 
     if type == "a":
         opts = {
@@ -612,41 +612,41 @@ async def download_video(v_url):
         video = True
 
     try:
-        await v_url.edit("`Fetching data, please wait..`")
+        await v_url.edit("Fetching data, please wait..")
         with YoutubeDL(opts) as rip:
             rip_data = rip.extract_info(url)
     except DownloadError as DE:
-        await v_url.edit(f"`{str(DE)}`")
+        await v_url.edit(f"{str(DE)}")
         return
     except ContentTooShortError:
-        await v_url.edit("`The download content was too short.`")
+        await v_url.edit("The download content was too short.")
         return
     except GeoRestrictedError:
         await v_url.edit(
-            "`Video is not available from your geographic location due to geographic restrictions imposed by a website.`"
+            "Video is not available from your geographic location due to geographic restrictions imposed by a website."
         )
         return
     except MaxDownloadsReached:
-        await v_url.edit("`Max-downloads limit has been reached.`")
+        await v_url.edit("Max-downloads limit has been reached.")
         return
     except PostProcessingError:
-        await v_url.edit("`There was an error during post processing.`")
+        await v_url.edit("There was an error during post processing.")
         return
     except UnavailableVideoError:
-        await v_url.edit("`Media is not available in the requested format.`")
+        await v_url.edit("Media is not available in the requested format.")
         return
     except XAttrMetadataError as XAME:
-        await v_url.edit(f"`{XAME.code}: {XAME.msg}\n{XAME.reason}`")
+        await v_url.edit(f"{XAME.code}: {XAME.msg}\n{XAME.reason}")
         return
     except ExtractorError:
-        await v_url.edit("`There was an error during info extraction.`")
+        await v_url.edit("There was an error during info extraction.")
         return
     except Exception as e:
         await v_url.edit(f"{str(type(e)): {str(e)}}")
         return
     c_time = time.time()
     if song:
-        await v_url.edit(f"`Preparing to upload song:`\
+        await v_url.edit(f"Preparing to upload song:\
         \n**{rip_data['title']}**\
         \nby *{rip_data['uploader']}*")
         await v_url.client.send_file(
@@ -665,7 +665,7 @@ async def download_video(v_url):
         os.remove(f"{rip_data['id']}.mp3")
         await v_url.delete()
     elif video:
-        await v_url.edit(f"`Preparing to upload video:`\
+        await v_url.edit(f"Preparing to upload video:\
         \n**{rip_data['title']}**\
         \nby *{rip_data['uploader']}*")
         await v_url.client.send_file(
@@ -687,7 +687,7 @@ def deEmojify(inputString):
 
 @register(outgoing=True, pattern="^.apps$")
 async def dumcer(dumder):
-    await dumder.edit("Apps :\n.i .g .im .wi .ca .cu .ud. ex .te .tt .tr .la .y .lf .lb .ll .rv \n.sn .si .rs .hs .rb .ss .dec .bar .oc .bs .mqr .dog .dop .ev")
+    await dumder.edit("𝐀𝐏𝐏𝐒 :\n.i .g .im .wi .ca .cu .ud. ex .te .tt .tr .la .y .lf .lb .ll .rv \n.sn .si .rs .hs .rb .ss .dec .bar .oc .bs .mqr .dog .dop .ev")
 
 
 CMD_HELP.update({
