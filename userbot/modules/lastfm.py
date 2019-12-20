@@ -21,14 +21,14 @@ from userbot import CMD_HELP, BOTLOG, BOTLOG_CHATID, DEFAULT_BIO, BIO_PREFIX, la
 from userbot.events import register
 
 # =================== CONSTANT ===================
-LFM_BIO_ENABLED = "```last.fm current music to bio is now enabled.```"
-LFM_BIO_DISABLED = "```last.fm current music to bio is now disabled. Bio reverted to default.```"
-LFM_BIO_RUNNING = "```last.fm current music to bio is already running.```"
-LFM_BIO_ERR = "```No option specified.```"
-LFM_LOG_ENABLED = "```last.fm logging to bot log is now enabled.```"
-LFM_LOG_DISABLED = "```last.fm logging to bot log is now disabled.```"
-LFM_LOG_ERR = "```No option specified.```"
-ERROR_MSG = "```last.fm module halted, got an unexpected error.```"
+LFM_BIO_ENABLED = "last.fm current music to bio is now enabled."
+LFM_BIO_DISABLED = "last.fm current music to bio is now disabled. Bio reverted to default."
+LFM_BIO_RUNNING = "last.fm current music to bio is already running."
+LFM_BIO_ERR = "No option specified."
+LFM_LOG_ENABLED = "last.fm logging to bot log is now enabled."
+LFM_LOG_DISABLED = "last.fm logging to bot log is now disabled."
+LFM_LOG_ERR = "No option specified."
+ERROR_MSG = "last.fm module halted, got an unexpected error."
 
 ARTIST = 0
 SONG = 0
@@ -64,10 +64,10 @@ async def last_fm(lastFM):
         rectrack = sub("^", "https://www.youtube.com/results?search_query=",
                        rectrack)
         if image:
-            output = f"[‎]({image})[{LASTFM_USERNAME}]({username}) __is now listening to:__\n\n• [{playing}]({rectrack})\n`{tags}`"
+            output = f"[‎]({image})[{LASTFM_USERNAME}]({username}) __is now listening to:__\n\n• [{playing}]({rectrack})\n{tags}"
             preview = True
         else:
-            output = f"[{LASTFM_USERNAME}]({username}) __is now listening to:__\n\n• [{playing}]({rectrack})\n`{tags}`"
+            output = f"[{LASTFM_USERNAME}]({username}) __is now listening to:__\n\n• [{playing}]({rectrack})\n{tags}"
     else:
         recent = User(LASTFM_USERNAME, lastfm).get_recent_tracks(limit=3)
         playing = User(LASTFM_USERNAME, lastfm).get_now_playing()
@@ -82,7 +82,7 @@ async def last_fm(lastFM):
                            rectrack)
             output += f"• [{printable}]({rectrack})\n"
             if tags:
-                output += f"`{tags}`\n\n"
+                output += f"{tags}\n\n"
     if preview is not None:
         await lastFM.edit(f"{output}", parse_mode='md', link_preview=True)
     else:
