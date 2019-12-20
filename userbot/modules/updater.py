@@ -82,7 +82,7 @@ async def upstream(ups):
         return
 
     if conf != "now":
-        changelog_str = f'**New UPDATE available for [{ac_br}]:\n\nCHANGELOG:**\n{changelog}'
+        changelog_str = f'**New UPDATE available for [{ac_br}]:\nCHANGELOG:**\n{changelog}'
         if len(changelog_str) > 4096:
             await ups.edit("Changelog is too big, sending it as a file.")
             file = open("output.txt", "w+")
