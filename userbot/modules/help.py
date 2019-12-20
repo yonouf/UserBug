@@ -22,6 +22,6 @@ async def help(event):
         await event.edit(".h <module name> for Detail or .<module> Retrieves All Available CMD.")
         string = ""
         for i in CMD_HELP:
-            string += ""+ str(i)
+            string += (".h <module name> for Detail or .<module> Retrieves All Available CMD.\n") + str(i)
             string += " ⊙ "
         await event.edit(string)
