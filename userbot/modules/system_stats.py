@@ -80,7 +80,7 @@ async def pipcheck(pip):
     """ For .pip command, do a pip search. """
     pipmodule = pip.pattern_match.group(1)
     if pipmodule:
-        await pip.edit("Searching . . .")
+        await pip.edit("Searching...")
         invokepip = f"pip3 search {pipmodule}"
         pipc = await asyncrunapp(
             invokepip,
