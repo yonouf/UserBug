@@ -28,8 +28,8 @@ async def gethash(hash_q):
     sha512 = runapp(["sha512sum", "hashdis.txt"], stdout=PIPE)
     runapp(["rm", "hashdis.txt"], stdout=PIPE)
     sha512 = sha512.stdout.decode()
-    ans = ("Text: `" + hashtxt_ + "`\nMD5: `" + md5 + "`SHA1: `" + sha1 +
-           "`SHA256: `" + sha256 + "`SHA512: `" + sha512[:-1] + "`")
+    ans = ("Text: " + hashtxt_ + "\nMD5: " + md5 + "SHA1: " + sha1 +
+           "SHA256: " + sha256 + "SHA512: " + sha512[:-1] + "")
     if len(ans) > 4096:
         hashfile = open("hashes.txt", "w+")
         hashfile.write(ans)
@@ -38,7 +38,7 @@ async def gethash(hash_q):
             hash_q.chat_id,
             "hashes.txt",
             reply_to=hash_q.id,
-            caption="`It's too big, sending a text file instead. `")
+            caption="It's too big, sending a text file instead. ")
         runapp(["rm", "hashes.txt"], stdout=PIPE)
     else:
         await hash_q.reply(ans)
@@ -51,9 +51,9 @@ async def endecrypt(query):
         lething = str(
             pybase64.b64encode(bytes(query.pattern_match.group(2),
                                      "utf-8")))[2:]
-        await query.reply("Encoded: `" + lething[:-1] + "`")
+        await query.reply("Encoded: " + lething[:-1] + "")
     else:
         lething = str(
             pybase64.b64decode(bytes(query.pattern_match.group(2), "utf-8"),
                                validate=True))[2:]
-        await query.reply("Decoded: `" + lething[:-1] + "`")
+        await query.reply("Decoded: " + lething[:-1] + "")
