@@ -103,7 +103,7 @@ async def upstream(ups):
     await ups.edit('New update seems to be fake, Loading...')
     ups_rem.fetch(ac_br)
     await ups.edit('Successfully Updated !!!\n'
-                   'Bot is restarting...\n\nOh Wait for a second.\n\n\Sorry...I cant do that.\nAll you have to do is Re-Deploy your app in Heroku.')
+                   'Bot is restarting...\n\nOh Wait for a second.\n\nSorry...I cant do that.\nAll you have to do is Re-Deploy your app in Heroku.')
     await install_requirements()
     await bot.disconnect()
     # Spin a new instance of bot
