@@ -68,10 +68,10 @@ async def locks(event):
         what = "everything"
     else:
         if not input_str:
-            await event.edit("`I can't lock nothing !!`")
+            await event.edit("I can't lock !")
             return
         else:
-            await event.edit(f"`Invalid lock type:` {input_str}")
+            await event.edit(f"Invalid lock type: {input_str}")
             return
 
     lock_rights = ChatBannedRights(
@@ -91,10 +91,10 @@ async def locks(event):
         await event.client(
             EditChatDefaultBannedRightsRequest(peer=peer_id,
                                                banned_rights=lock_rights))
-        await event.edit(f"`Locked {what} for this chat !!`")
+        await event.edit(f"Locked {what} for this chat !")
     except BaseException as e:
         await event.edit(
-            f"`Do I have proper rights for that ??`\n**Error:** {str(e)}")
+            f"Do I have proper rights for that ?\n**Error:** {str(e)}")
         return
 
 
@@ -156,10 +156,10 @@ async def rem_locks(event):
         what = "everything"
     else:
         if not input_str:
-            await event.edit("`I can't unlock nothing !!`")
+            await event.edit("I can't unlock !")
             return
         else:
-            await event.edit(f"`Invalid unlock type:` {input_str}")
+            await event.edit(f"Invalid unlock type: {input_str}")
             return
 
     unlock_rights = ChatBannedRights(
@@ -179,10 +179,10 @@ async def rem_locks(event):
         await event.client(
             EditChatDefaultBannedRightsRequest(peer=peer_id,
                                                banned_rights=unlock_rights))
-        await event.edit(f"`Unlocked {what} for this chat !!`")
+        await event.edit(f"Unlocked {what} for this chat !")
     except BaseException as e:
         await event.edit(
-            f"`Do I have proper rights for that ??`\n**Error:** {str(e)}")
+            f"Do I have proper rights for that ?\n**Error:** {str(e)}")
         return
 
 
@@ -192,5 +192,5 @@ async def rem_locks(event):
 \nUsage: Allows you to lock/unlock some common message types in the chat.\
 [NOTE: Requires proper admin rights in the chat !!]\
 \n\nAvailable message types to lock/unlock are: \
-\n`all, msg, media, sticker, gif, game, inline, poll, invite, pin, info`"
+\nall, msg, media, sticker, gif, game, inline, poll, invite, pin, info"
 })"""
