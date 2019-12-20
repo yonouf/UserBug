@@ -15,7 +15,7 @@ async def help(event):
     args = event.pattern_match.group(1).lower()
     if args:
         if args in CMD_HELP:
-            await event.edit(".h <module name> for Detail or .<module> Retrieves All Available CMD."(CMD_HELP[args]))
+            await event.edit(str(CMD_HELP[args]))
         else:
             await event.edit("Invalid CMD...!!! Are u Blind ???")
     else:
