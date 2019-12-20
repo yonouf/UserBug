@@ -81,11 +81,11 @@ async def gdrive_upload_function(dryb):
             estimated_total_time = downloader.get_eta(human=True)
             try:
                 current_message = f"{status}...\
-                \nURL: {url}\
-                \nFile Name: {file_name}\
+                \nURL : {url}\
+                \nFile Name : {file_name}\
                 \n{progress_str}\
                 \n{humanbytes(downloaded)} of {humanbytes(total_length)}\
-                \nETA: {estimated_total_time}"
+                \nETA : {estimated_total_time}"
 
                 if round(diff %
                          10.00) == 0 and current_message != display_message:
@@ -96,7 +96,7 @@ async def gdrive_upload_function(dryb):
                 pass
         if downloader.isSuccessful():
             await dryb.edit(
-                "Downloaded to {}. Uploading to GDrive"
+                "Downloaded to {}. Uploading to 𝐆𝐃𝐑𝐈𝐕𝐄"
                 .format(downloaded_file_name))
             required_file_name = downloaded_file_name
         else:
@@ -106,7 +106,7 @@ async def gdrive_upload_function(dryb):
         if os.path.exists(input_str):
             required_file_name = input_str
             await dryb.edit(
-                "Found {}, Uploading to GDrive"
+                "Found {}, Uploading to 𝐆𝐃𝐑𝐈𝐕𝐄"
                 .format(input_str))
         else:
             await dryb.edit(
@@ -125,7 +125,7 @@ async def gdrive_upload_function(dryb):
         else:
             required_file_name = downloaded_file_name
             await dryb.edit(
-                "Downloaded to {}. Uploading to GDrive"
+                "Downloaded to {}. Uploading to 𝐆𝐃𝐑𝐈𝐕𝐄"
                 .format(downloaded_file_name))
     if required_file_name:
         if G_DRIVE_AUTH_TOKEN_DATA is not None:
@@ -147,7 +147,7 @@ async def gdrive_upload_function(dryb):
                                              file_name, mime_type, dryb,
                                              parent_id)
             await dryb.edit(
-                f"File:{required_file_name} Uploaded to [GDrive]({g_drive_link})!"
+                f"File: {required_file_name} Uploaded to [𝐆𝐃𝐑𝐈𝐕𝐄]({g_drive_link})!"
             )
         except Exception as e:
             await dryb.edit(
@@ -176,7 +176,7 @@ async def upload_dir_to_gdrive(event):
             http, os.path.basename(os.path.abspath(input_str)), parent_id)
         await DoTeskWithDir(http, input_str, event, dir_id)
         dir_link = "https://drive.google.com/folderview?id={}".format(dir_id)
-        await event.edit(f"Here is your [GDrive]({dir_link})")
+        await event.edit(f"Here is your [𝐆𝐃𝐑𝐈𝐕𝐄]({dir_link})")
     else:
         await event.edit(f"Directory {input_str} Not Exist")
 
@@ -197,7 +197,7 @@ async def gdrive_search_list(event):
         storage = await create_token_file(G_DRIVE_TOKEN_FILE, event)
     http = authorize(G_DRIVE_TOKEN_FILE, storage)
     # Authorize, get file parameters, upload file and print out result URL for download
-    await event.edit(f"Searching for {input_str} in your GDrive")
+    await event.edit(f"Searching for {input_str} in your 𝐆𝐃𝐑𝐈𝐕𝐄")
     gsearch_results = await gdrive_search(http, input_str)
     await event.edit(gsearch_results, link_preview=False)
 
@@ -235,7 +235,7 @@ async def show_current_gdrove_folder(event):
     if parent_id:
         folder_link = f"https://drive.google.com/drive/folders/" + parent_id
         await event.edit(
-            f"My userbot is currently uploading files [GDrive]({folder_link})")
+            f"I'm currently uploading files on [𝐆𝐃𝐑𝐈𝐕𝐄]({folder_link})")
     else:
         await event.edit(
             f"My userbot is currently uploading files to the root of my Google Drive storage.\
@@ -318,7 +318,7 @@ async def upload_file(http, file_path, file_name, mime_type, event, parent_id):
                 "".join(["▱"
                          for i in range(10 - math.floor(percentage / 10))]),
                 round(percentage, 2))
-            current_message = f"Uploading to GDrive\nFile Name: {file_name}\n{progress_str}"
+            current_message = f"Uploading to 𝐆𝐃𝐑𝐈𝐕𝐄\nFile Name : {file_name}\n{progress_str}"
             if display_message != current_message:
                 try:
                     await event.edit(current_message)
@@ -354,7 +354,7 @@ async def create_directory(http, directory_name, parent_id):
     file_id = file.get("id")
     drive_service.permissions().insert(fileId=file_id,
                                        body=permissions).execute()
-    LOGS.info("Created GDrive Folder:\nName: {}\nID: {} ".format(
+    LOGS.info("Created 𝐆𝐃𝐑𝐈𝐕𝐄 Folder :\nName : {}\nID : {} ".format(
         file.get("title"), file_id))
     return file_id
 
@@ -441,7 +441,7 @@ async def gdrive_search(http, search_query):
 
 @register(outgoing=True, pattern="^.download$")
 async def dumoer(dumocer):
-    await dumocer.edit("Download :\n.gd .li .di .am .at .au .ac .ap \n.ar .aw .dw .upd .up .uas .ra .rv")
+    await dumocer.edit("𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 :\n.gd .li .di .am .at .au .ac .ap \n.ar .aw .dw .upd .up .uas .ra .rv")
 
 CMD_HELP.update({
 	"download":
@@ -453,7 +453,7 @@ CMD_HELP.update({
 
 @register(outgoing=True, pattern="^.setgd$")
 async def dumier(dumoler):
-    await dumoler.edit("Set GDrive:\n.gsetf <GDrive Folder URL>\
+    await dumoler.edit("𝐆𝐃𝐑𝐈𝐕𝐄 :\n.gsetf <GDrive Folder URL>\
     \nUsage: Sets the folder to upload new files to.\
     \n.gsetclear\
     \nUsage: Reverts to default upload destination.\
