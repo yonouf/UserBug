@@ -17,11 +17,11 @@ async def help(event):
         if args in CMD_HELP:
             await event.edit(str(CMD_HELP[args]))
         else:
-            await event.edit("Invalid...Are u Blind ???")
+            await event.edit("Invalid CMD...!!! Are u Blind ???")
     else:
-        await event.edit(".h <module name> for Detail or\n.<module> Retrieves All Available CMD.")
+        await event.edit(".h <module name> for Detail or .<module> Retrieves All Available CMD.")
         string = ""
         for i in CMD_HELP:
             string += "" + str(i)
-            string += " | "
+            string += " ⊙ "
         await event.reply(string)
