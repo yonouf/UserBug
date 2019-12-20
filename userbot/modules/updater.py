@@ -97,7 +97,7 @@ async def upstream(ups):
         else:
             await ups.edit(changelog_str)
         await ups.respond(
-            "Do \".u now\" to update.\nDon't Do ".u now" if U using Heroku account.\nBut U can try it if U want.")
+            "Do \".u now\" to update.\nDon't Do \".u now\" if U using Heroku account.\nBut U can try it if U want.")
         return
 
     await ups.edit('New update seems to be fake, Loading...')
