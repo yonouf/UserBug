@@ -36,23 +36,23 @@ async def is_off_br(br):
 @register(outgoing=True, pattern="^.u(?: |$)(.*)")
 async def upstream(ups):
     "For .update command, check if the bot is up to date, update if specified"
-    await ups.edit("`Checking for updates, please wait....`")
+    await ups.edit("Loading...")
     conf = ups.pattern_match.group(1).lower()
     off_repo = 'https://github.com/BL4CKID/BL4CKID.git'
 
     try:
-        txt = "`Oops.. Updater cannot continue due to some problems occured`\n\n**LOGTRACE:**\n"
+        txt = "Oops.. Updater Error\n**LOGTRACE:**\n"
         repo = Repo()
     except NoSuchPathError as error:
-        await ups.edit(f'{txt}\n`directory {error} is not found`')
+        await ups.edit(f'{txt}\ndirectory {error} is not found')
         return
     except GitCommandError as error:
-        await ups.edit(f'{txt}\n`Early failure! {error}`')
+        await ups.edit(f'{txt}\nEarly failure! {error}')
         return
     except InvalidGitRepositoryError:
         repo = Repo.init()
         await ups.edit(
-            "`Warning: Force-Syncing to the latest stable code from repo.`\
+            "Warning: Force-Syncing to the latest stable code from repo.\
             \nI may lose my downloaded files during this update."
         )
         origin = repo.create_remote('upstream', off_repo)
@@ -63,9 +63,9 @@ async def upstream(ups):
     ac_br = repo.active_branch.name
     if not await is_off_br(ac_br):
         await ups.edit(
-            f'**[UPDATER]:**` Looks like you are using your own custom branch ({ac_br}). \
+            f'**[UPDATER]:** Looks like you are using your own custom branch ({ac_br}). \
             in that case, Updater is unable to identify which branch is to be merged. \
-            please checkout to any official branch`')
+            please checkout to any official branch')
         return
 
     try:
@@ -78,13 +78,13 @@ async def upstream(ups):
     changelog = await gen_chlog(repo, f'HEAD..upstream/{ac_br}')
 
     if not changelog:
-        await ups.edit(f'\n`Your BOT is` **up-to-date** `with` **{ac_br}**\n')
+        await ups.edit(f'\nYour BOT is **up-to-date** with **{ac_br}**\n')
         return
 
     if conf != "now":
-        changelog_str = f'**New UPDATE available for [{ac_br}]:\n\nCHANGELOG:**\n`{changelog}`'
+        changelog_str = f'**New UPDATE available for [{ac_br}]:\n\nCHANGELOG:**\n{changelog}'
         if len(changelog_str) > 4096:
-            await ups.edit("`Changelog is too big, sending it as a file.`")
+            await ups.edit("Changelog is too big, sending it as a file.")
             file = open("output.txt", "w+")
             file.write(changelog_str)
             file.close()
@@ -97,13 +97,13 @@ async def upstream(ups):
         else:
             await ups.edit(changelog_str)
         await ups.respond(
-            "`do \".update now\" to update\nDon't if using Heroku`")
+            "Do \".u now\" to update\n.\n.\n.\nDon't Do .u now Cause Useless if U using Heroku account")
         return
 
-    await ups.edit('`New update found, updating...`')
+    await ups.edit('New update seems to be fake, Loading...')
     ups_rem.fetch(ac_br)
-    await ups.edit('`Successfully Updated!\n'
-                   'Bot is restarting... Wait for a second!`')
+    await ups.edit('Successfully Updated!\n'
+                   'Bot is restarting...\nWait for a second.\n.\n.\n.\n.\n.\n.\n.\n.\nYou need to redeploy your app in Heroku')
     await install_requirements()
     await bot.disconnect()
     # Spin a new instance of bot
