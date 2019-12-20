@@ -64,11 +64,11 @@ async def bot_ver(event):
         revout = str(stdout.decode().strip()) \
             + str(stderr.decode().strip())
 
-        await event.edit("Userbot Version: "
+        await event.edit("⊙ Version   : "
                          f"{verout}"
-                         "Revision: "
+                         "\n⊙ Revision : "
                          f"{revout}"
-                         "")
+                         f"\n⊙ Loaded by : ⊙ {DEFAULTUSER} ⊙")
     else:
         await event.edit(
             "Shame that you don't have git, You're running 5.0 - 'Extended' anyway"
