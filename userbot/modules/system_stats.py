@@ -64,7 +64,7 @@ async def bot_ver(event):
         revout = str(stdout.decode().strip()) \
             + str(stderr.decode().strip())
 
-        await event.edit("⊙ Version   : "
+        await event.edit("⊙ Version  : "
                          f"{verout}"
                          "\n⊙ Revision : "
                          f"{revout}"
@@ -123,8 +123,8 @@ async def amireallyalive(on):
     """ For .on command, check if the bot is running.  """
     await on.edit("⊙ I'm Alive...!!! ⊙\n\n"
                   f"⊙ Telethon  :  {version.__version__} ⊙\n"
-                  f"⊙ Python     :  {python_version()} ⊙\n\n"
-                  f"⊙ User ⊙ : ⊙ {DEFAULTUSER} ⊙")
+                  f"⊙ Python    :  {python_version()} ⊙\n\n"
+                  f"⊙ {DEFAULTUSER} ⊙")
 
 @register(outgoing=True, pattern="^.al")
 async def amireallyaliveuser(username):
