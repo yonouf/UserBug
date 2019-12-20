@@ -75,14 +75,14 @@ async def upstream(ups):
 
     ups_rem = repo.remote('upstream')
     ups_rem.fetch(ac_br)
-    changelog = await gen_chlog(repo, f'HEAD..upstream/{ac_br}')
+    changelog = await gen_chlog(repo, f'HEAD..upstream /{ac_br}')
 
     if not changelog:
         await ups.edit(f'\nYour BOT is **up-to-date** with **{ac_br}**\n')
         return
 
     if conf != "now":
-        changelog_str = f'**New UPDATE available for [{ac_br}]:\nCHANGELOG:**\n{changelog}'
+        changelog_str = f'**New UPDATE {ac_br} :\nCHANGELOG:**\n{changelog}'
         if len(changelog_str) > 4096:
             await ups.edit("Changelog is too big, sending it as a file.")
             file = open("output.txt", "w+")
@@ -97,13 +97,13 @@ async def upstream(ups):
         else:
             await ups.edit(changelog_str)
         await ups.respond(
-            "Do \".u now\" to update\n.\n.\n.\nDon't Do .u now Cause Useless if U using Heroku account")
+            "Do \".u now\" to update.\nDon't Do ".u now" if U using Heroku account.\nBut U can try it if U want.")
         return
 
     await ups.edit('New update seems to be fake, Loading...')
     ups_rem.fetch(ac_br)
-    await ups.edit('Successfully Updated!\n'
-                   'Bot is restarting...\nWait for a second.\n.\n.\n.\n.\n.\n.\n.\n.\nYou need to redeploy your app in Heroku')
+    await ups.edit('Successfully Updated !!!\n'
+                   'Bot is restarting...\n\nOh Wait for a second.\n\n\Sorry...I cant do that.\nAll you have to do is Re-Deploy your app in Heroku.')
     await install_requirements()
     await bot.disconnect()
     # Spin a new instance of bot
