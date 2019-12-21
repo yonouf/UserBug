@@ -278,15 +278,15 @@ async def unblockpm(unblock):
         )
 @register(outgoing=True, pattern="^.chats$")
 async def dumver(dumyer):
-    await dumyer.edit("𝐂𝐇𝐀𝐓𝐒 :\n.pu .d .sd .bl .app .dap .ubl .fi .st .fs .rmf \n.sw .cw .rw .user .notes .clear .save .rmn .ninja ")
+    await dumyer.edit("⊙ 𝐂𝐇𝐀𝐓𝐒 ⊙ :\n⊙ .pu ⊙ .d ⊙ .sd ⊙ .bl ⊙ .app ⊙ .dap ⊙ .ubl ⊙ .fi ⊙ .st ⊙ .fs ⊙ .rmf \n⊙ .sw ⊙ .cw ⊙ .rw ⊙ .user ⊙ .notes ⊙ .clear ⊙ .save ⊙ .rmn ⊙ .ninja\n⊙ Help : .h 𝐂𝐇𝐀𝐓𝐒 for Details.")
 
 CMD_HELP.update({
     "chats":
-	".pu Purge | .d Delete | .sd Self Destruction\
-	\n.sw Set Welcome | .cw Check Welcome | .rw Remove Welcome\
-	\n.notes Notes | .clear Notes | .save Notes | .rmn Removes All Bot Notes\
-	\n.app Approves PM | .dap Disapproves PM | .bl Blocks PM | ubl Unblocks PM\
-	\n.fi Filter | .st Stop Filter | .fs List Filters | .rmf Remove Bot Filters."
+	"⊙ 𝐂𝐇𝐀𝐓𝐒 ⊙ :\n⊙ .pu Purge ⊙ .d Delete ⊙ .sd Self Destruction\
+	\n⊙ .sw Set Welcome ⊙ .cw Check Welcome ⊙ .rw Remove Welcome\
+	\n⊙ .notes Notes ⊙ .clear Notes ⊙ .save Notes ⊙ .rmn Removes All Bot Notes\
+	\n⊙ .app Approves PM ⊙ .dap Disapproves PM ⊙ .bl Blocks PM ⊙ ubl Unblocks PM\
+	\n⊙ .fi Filter ⊙ .st Stop Filter ⊙ .fs List Filters ⊙ .rmf Remove Bot Filters."
 	})
 
 """
