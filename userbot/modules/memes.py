@@ -267,12 +267,12 @@ async def typewriter(typew):
 
 @register(outgoing=True, pattern="^.memes$")
 async def dumeer(dumwer):
-    await dumwer.edit("𝐌𝐄𝐌𝐄𝐒 :\n.rpf .acf .rcf .f .ly .ty .Oof .hi .str .sl .ka .stk")
+    await dumwer.edit("⊙ 𝐌𝐄𝐌𝐄𝐒 ⊙ :\n⊙ .rpf ⊙ .acf ⊙ .rcf ⊙ .f ⊙ .ly ⊙ .ty ⊙ .Oof ⊙ .hi ⊙ .str ⊙ .sl ⊙ .ka ⊙ .stk\n⊙ Help : .h 𝐌𝐄𝐌𝐄𝐒 for Details.")
 
 CMD_HELP.update({
     "memes":
-	".rpf Lydia reply | .acf Lydia add | .rcf Lydia Remove | .ly Fake Link\
-	\n.ty Type | .sl Slaps | .str Stretch | .f Big f**k | .hi Say Hai."
+	"⊙ 𝐌𝐄𝐌𝐄𝐒 ⊙ :\n⊙ .rpf Lydia reply ⊙ .acf Lydia add ⊙ .rcf Lydia Remove ⊙ .ly Fake Link\
+	\n⊙ .ty Type ⊙ .sl Slaps ⊙ .str Stretch ⊙ .f Big f**k ⊙ .hi Say Hai."
 	})
 
 """CMD_HELP.update({
