@@ -919,9 +919,9 @@ async def dumper(dumber):
 
 CMD_HELP.update({
     "admin":
-	".ads .us : Admins & Users Lists | .b .ub : Ban & Unban\
-	\n.k : Kick | .pin : Pin Messages | .m .um : Mute & Unmute\
-	\n.pro .dem : Promote & Demote | .zo : Scan & Clean Zombies\
-	\n.lo .ul : Lock & Unlock. Types : all, msg, media, sticker, gif, game,\
+	"⊙ 𝐀𝐃𝐌𝐈𝐍 ⊙ :\n⊙ .ads .us : Admins & Users Lists ⊙ .b .ub : Ban & Unban\
+	\n⊙ .k : Kick ⊙ .pin : Pin Messages ⊙ .m .um : Mute & Unmute\
+	\n⊙ .pro .dem : Promote & Demote ⊙ .zo : Scan & Clean Zombies\
+	\n⊙ .lo .ul : Lock & Unlock Types : all, msg, media, sticker, gif, game,\
 	\ninline, poll, invite, pin, info."
 })
