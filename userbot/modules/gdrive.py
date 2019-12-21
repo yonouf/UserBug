@@ -147,7 +147,7 @@ async def gdrive_upload_function(dryb):
                                              file_name, mime_type, dryb,
                                              parent_id)
             await dryb.edit(
-                f"[Files]({required_file_name}) Uploaded to [𝐆𝐃𝐑𝐈𝐕𝐄]({g_drive_link})!"
+                f"This [Files]({required_file_name}) Uploaded to [𝐆𝐃𝐑𝐈𝐕𝐄]({g_drive_link})!"
             )
         except Exception as e:
             await dryb.edit(
@@ -441,12 +441,12 @@ async def gdrive_search(http, search_query):
 
 @register(outgoing=True, pattern="^.download$")
 async def dumoer(dumocer):
-    await dumocer.edit("⊙ 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 ⊙ :\n⊙.gd ⊙ .li ⊙ .di ⊙ .am ⊙ .at ⊙ .au ⊙ .ac ⊙ .ap \n⊙ .ar ⊙ .aw ⊙ .dw ⊙ .upd ⊙ .up ⊙ .uas ⊙ .ra ⊙ .rv\n⊙ Help : .h 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 for Details.")
+    await dumocer.edit("⊙ 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 ⊙ :\n⊙ .gd ⊙ .li ⊙ .di ⊙ .am ⊙ .at ⊙ .au ⊙ .ac ⊙ .ap \n⊙ .ar ⊙ .aw ⊙ .dw ⊙ .upd ⊙ .up ⊙ .uas ⊙ .ra ⊙ .rv\n⊙ Help : .h 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 for Details.")
 
 CMD_HELP.update({
 	"download":
-	"⊙ 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 ⊙ :\n⊙ .dw Download ⊙ .upd Uploadir ⊙ .up Upload ⊙ .uas Uploadas\
-	\n⊙ .au URL ⊙ .at Torrent ⊙ .am Magnet ⊙ .ac Clear ⊙ .ap Pause ⊙ .ar Resume ⊙ .aw Show\
+	"⊙ 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 ⊙ :\n⊙ .dw Download ⊙ .upd Uploadir ⊙ .up Upload ⊙ .uas Uploadas ⊙ .at Torrent \
+	\n⊙ .au URL ⊙ .am Magnet ⊙ .ac Clear ⊙ .ap Pause ⊙ .ar Resume ⊙ .aw Show\
 	\n⊙ .gd Upload to GD ⊙ .li List files GD ⊙ .setgd Help GD ⊙ .ra Rip Audio ⊙ .rv Rip Video\
 	\n⊙ .di Direct URLs GDrive Mega CMail Yandex AFH Zippy MediaFire SourceForge OSDN GitHub."
 	})
