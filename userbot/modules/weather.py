@@ -43,7 +43,7 @@ async def get_weather(weather):
 
     if not OWM_API:
         await weather.edit(
-            "Get an API key from [here](https://openweathermap.org/) first.")
+            "Get an [API](https://openweathermap.org/) key first.")
         return
 
     APPID = OWM_API
@@ -52,7 +52,7 @@ async def get_weather(weather):
         CITY = DEFCITY
         if not CITY:
             await weather.edit(
-                "`Please specify a city or set one as default using the WEATHER_DEFCITY config variable.`"
+                "Please specify a city or set one as default using the WEATHER_DEFCITY config variable."
             )
             return
     else:
@@ -81,7 +81,7 @@ async def get_weather(weather):
     result = json.loads(request.text)
 
     if request.status_code != 200:
-        await weather.edit(f"`Invalid country.`")
+        await weather.edit(f"Invalid country.")
         return
 
     cityname = result['name']
@@ -122,6 +122,8 @@ async def get_weather(weather):
         return xx
 
     await weather.edit(
+        f"**{desc}**\n" +
+        f"`{cityname}, {fullc_n}`\n" + f"`{time}`\n\n
         f"**Temperature:** `{celsius(curtemp)}°C | {fahrenheit(curtemp)}°F`\n"
         +
         f"**Min. Temp.:** `{celsius(min_temp)}°C | {fahrenheit(min_temp)}°F`\n"
@@ -130,8 +132,7 @@ async def get_weather(weather):
         + f"**Humidity:** `{humidity}%`\n" +
         f"**Wind:** `{kmph[0]} kmh | {mph[0]} mph, {findir}`\n" +
         f"**Sunrise:** `{sun(sunrise)}`\n" +
-        f"**Sunset:** `{sun(sunset)}`\n\n" + f"**{desc}**\n" +
-        f"`{cityname}, {fullc_n}`\n" + f"`{time}`")
+        f"**Sunset:** `{sun(sunset)}`")
 
 
 """CMD_HELP.update({
