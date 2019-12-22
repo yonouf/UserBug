@@ -183,10 +183,11 @@ async def dumler(dumger):
 
 CMD_HELP.update({
     "info":
-	"⊙ 𝐈𝐍𝐅𝐎 ⊙ :\n⊙ .dc Datacentre ⊙ .speed Test ⊙ .w Weather ⊙ .sys System ⊙ .bv Bot Version\
-	\n⊙ .pip Search ⊙ .al Change User ⊙ .rl Reset Alive ⊙ .who Whois ⊙ .u Update\
-	\n⊙ .sleep Bot Sleep ⊙ .com Community ⊙ .sup Support ⊙ .dvc Device ⊙ .spc Specs\
-	\n⊙ .cn Codename ⊙ .git Search ⊙ .co Count Username."
+	"⊙ 𝐈𝐍𝐅𝐎 ⊙ :\
+	\n⊙ .dc Datacentre ⊙ .speed Test ⊙ .w Weather ⊙ .sys System ⊙ .bv Bot Version\
+	\n⊙ .al Change User ⊙ .rl Reset Alive ⊙ .who Whois ⊙ .co Count Username\
+	\n⊙ .git Search ⊙ .pip Search ⊙ .cn Codename ⊙ .dvc Device ⊙ .spc Specs\
+	\n⊙ .sleep Bot Sleep ⊙ .com Community ⊙ .sup Support ⊙ .u Update."
 	})
 
 """CMD_HELP.update({
