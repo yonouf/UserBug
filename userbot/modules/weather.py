@@ -123,7 +123,7 @@ async def get_weather(weather):
 
     await weather.edit(
         f"**{desc}**\n" +
-        f"`{cityname}, {fullc_n}`\n" + f"`{time}`\n\n
+        f"`{cityname}, {fullc_n}`\n" + f"`{time}`\n\n" +
         f"**Temperature:** `{celsius(curtemp)}°C | {fahrenheit(curtemp)}°F`\n"
         +
         f"**Min. Temp.:** `{celsius(min_temp)}°C | {fahrenheit(min_temp)}°F`\n"
