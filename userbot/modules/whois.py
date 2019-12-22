@@ -21,7 +21,7 @@ from userbot.events import register
 async def who(event):
 
     await event.edit(
-        "`Sit tight while I steal some data from *Global Network Zone*...`")
+        "Wait a seconds while I steal some data from `FBI` database...")
 
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
@@ -31,7 +31,7 @@ async def who(event):
     try:
         photo, caption = await fetch_info(replied_user, event)
     except AttributeError:
-        event.edit("`Could not fetch info of that user.`")
+        event.edit("That user is Retarted")
         return
 
     message_id_to_reply = event.message.reply_to_msg_id
@@ -122,12 +122,12 @@ async def fetch_info(replied_user, event):
                                                       str(user_id) + ".jpg",
                                                       download_big=True)
     first_name = first_name.replace(
-        "\u2060", "") if first_name else ("This User has no First Name")
+        "\u2060", "") if first_name else ("RETARTED")
     last_name = last_name.replace(
-        "\u2060", "") if last_name else ("This User has no Last Name")
+        "\u2060", "") if last_name else ("RETARTED")
     username = "@{}".format(username) if username else (
-        "This User has no Username")
-    user_bio = "This User has no About" if not user_bio else user_bio
+        "RETARTED")
+    user_bio = "RETARTED" if not user_bio else user_bio
 
     caption = "<b>USER INFO:</b>\n\n"
     caption += f"First Name: {first_name}\n"
