@@ -687,16 +687,14 @@ def deEmojify(inputString):
 
 @register(outgoing=True, pattern="^.apps$")
 async def dumcer(dumder):
-    await dumder.edit("⊙ 𝐀𝐏𝐏𝐒 ⊙ :\n⊙ .i ⊙ .g ⊙ .im ⊙ .wi ⊙ .ca ⊙ .cu ⊙ .ud ⊙ .ex ⊙ .te ⊙ .tt ⊙ .tr \n⊙ .la ⊙ .y ⊙ .lf ⊙ .lb ⊙ .ll ⊙ .rv ⊙ .sn ⊙ .si ⊙ .rs ⊙ .hs \n⊙ .rb ⊙ .ss ⊙ .dec ⊙ .bar ⊙ .oc ⊙ .bs ⊙ .mqr ⊙ .dog ⊙ .dop ⊙ .ev\n⊙ Help : .h 𝐀𝐏𝐏𝐒 for Details.")
+    await dumder.edit("⊙ 𝐀𝐏𝐏𝐒 ⊙ :\n⊙ .i ⊙ .g ⊙ .im ⊙ .wi ⊙ .ca ⊙ .cu ⊙ .ud ⊙\n⊙ .te ⊙ .tt ⊙ .tr ⊙ .la ⊙ .y ⊙ .rb ⊙ .ss ⊙\n⊙ Help : .h 𝐀𝐏𝐏𝐒 for Details ⊙")
 
 
 CMD_HELP.update({
 	"apps":
-	"⊙ 𝐀𝐏𝐏𝐒 ⊙ :\n⊙.i Image ⊙ .g Google ⊙ .im Imdb ⊙ .wi Wikipedia ⊙ .ca Carbon\
-	\n⊙ .cu Currency ⊙ .ud Urban Dictionary  ⊙ .ex Exec ⊙ .te Terminal\
-	\n⊙ .tt Text To Speech ⊙ .tr Translate ⊙ .la Language ⊙ .y YouTube\
-	\n⊙ .lf LastFM ⊙ .lb LastBio ⊙ .ll Lastlog ⊙ .rv Reverse ⊙ .bs Base64\
-	\n⊙ .sn Snip ⊙ .si Snips ⊙ .rs Remove Snips ⊙ .hs Hash ⊙ .rb Remove BG\
-	\n⊙ .ss ScreenShot ⊙ .dec Decode ⊙ .bar Barcode ⊙ .oc Ocr ⊙ .ev Evaluators\
-	\n⊙ .mqr Make QR  ⊙ .dog Dogbin ⊙ .dop Get Dogbin."
+	"⊙ 𝐀𝐏𝐏𝐒 ⊙ :\
+	\n⊙ .i Image ⊙ .g Google ⊙ .im Imdb ⊙ .wi Wikipedia ⊙\
+	\n⊙ .y YouTube ⊙ .cu Currency ⊙ .ud Dictionary ⊙ .te Terminal ⊙\
+	\n⊙ .tt Text To Speech ⊙ .tr Translate ⊙ .la Language ⊙\
+	\n⊙ .rb Remove BG ⊙ .ca Carbon ⊙ .ss ScreenShot ⊙"
 	})
