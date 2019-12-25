@@ -27,17 +27,17 @@ from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, bot
 from userbot.events import register
 
 # =================== CONSTANT ===================
-PP_TOO_SMOL = "`The image is too small`"
-PP_ERROR = "`Failure while processing the image`"
-NO_ADMIN = "`I am not an admin!`"
-NO_PERM = "`I don't have sufficient permissions!`"
-NO_SQL = "`Running on Non-SQL mode!`"
+PP_TOO_SMOL = "The image is too small"
+PP_ERROR = "Failure while processing the image"
+NO_ADMIN = "I am not an admin!"
+NO_PERM = "I don't have sufficient permissions!"
+NO_SQL = "Running on Non-SQL mode!"
 
-CHAT_PP_CHANGED = "`Chat Picture Changed`"
-CHAT_PP_ERROR = "`Some issue with updating the pic,`" \
-                "`maybe coz I'm not an admin,`" \
-                "`or don't have enough rights.`"
-INVALID_MEDIA = "`Invalid Extension`"
+CHAT_PP_CHANGED = "Chat Picture Changed"
+CHAT_PP_ERROR = "Some issue with updating the pic," \
+                "maybe coz I'm not an admin," \
+                "or don't have enough rights."
+INVALID_MEDIA = "Invalid Extension"
 
 BANNED_RIGHTS = ChatBannedRights(
     until_date=None,
@@ -72,7 +72,7 @@ UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 async def set_group_photo(gpic):
     """ For .setgpic command, changes the picture of a group """
     if not gpic.is_group:
-        await gpic.edit("`I don't think this is a group.`")
+        await gpic.edit("I don't think this is a group.")
         return
     replymsg = await gpic.get_reply_message()
     chat = await gpic.get_chat()
@@ -194,7 +194,7 @@ async def demote(dmod):
     except BadRequestError:
         await dmod.edit(NO_PERM)
         return
-    await dmod.edit("Demoted!")
+    await dmod.edit("Downgraded!")
 
     # Announce to the logging group if we have demoted successfully
     if BOTLOG:
@@ -254,7 +254,7 @@ async def ban(bon):
         await bon.client.send_message(
             BOTLOG_CHATID, "#BAN\n"
             f"USER: [{user.first_name}](tg://user?id={user.id})\n"
-            f"CHAT: {bon.chat.title}(`{bon.chat_id}`)")
+            f"CHAT: {bon.chat.title}({bon.chat_id})")
 
 
 @register(outgoing=True, pattern="^.ub(?: |$)(.*)")
@@ -384,7 +384,7 @@ async def unmoot(unmot):
         return
 
     if unmute(unmot.chat_id, user.id) is False:
-        return await unmot.edit("`Error! User probably already unmuted.`")
+        return await unmot.edit("Error! User probably already unmuted.")
     else:
 
         try:
@@ -461,19 +461,19 @@ async def ungmoot(un_gmute):
         return
 
     # If pass, inform and start ungmuting
-    await un_gmute.edit('```Ungmuting...```')
+    await un_gmute.edit('Ungmuting...')
 
     if ungmute(user.id) is False:
-        await un_gmute.edit("`Error! User probably not gmuted.`")
+        await un_gmute.edit("Error! User probably not gmuted.")
     else:
         # Inform about success
-        await un_gmute.edit("```Ungmuted Successfully```")
+        await un_gmute.edit("Ungmuted Successfully")
 
         if BOTLOG:
             await un_gmute.client.send_message(
                 BOTLOG_CHATID, "#UNGMUTE\n"
                 f"USER: [{user.first_name}](tg://user?id={user.id})\n"
-                f"CHAT: {un_gmute.chat.title}(`{un_gmute.chat_id}`)")
+                f"CHAT: {un_gmute.chat.title}({un_gmute.chat_id})")
 
 
 @register(outgoing=True, pattern="^.gmmmmmmm(?: |$)(.*)")
@@ -503,21 +503,21 @@ async def gspider(gspdr):
         return
 
     # If pass, inform and start gmuting
-    await gspdr.edit("`Grabs a huge, sticky duct tape!`")
+    await gspdr.edit("Grabs a huge, sticky duct tape!")
     if gmute(user.id) is False:
         await gspdr.edit(
-            '`Error! User probably already gmuted.\nRe-rolls the tape.`')
+            'Error! User probably already gmuted.\nRe-rolls the tape.')
     else:
         if reason:
-            await gspdr.edit(f"`Globally taped!`Reason: {reason}")
+            await gspdr.edit(f"Globally taped!Reason: {reason}")
         else:
-            await gspdr.edit("`Globally taped!`")
+            await gspdr.edit("Globally taped!")
 
         if BOTLOG:
             await gspdr.client.send_message(
                 BOTLOG_CHATID, "#GMUTE\n"
                 f"USER: [{user.first_name}](tg://user?id={user.id})\n"
-                f"CHAT: {gspdr.chat.title}(`{gspdr.chat_id}`)")
+                f"CHAT: {gspdr.chat.title}({gspdr.chat_id})")
 
 
 @register(outgoing=True, pattern="^.zo(?: |$)(.*)", groups_only=False)
@@ -529,7 +529,7 @@ async def rm_deletedacc(show):
     del_status = "No Zombies found, Group is clean"
 
     if con != "clean":
-        await show.edit("Searching Zombi accounts...")
+        await show.edit("Searching Zombie accounts...")
         async for user in show.client.iter_participants(show.chat_id):
 
             if user.deleted:
@@ -547,7 +547,7 @@ async def rm_deletedacc(show):
 
     # Well
     if not admin and not creator:
-        await show.edit("I am not an admin here!")
+        await show.edit("I am not an admin")
         return
 
     await show.edit("Deleting Zombie accounts...Awesome")
@@ -797,17 +797,17 @@ async def get_usersdel(show):
         if not show.pattern_match.group(1):
             async for user in show.client.iter_participants(show.chat_id):
                 if not user.deleted:
-                    mentions += f"\n[{user.first_name}](tg://user?id={user.id}) `{user.id}`"
+                    mentions += f"\n[{user.first_name}](tg://user?id={user.id}) {user.id}"
          #       else:
-    #                mentions += f"\nDeleted Account `{user.id}`"
+    #                mentions += f"\nDeleted Account {user.id}"
         else:
             searchq = show.pattern_match.group(1)
             async for user in show.client.iter_participants(
                    show.chat_id, search=f'{searchq}'):
                 if not user.deleted:
-                    mentions += f"\n[{user.first_name}](tg://user?id={user.id}) `{user.id}`"
+                    mentions += f"\n[{user.first_name}](tg://user?id={user.id}) {user.id}"
          #       else:
-      #              mentions += f"\nDeleted Account `{user.id}`"
+      #              mentions += f"\nDeleted Account {user.id}"
     except ChatAdminRequiredError as err:
         mentions += " " + str(err) + "\n"
     try:
@@ -844,7 +844,7 @@ async def get_userdel_from_event(event):
             user = int(user)
 
         if not user:
-            await event.edit("`Pass the deleted user's username, id or reply!`")
+            await event.edit("Pass the deleted user's username, id or reply!")
             return
 
         if event.message.entities is not None:
@@ -884,7 +884,7 @@ async def get_bots(show):
     mentions = f'<b>Bots in {title}:</b>\n'
     try:
         if isinstance(message.to_id, PeerChat):
-            await show.edit("`I heard that only Supergroups can have bots.`")
+            await show.edit("I heard that only Supergroups can have bots.")
             return
         else:
             async for user in show.client.iter_participants(
@@ -915,7 +915,7 @@ async def get_bots(show):
 
 @register(outgoing=True, pattern="^.admin$")
 async def dumper(dumber):
-    await dumber.edit("⊙ 𝐀𝐃𝐌𝐈𝐍 ⊙ :\n⊙ .k ⊙ .b ⊙ .ub ⊙ .pin ⊙ .m ⊙ .um ⊙ .lo \n⊙ .ul ⊙ .pro ⊙ .dem ⊙ .zo ⊙ .ads ⊙ .uss\n⊙ Help : .h 𝐀𝐃𝐌𝐈𝐍 for Details.")
+    await dumber.edit("⊙ 𝐀𝐃𝐌𝐈𝐍 ⊙ :\n⊙ .k ⊙ .b ⊙ .ub ⊙ .pin ⊙ .m ⊙ .um ⊙ .lo\n⊙ .ul ⊙ .pro ⊙ .dem ⊙ .zo ⊙ .ads ⊙ .uss\n⊙ Help : .h 𝐀𝐃𝐌𝐈𝐍 for Details.")
 
 CMD_HELP.update({
     "admin":
