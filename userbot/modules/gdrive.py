@@ -441,26 +441,28 @@ async def gdrive_search(http, search_query):
 
 @register(outgoing=True, pattern="^.download$")
 async def dumoer(dumocer):
-    await dumocer.edit("⊙ 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 ⊙ :\n⊙ .gd ⊙ .li ⊙ .di ⊙ .am ⊙ .at ⊙ .au ⊙ .ac ⊙ .ap \n⊙ .ar ⊙ .aw ⊙ .dw ⊙ .upd ⊙ .up ⊙ .uas ⊙ .ra ⊙ .rv\n⊙ Help : .h 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 for Details.")
+    await dumocer.edit("⊙ 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 ⊙ :\n⊙ .gd ⊙ .li ⊙ .di ⊙ .am ⊙ .at ⊙ .au ⊙ .ac ⊙ .ap ⊙\n⊙ .ar ⊙ .aw ⊙ .dw ⊙ .upd ⊙ .up ⊙ .uas ⊙ .ra ⊙ .rv ⊙\n⊙ Help : .h 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 for Details ⊙")
 
 CMD_HELP.update({
 	"download":
-	"⊙ 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 ⊙ :\n⊙ .dw Download ⊙ .upd Uploadir ⊙ .up Upload ⊙ .uas Uploadas ⊙ .at Torrent \
-	\n⊙ .au URL ⊙ .am Magnet ⊙ .ac Clear ⊙ .ap Pause ⊙ .ar Resume ⊙ .aw Show\
-	\n⊙ .gd Upload to GD ⊙ .li List files GD ⊙ .setgd Help GD ⊙ .ra Rip Audio ⊙ .rv Rip Video\
-	\n⊙ .di Direct URLs GDrive Mega CMail Yandex AFH Zippy MediaFire SourceForge OSDN GitHub."
+	"⊙ 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 ⊙ :\
+	\n⊙ .dw Download ⊙ .upd Uploadir ⊙ .up Upload ⊙ .uas Uploadas ⊙ .at Torrent ⊙\
+	\n⊙ .au URL ⊙ .am Magnet ⊙ .ac Clear ⊙ .ap Pause ⊙ .ar Resume ⊙ .aw Show ⊙\
+	\n⊙ .gd Upload to GD ⊙ .li List files GD ⊙ .setgd Help GD ⊙ .ra Rip Audio ⊙ .rv Rip Video ⊙\
+	\n⊙ .di Direct URLs GDrive Mega CMail Yandex AFH Zippy MediaFire SourceForge OSDN GitHub ⊙"
 	})
 
 @register(outgoing=True, pattern="^.setgd$")
 async def dumier(dumoler):
-    await dumoler.edit("⊙ 𝐆𝐃𝐑𝐈𝐕𝐄 ⊙ :\n⊙ .gsetf <GDrive Folder URL>\
-    \nUsage: Sets the folder to upload new files to.\
-    \n⊙ .gsetclear\
-    \nUsage: Reverts to default upload destination.\
-    \n⊙ .gfolder\
-    \nUsage: Shows your current upload destination/folder.\
-    \n⊙ .ggd <path_to_folder_in_server>\
-    \nUsage: Uploads all the files in the directory to a folder in Google Drive.")
+    await dumoler.edit("⊙ 𝐆𝐃𝐑𝐈𝐕𝐄 ⊙ :\
+		       \n⊙ .gsetf <GDrive Folder URL> ⊙\
+		       \nUsage: Sets the folder to upload new files to ⊙\
+		       \n⊙ .gsetclear ⊙\
+		       \nUsage: Reverts to default upload destination ⊙\
+		       \n⊙ .gfolder ⊙\
+		       \nUsage: Shows your current upload destination/folder ⊙\
+		       \n⊙ .ggd <path_to_folder_in_server> ⊙\
+		       \nUsage: Uploads all the files in the directory to a folder in Google Drive ⊙")
 	
 """CMD_HELP.update({
     "gdrive":
