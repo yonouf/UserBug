@@ -112,7 +112,7 @@ async def reedme(e):
 async def repo_is_here(wannasee):
     """ For .repo command, just returns the repo URL. """
     await wannasee.edit(
-        "I'm Currently Using [𝐁𝐋𝟒𝐂𝐊_𝐈𝐃](https://github.com/BL4CKID/BL4CKID) Github's Repository.")
+        "I'm Currently Using [𝐁𝐋𝟒𝐂𝐊_𝐈𝐃](https://github.com/BL4CKID/NONE) Github's Repository.")
 
 
 @register(outgoing=True, pattern="^.rawwwwwwwwwwwwww$")
