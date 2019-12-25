@@ -179,15 +179,15 @@ async def remove_profilepic(delpfp):
 		
 @register(outgoing=True, pattern="^.info$")
 async def dumler(dumger):
-    await dumger.edit("⊙ 𝐈𝐍𝐅𝐎 ⊙ :\n⊙ .dc ⊙ .speed ⊙ .w ⊙ .sys ⊙ .bv ⊙ .pip ⊙ .al ⊙ .rl ⊙ .who \n⊙ .sleep ⊙ .com ⊙ .sup ⊙ .rp ⊙ .dvc ⊙ .u ⊙ .cn ⊙ .spc ⊙ .git ⊙ .co\n⊙ Help : .h 𝐈𝐍𝐅𝐎 for Details.")
+    await dumger.edit("⊙ 𝐈𝐍𝐅𝐎 ⊙ :\n⊙ .dc ⊙ .speed ⊙ .w ⊙ .sys ⊙ .bv ⊙ .pip ⊙ .who ⊙ .sleep ⊙\n⊙ .com ⊙ .sup ⊙ .rp ⊙ .dvc ⊙ .u ⊙ .cn ⊙ .spc ⊙ .git ⊙ .co ⊙\n⊙ Help : .h 𝐈𝐍𝐅𝐎 for Details ⊙")
 
 CMD_HELP.update({
     "info":
 	"⊙ 𝐈𝐍𝐅𝐎 ⊙ :\
-	\n⊙ .dc Datacentre ⊙ .speed Test ⊙ .w Weather ⊙ .sys System ⊙ .bv Bot Version\
-	\n⊙ .al Change User ⊙ .rl Reset Alive ⊙ .who Whois ⊙ .co Count Username\
-	\n⊙ .git Search ⊙ .pip Search ⊙ .cn Codename ⊙ .dvc Device ⊙ .spc Specs\
-	\n⊙ .sleep Bot Sleep ⊙ .com Community ⊙ .sup Support ⊙ .u Update."
+	\n⊙ .dc Datacentre ⊙ .speed Test ⊙ .w Weather ⊙ .sys System ⊙\
+	\n⊙ .bv Version ⊙ .who Whois ⊙ .co Count Username ⊙ .git Search ⊙\
+	\n⊙ .pip Search ⊙ .cn Codename ⊙ .dvc Device ⊙ .spc Specs ⊙\
+	\n⊙ .sleep Bot ⊙ .com Community ⊙ .sup Support ⊙ .u Update ⊙"
 	})
 
 """CMD_HELP.update({
