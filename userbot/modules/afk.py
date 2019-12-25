@@ -117,9 +117,9 @@ async def set_afk(afk_e):
     global AFKREASON
     if string:
         AFKREASON = string
-        await afk_e.edit(f"Going away. Reason: {string}")
+        await afk_e.edit(f"I'm Going away. Reason: {string}")
     else:
-        await afk_e.edit("Going away")
+        await afk_e.edit("I'm Going away")
     if BOTLOG:
         await afk_e.client.send_message(BOTLOG_CHATID, "#AFK You went away")
     ISAFK = True
@@ -135,7 +135,7 @@ async def type_afk_is_not_true(notafk):
     global AFKREASON
     if ISAFK:
         ISAFK = False
-        await notafk.respond("I'm back.")
+        await notafk.respond(".sd 1 I'm back.")
         await sleep(2)
         if BOTLOG:
             await notafk.client.send_message(
