@@ -446,9 +446,9 @@ async def dumoer(dumocer):
 CMD_HELP.update({
 	"download":
 	"⊙ 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 ⊙ :\
-	\n⊙ .dw Download ⊙ .upd Uploadir ⊙ .up Upload ⊙ .uas Uploadas ⊙ .at Torrent ⊙\
+	\n⊙ .dw Download ⊙ .upd Uploadir ⊙ .up Upload ⊙ .uas Upload as ⊙ .at Torrent ⊙\
 	\n⊙ .au URL ⊙ .am Magnet ⊙ .ac Clear ⊙ .ap Pause ⊙ .ar Resume ⊙ .aw Show ⊙\
-	\n⊙ .gd Upload to GD ⊙ .li List files GD ⊙ .setgd Help GD ⊙ .ra Rip Audio ⊙ .rv Rip Video ⊙\
+	\n⊙ .gd Upload to GD ⊙ .li Files on GD ⊙ .setgd GD ⊙ .ra Rip Audio ⊙ .rv Rip Video ⊙\
 	\n⊙ .di Direct URLs GDrive Mega CMail Yandex AFH Zippy MediaFire SourceForge OSDN GitHub ⊙"
 	})
 
