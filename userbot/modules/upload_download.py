@@ -46,7 +46,7 @@ async def progress(current, total, event, start, type_of_ps, file_name=None):
                 time_formatter(estimated_total_time)
             )
         if file_name:
-            await event.edit("{}\nFile Name: `{}`\n{}".format(
+            await event.edit("{}\nFile Name: {}\n{}".format(
                 type_of_ps, file_name, tmp))
         else:
             await event.edit("{}\n{}".format(type_of_ps, tmp))
@@ -135,7 +135,7 @@ async def download(target_file):
             except Exception as e:
                 LOGS.info(str(e))
         if downloader.isSuccessful():
-            await target_file.edit("Downloaded to `{}` successfully !!".format(
+            await target_file.edit("Downloaded to [here]({})!".format(
                 downloaded_file_name))
         else:
             await target_file.edit("Incorrect URL\n{}".format(url))
@@ -151,7 +151,7 @@ async def download(target_file):
         except Exception as e:  # pylint:disable=C0103,W0703
             await target_file.edit(str(e))
         else:
-            await target_file.edit("Downloaded to `{}` successfully !!".format(
+            await target_file.edit("Downloaded to [here]({})!".format(
                 downloaded_file_name))
     else:
         await target_file.edit(
@@ -173,7 +173,7 @@ async def uploadir(udir_event):
         LOGS.info(lst_of_files)
         uploaded = 0
         await udir_event.edit(
-            "Found {} files. Uploading will start soon. Please wait!".format(
+            "Found [this]({}) files. Please wait!".format(
                 len(lst_of_files)))
         for single_file in lst_of_files:
             if os.path.exists(single_file):
@@ -229,7 +229,7 @@ async def uploadir(udir_event):
                 os.remove(single_file)
                 uploaded = uploaded + 1
         await udir_event.edit(
-            "Uploaded {} files successfully !!".format(uploaded))
+            "[This]({}) files Uploaded".format(uploaded))
     else:
         await udir_event.edit("404: Directory Not Found")
 
@@ -240,7 +240,7 @@ async def upload(u_event):
     await u_event.edit("Processing ...")
     input_str = u_event.pattern_match.group(1)
     if input_str in ("userbot.session", "config.env"):
-        await u_event.edit("`That's a dangerous operation! Not Permitted!`")
+        await u_event.edit("That's a dangerous operation! Not Permitted!")
         return
     if os.path.exists(input_str):
         c_time = time.time()
@@ -253,7 +253,7 @@ async def upload(u_event):
             progress_callback=lambda d, t: asyncio.get_event_loop(
             ).create_task(
                 progress(d, t, u_event, c_time, "Uploading...", input_str)))
-        await u_event.edit("Uploaded successfully !!")
+        await u_event.edit("Upload Done.")
     else:
         await u_event.edit("404: File Not Found")
 
