@@ -19,7 +19,7 @@ from userbot.events import register
 UNAPPROVED_MSG = (
     "𝐇𝐨𝐥𝐥𝐚...!\n\nThis is an automated message.\n"
     "I haven't approved you to PM yet.\n"
-    "Please wait for me to approve your PM.\n"
+    "Please wait for me to approve your PM.\n\n"
     "Until then, please 𝐃𝐎𝐍'𝐓 send any messages to me.\nYou'll get 𝐁𝐋𝐎𝐂𝐊𝐄𝐃 and 𝐑𝐄𝐏𝐎𝐑𝐓𝐄𝐃 if you do so!")
 # =================================================================
 
@@ -278,15 +278,17 @@ async def unblockpm(unblock):
         )
 @register(outgoing=True, pattern="^.chats$")
 async def dumver(dumyer):
-    await dumyer.edit("⊙ 𝐂𝐇𝐀𝐓𝐒 ⊙ :\n⊙ .pu ⊙ .d ⊙ .sd ⊙ .bl ⊙ .app ⊙ .dap ⊙ .ubl ⊙ .fi ⊙ .st ⊙ .fs ⊙ .rmf \n⊙ .sw ⊙ .cw ⊙ .rw ⊙ .user ⊙ .notes ⊙ .clear ⊙ .save ⊙ .rmn ⊙ .ninja\n⊙ Help : .h 𝐂𝐇𝐀𝐓𝐒 for Details.")
+    await dumyer.edit("⊙ 𝐂𝐇𝐀𝐓𝐒 ⊙ :\n⊙ .sn ⊙ .si ⊙ .rs ⊙ .pu ⊙ .d ⊙ .sd ⊙ .sw ⊙ .cw ⊙\n⊙ .rw ⊙ .notes ⊙ .clear ⊙ .save ⊙ .rmn ⊙ .app ⊙\n⊙ .dap ⊙ .bl ⊙ .ubl ⊙ .fi ⊙ .st ⊙ .fs ⊙ .rmf ⊙\n⊙ Help : .h 𝐂𝐇𝐀𝐓𝐒 for Details ⊙")
 
 CMD_HELP.update({
     "chats":
-	"⊙ 𝐂𝐇𝐀𝐓𝐒 ⊙ :\n⊙ .pu Purge ⊙ .d Delete ⊙ .sd Self Destruction\
-	\n⊙ .sw Set Welcome ⊙ .cw Check Welcome ⊙ .rw Remove Welcome\
-	\n⊙ .notes Notes ⊙ .clear Notes ⊙ .save Notes ⊙ .rmn Removes All Bot Notes\
-	\n⊙ .app Approves PM ⊙ .dap Disapproves PM ⊙ .bl Blocks PM ⊙ ubl Unblocks PM\
-	\n⊙ .fi Filter ⊙ .st Stop Filter ⊙ .fs List Filters ⊙ .rmf Remove Bot Filters."
+	"⊙ 𝐂𝐇𝐀𝐓𝐒 ⊙ :\
+	\n⊙ .sn Snip ⊙ .si Snips ⊙ .rs Remove Snips ⊙\
+	\n⊙ .pu Purge ⊙ .d Delete ⊙ .sd Self Destruction ⊙\
+	\n⊙ .sw Set Welcome ⊙ .cw Check Welcome ⊙ .rw Remove Welcome ⊙\
+	\n⊙ .notes Notes ⊙ .clear Notes ⊙ .save Notes ⊙ .rmn Removes All Bot Notes ⊙\
+	\n⊙ .app Approves PM ⊙ .dap Disapproves PM ⊙ .bl Blocks PM ⊙ ubl Unblocks PM ⊙\
+	\n⊙ .fi Filter ⊙ .st Stop Filter ⊙ .fs List Filters ⊙ .rmf Remove Bot Filters ⊙"
 	})
 
 """
