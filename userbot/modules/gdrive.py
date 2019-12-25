@@ -96,7 +96,7 @@ async def gdrive_upload_function(dryb):
                 pass
         if downloader.isSuccessful():
             await dryb.edit(
-                "Downloaded to {}. Uploading to 𝐆𝐃𝐑𝐈𝐕𝐄"
+                "Downloaded to [here]({})\nNow Uploading to 𝐆𝐃𝐑𝐈𝐕𝐄."
                 .format(downloaded_file_name))
             required_file_name = downloaded_file_name
         else:
@@ -106,7 +106,7 @@ async def gdrive_upload_function(dryb):
         if os.path.exists(input_str):
             required_file_name = input_str
             await dryb.edit(
-                "Found {}, Uploading to 𝐆𝐃𝐑𝐈𝐕𝐄"
+                "Found [this]({})\nNow Uploading to 𝐆𝐃𝐑𝐈𝐕𝐄."
                 .format(input_str))
         else:
             await dryb.edit(
@@ -125,7 +125,7 @@ async def gdrive_upload_function(dryb):
         else:
             required_file_name = downloaded_file_name
             await dryb.edit(
-                "Downloaded to {}. Uploading to 𝐆𝐃𝐑𝐈𝐕𝐄"
+                "Downloaded to [here]({})\nNow Uploading to 𝐆𝐃𝐑𝐈𝐕𝐄."
                 .format(downloaded_file_name))
     if required_file_name:
         if G_DRIVE_AUTH_TOKEN_DATA is not None:
@@ -441,20 +441,24 @@ async def gdrive_search(http, search_query):
 
 @register(outgoing=True, pattern="^.download$")
 async def dumoer(dumocer):
-    await dumocer.edit("⊙ 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 ⊙ :\n⊙ .gd ⊙ .li ⊙ .di ⊙ .am ⊙ .at ⊙ .au ⊙ .ac ⊙ .ap ⊙\n⊙ .ar ⊙ .aw ⊙ .dw ⊙ .upd ⊙ .up ⊙ .uas ⊙ .ra ⊙ .rv ⊙\n⊙ Help : .h 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 for Details ⊙")
+    await dumocer.edit("⊙ 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 ⊙ :\n⊙ .gd ⊙ .li ⊙ .di ⊙ .am ⊙ .at ⊙ .sgd ⊙ .au ⊙ .ac ⊙ .ap ⊙\n⊙ .ar ⊙ .aw ⊙ .dw ⊙ .upd ⊙ .up ⊙ .uas ⊙ .ra ⊙ .rv ⊙\n⊙ Help : .h 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 for Details ⊙")
 
 CMD_HELP.update({
 	"download":
 	"⊙ 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 ⊙ :\
 	\n⊙ .dw Download ⊙ .upd Uploadir ⊙ .up Upload ⊙ .uas Upload as ⊙ .at Torrent ⊙\
 	\n⊙ .au URL ⊙ .am Magnet ⊙ .ac Clear ⊙ .ap Pause ⊙ .ar Resume ⊙ .aw Show ⊙\
-	\n⊙ .gd Upload to GD ⊙ .li Files on GD ⊙ .setgd GD ⊙ .ra Rip Audio ⊙ .rv Rip Video ⊙\
-	\n⊙ .di Direct URLs GDrive Mega CMail Yandex AFH Zippy MediaFire SourceForge OSDN GitHub ⊙"
+	\n⊙ .gd Upload to GD ⊙ .li Files on GD ⊙ .sgd Set GD ⊙ .ra Rip Audio ⊙ .rv Rip Video ⊙\
+	\n⊙ .di Direct URLs GDrive Mega CMail Yandex AFH Zippy MF SF OSDN GitHub ⊙"
 	})
 
-@register(outgoing=True, pattern="^.setgd$")
+@register(outgoing=True, pattern="^.sgd$")
 async def dumier(dumoler):
     await dumoler.edit("⊙ 𝐆𝐃𝐑𝐈𝐕𝐄 ⊙ :\
+		       \n⊙ .gd <file_path / reply / URL|file_name> ⊙\
+		       \nUsage: Uploads the file in reply, URL or file path in server to your GDrive ⊙\
+		       \n⊙ .li <query> ⊙\
+		       \n⊙ Usage: Looks for files and folders in your GDrive ⊙\
 		       \n⊙ .gsetf <GDrive Folder URL> ⊙\
 		       \nUsage: Sets the folder to upload new files to ⊙\
 		       \n⊙ .gsetclear ⊙\
@@ -462,20 +466,4 @@ async def dumier(dumoler):
 		       \n⊙ .gfolder ⊙\
 		       \nUsage: Shows your current upload destination/folder ⊙\
 		       \n⊙ .ggd <path_to_folder_in_server> ⊙\
-		       \nUsage: Uploads all the files in the directory to a folder in Google Drive ⊙")
-	
-"""CMD_HELP.update({
-    "gdrive":
-    ".gdrive <file_path / reply / URL|file_name>\
-    \nUsage: Uploads the file in reply , URL or file path in server to your Google Drive.\
-    \n\n.gsetf <GDrive Folder URL>\
-    \nUsage: Sets the folder to upload new files to.\
-    \n\n.gsetclear\
-    \nUsage: Reverts to default upload destination.\
-    \n\n.gfolder\
-    \nUsage: Shows your current upload destination/folder.\
-    \n\n.list <query>\
-    \nUsage: Looks for files and folders in your Google Drive.\
-    \n\n.ggd <path_to_folder_in_server>\
-    \nUsage: Uploads all the files in the directory to a folder in Google Drive."
-})"""
+		       \nUsage: Uploads all the files in the directory to a folder in GDrive ⊙")
