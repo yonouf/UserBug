@@ -685,16 +685,3 @@ def deEmojify(inputString):
     """ Remove emojis and other non-safe characters from string """
     return get_emoji_regexp().sub(u'', inputString)
 
-@register(outgoing=True, pattern="^.apps$")
-async def dumcer(dumder):
-    await dumder.edit("⊙ 𝐀𝐏𝐏𝐒 ⊙ :\n⊙ .i ⊙ .g ⊙ .im ⊙ .wi ⊙ .ca ⊙ .cu ⊙ .ud ⊙\n⊙ .t ⊙ .tt ⊙ .tr ⊙ .la ⊙ .y ⊙ .rb ⊙ .ss ⊙\n⊙ Help : .h 𝐀𝐏𝐏𝐒 for Details ⊙")
-
-
-CMD_HELP.update({
-	"apps":
-	"⊙ 𝐀𝐏𝐏𝐒 ⊙ :\
-	\n⊙ .i Image ⊙ .g Google ⊙ .im Imdb ⊙ .wi Wikipedia ⊙\
-	\n⊙ .y YouTube ⊙ .cu Currency ⊙ .ud Dictionary ⊙ .t Terminal ⊙\
-	\n⊙ .tt Text To Speech ⊙ .tr Translate ⊙ .la Language ⊙\
-	\n⊙ .rb Remove BG ⊙ .ca Carbon ⊙ .ss ScreenShot ⊙"
-	})
