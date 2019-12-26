@@ -276,32 +276,3 @@ async def unblockpm(unblock):
             f"[{name0}](tg://user?id={replied_user.id})"
             " was 𝐔𝐍𝐁𝐋𝐎𝐂𝐊𝐄𝐃.",
         )
-@register(outgoing=True, pattern="^.chats$")
-async def dumver(dumyer):
-    await dumyer.edit("⊙ 𝐂𝐇𝐀𝐓𝐒 ⊙ :\n⊙ .sn ⊙ .si ⊙ .rs ⊙ .pu ⊙ .d ⊙ .sd ⊙ .sw ⊙ .cw ⊙\n⊙ .rw ⊙ .notes ⊙ .clear ⊙ .save ⊙ .rmn ⊙ .app ⊙\n⊙ .dap ⊙ .bl ⊙ .ubl ⊙ .fi ⊙ .st ⊙ .fs ⊙ .rmf ⊙\n⊙ Help : .h 𝐂𝐇𝐀𝐓𝐒 for Details ⊙")
-
-CMD_HELP.update({
-    "chats":
-	"⊙ 𝐂𝐇𝐀𝐓𝐒 ⊙ :\
-	\n⊙ .sn Snip ⊙ .si Snips ⊙ .rs Remove Snips ⊙\
-	\n⊙ .pu Purge ⊙ .d Delete ⊙ .sd Self Destruction ⊙\
-	\n⊙ .sw Set Welcome ⊙ .cw Check Welcome ⊙ .rw Remove Welcome ⊙\
-	\n⊙ .notes Notes ⊙ .clear Notes ⊙ .save Notes ⊙ .rmn Removes All Bot Notes ⊙\
-	\n⊙ .app Approves PM ⊙ .dap Disapproves PM ⊙ .bl Blocks PM ⊙ ubl Unblocks PM ⊙\
-	\n⊙ .fi Filter ⊙ .st Stop Filter ⊙ .fs List Filters ⊙ .rmf Remove Bot Filters ⊙"
-	})
-
-"""
-.approve\
-\nUsage: Approves the mentioned/replied person to PM.\
-\n\n.disapprove\
-\nUsage: Disapproves the mentioned/replied person to PM.\
-\n\n.block\
-\nUsage: Blocks the person.\
-\n\n.unblock\
-\nUsage: Unblocks the person so they can PM you.\
-\n\n.notifoff\
-\nUsage: Clears/Disables any notifications of unapproved PMs.\
-\n\n.notifon\
-\nUsage: Allows notifications for unapproved PMs."
-})"""
