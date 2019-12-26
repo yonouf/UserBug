@@ -915,26 +915,20 @@ async def get_bots(show):
 
 @register(outgoing=True, pattern="^.admin$")
 async def dumper(dumber):
-  await dumber.edit("⊙ 𝐀𝐃𝐌𝐈𝐍 ⊙\
-                    \n⊙ .k ⊙ .b ⊙ .ub ⊙ .pin ⊙ .m ⊙ .um ⊙ .lo ⊙\
-                    \n⊙ .ul ⊙ .pro ⊙ .dem ⊙ .zo ⊙ .ads ⊙ .us ⊙\
-                    \n⊙ Help : .h 𝐀𝐃𝐌𝐈𝐍 for Details ⊙")
+  await dumber.edit("⊙ 𝐀𝐃𝐌𝐈𝐍 ⊙\n\n⊙ .k ⊙ .b ⊙ .ub ⊙ .pin ⊙ .m ⊙ .um ⊙ .lo ⊙\n⊙ .ul ⊙ .pro ⊙ .dem ⊙ .zo ⊙ .ads ⊙ .us ⊙\n⊙ Help : .h 𝐀𝐃𝐌𝐈𝐍 for Details ⊙")
     
 CMD_HELP.update({
   "admin":
   "⊙ 𝐀𝐃𝐌𝐈𝐍 ⊙\n
-	\n⊙ .ads .us : Admins & Users Lists ⊙ .b .ub : Ban & Unban ⊙\
-	\n⊙ .k : Kick ⊙ .pin : Pin Messages ⊙ .m .um : Mute & Unmute ⊙\
-	\n⊙ .pro .dem : Promote & Demote ⊙ .zo : Scan & Clean Zombies ⊙\
-	\n⊙ .lo .ul : Lock & Unlock ⊙ Types : all, msg, media, sticker, gif,\
-	\ngame, inline, poll, invite, pin, info ⊙"})
+  \n⊙ .ads .us : Admins & Users Lists ⊙ .b .ub : Ban & Unban ⊙\
+  \n⊙ .k : Kick ⊙ .pin : Pin Messages ⊙ .m .um : Mute & Unmute ⊙\
+  \n⊙ .pro .dem : Promote & Demote ⊙ .zo : Scan & Clean Zombies ⊙\
+  \n⊙ .lo .ul : Lock & Unlock ⊙ Types : all, msg, media, sticker, gif,\
+  \ngame, inline, poll, invite, pin, info ⊙"})
 
 @register(outgoing=True, pattern="^.download$")
 async def dumoer(dumocer):
-    await dumocer.edit("⊙ 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 ⊙\n
-                       \n⊙ .ar ⊙ .aw ⊙ .dw ⊙ .upd ⊙ .up ⊙ .uas ⊙ .ra ⊙ .rv ⊙\
-                       \n⊙ .gd ⊙ .li ⊙ .di ⊙ .am ⊙ .at ⊙ .sgd ⊙ .au ⊙ .ac ⊙ .ap ⊙\
-                       \n⊙ Help : .h 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 for Details ⊙")
+    await dumocer.edit("⊙ 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 ⊙\n\n⊙ .ar ⊙ .aw ⊙ .dw ⊙ .upd ⊙ .up ⊙ .uas ⊙ .ra ⊙ .rv ⊙\n⊙ .gd ⊙ .li ⊙ .di ⊙ .am ⊙ .at ⊙ .sgd ⊙ .au ⊙ .ac ⊙ .ap ⊙\n⊙ Help : .h 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 for Details ⊙")
     
 CMD_HELP.update({
 	"download":
@@ -962,11 +956,7 @@ async def dumier(dumoler):
 
 @register(outgoing=True, pattern="^.memes$")
 async def dumeer(dumwer):
-    await dumwer.edit("⊙ 𝐌𝐄𝐌𝐄𝐒 ⊙\n
-                      \n⊙ .rpf ⊙ .acf ⊙ .rcf ⊙ .f ⊙ .ly ⊙ .ty ⊙\
-                      \n⊙ .Oof ⊙ .hi ⊙ .str ⊙ .sl ⊙ .ka ⊙ .stk ⊙\
-                      \n⊙ .rb ⊙ .ca ⊙ .oub ⊙ .shalom ⊙\
-                      \n⊙ Help : .h 𝐌𝐄𝐌𝐄𝐒 for Details ⊙")
+    await dumwer.edit("⊙ 𝐌𝐄𝐌𝐄𝐒 ⊙\n\n⊙ .rpf ⊙ .acf ⊙ .rcf ⊙ .f ⊙ .ly ⊙ .ty ⊙\n⊙ .Oof ⊙ .hi ⊙ .str ⊙ .sl ⊙ .ka ⊙ .stk ⊙\n⊙ .rb ⊙ .ca ⊙ .oub ⊙ .shalom ⊙\n⊙ Help : .h 𝐌𝐄𝐌𝐄𝐒 for Details ⊙")
 
 CMD_HELP.update({
   "memes":
@@ -978,11 +968,7 @@ CMD_HELP.update({
 
 @register(outgoing=True, pattern="^.info$")
 async def dumler(dumger):
-    await dumger.edit("⊙ 𝐈𝐍𝐅𝐎 ⊙\n
-                      \n⊙ .dc ⊙ .speed ⊙ .w ⊙ .sys ⊙ .pip ⊙ .who ⊙ .com ⊙\
-                      \n⊙ .sup ⊙ .rp ⊙ .dvc  ⊙ .cn ⊙ .spc ⊙ .git ⊙ .co ⊙\
-                      \n⊙ .u ⊙ .t ⊙ .bv ⊙ .sleep ⊙ .shutdown ⊙ .restart ⊙\
-                      \n⊙ Help : .h 𝐈𝐍𝐅𝐎 for Details ⊙")
+    await dumger.edit("⊙ 𝐈𝐍𝐅𝐎 ⊙\n\n⊙ .dc ⊙ .speed ⊙ .w ⊙ .sys ⊙ .pip ⊙ .who ⊙ .com ⊙\n⊙ .sup ⊙ .rp ⊙ .dvc  ⊙ .cn ⊙ .spc ⊙ .git ⊙ .co ⊙\n⊙ .u ⊙ .t ⊙ .bv ⊙ .sleep ⊙ .shutdown ⊙ .restart ⊙\n⊙ Help : .h 𝐈𝐍𝐅𝐎 for Details ⊙")
 
 CMD_HELP.update({
   "info":
@@ -995,10 +981,7 @@ CMD_HELP.update({
 
 @register(outgoing=True, pattern="^.apps$")
 async def dumcer(dumder):
-    await dumder.edit("⊙ 𝐀𝐏𝐏𝐒 ⊙\n
-                      \n⊙ .i ⊙ .g ⊙ .im ⊙ .wi ⊙ .cu ⊙ .ud ⊙\
-                      \n⊙ .tt ⊙ .tr ⊙ .la ⊙ .y ⊙ .ss ⊙\
-                      \n⊙ Help : .h 𝐀𝐏𝐏𝐒 for Details ⊙")
+    await dumder.edit("⊙ 𝐀𝐏𝐏𝐒 ⊙\n\n⊙ .i ⊙ .g ⊙ .im ⊙ .wi ⊙ .cu ⊙ .ud ⊙\n⊙ .tt ⊙ .tr ⊙ .la ⊙ .y ⊙ .ss ⊙\n⊙ Help : .h 𝐀𝐏𝐏𝐒 for Details ⊙")
 
 CMD_HELP.update({
 	"apps":
@@ -1010,10 +993,7 @@ CMD_HELP.update({
                       
 @register(outgoing=True, pattern="^.chats$")
 async def dumver(dumyer):
-    await dumyer.edit("⊙ 𝐂𝐇𝐀𝐓𝐒 ⊙\n
-                      \n⊙ .pu ⊙ .purgeme ⊙ .d ⊙ .sd ⊙\
-                      \n⊙ .app ⊙ .dap ⊙ .bl ⊙ .ubl ⊙\
-                      \n⊙ Help : .h 𝐂𝐇𝐀𝐓𝐒 for Details ⊙")
+    await dumyer.edit("⊙ 𝐂𝐇𝐀𝐓𝐒 ⊙\n\n⊙ .pu ⊙ .purgeme ⊙ .d ⊙ .sd ⊙\n⊙ .app ⊙ .dap ⊙ .bl ⊙ .ubl ⊙\n⊙ Help : .h 𝐂𝐇𝐀𝐓𝐒 for Details ⊙")
 
 CMD_HELP.update({
   "chats":
@@ -1025,10 +1005,7 @@ CMD_HELP.update({
                       
 @register(outgoing=True, pattern="^.notes$")
 async def dumqer(dumker):
-    await dumker.edit("⊙ 𝐍𝐎𝐓𝐄𝐒 ⊙\n
-                      \n⊙ .notes ⊙ .clear ⊙ .save ⊙ .rmn ⊙ .sw ⊙ .cw ⊙ .rw ⊙\
-                      \n⊙ .fi ⊙ .st ⊙ .fs ⊙ .rmf ⊙ .sn ⊙ .si ⊙ .rs ⊙\
-                      \n⊙ Help : .h 𝐍𝐎𝐓𝐄𝐒 for Details ⊙")
+    await dumker.edit("⊙ 𝐍𝐎𝐓𝐄𝐒 ⊙\n\n⊙ .notes ⊙ .clear ⊙ .save ⊙ .rmn ⊙ .sw ⊙ .cw ⊙ .rw ⊙\n⊙ .fi ⊙ .st ⊙ .fs ⊙ .rmf ⊙ .sn ⊙ .si ⊙ .rs ⊙\n⊙ Help : .h 𝐍𝐎𝐓𝐄𝐒 for Details ⊙")
 
 CMD_HELP.update({
     "notes":
