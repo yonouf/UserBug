@@ -78,7 +78,7 @@ async def dumeer(dumwer):
     await dumwer.edit("⊙ 𝐌𝐄𝐌𝐄𝐒 ⊙\n
                       \n⊙ .rpf ⊙ .acf ⊙ .rcf ⊙ .f ⊙ .ly ⊙ .ty ⊙\
                       \n⊙ .Oof ⊙ .hi ⊙ .str ⊙ .sl ⊙ .ka ⊙ .stk ⊙\
-                      \n⊙ .rbg ⊙ 
+                      \n⊙ .rb ⊙ .ca ⊙ .oub ⊙ .shalom ⊙\
                       \n⊙ Help : .h 𝐌𝐄𝐌𝐄𝐒 for Details ⊙")
 
 CMD_HELP.update({
@@ -86,13 +86,15 @@ CMD_HELP.update({
 	"⊙ 𝐌𝐄𝐌𝐄𝐒 ⊙\n
 	\n⊙ .rpf Lydia reply ⊙ .acf Lydia add ⊙ .rcf Lydia Remove ⊙ .ly Fake Link ⊙\
 	\n⊙ .ty Type ⊙ .sl Slaps ⊙ .str Stretch ⊙ .f Big f**k ⊙ .hi Say Hai ⊙\
-	\n⊙ .ka Kang Stickers ⊙ .stk Stickers Info ⊙"})
+	\n⊙ .ka Kang Stickers ⊙ .stk Stickers Info ⊙ .rb Remove BG ⊙ .ca Carbon ⊙\
+	\n⊙ .oub OpenUserBot ⊙ .shalom Shalom ⊙"})
 
 @register(outgoing=True, pattern="^.info$")
 async def dumler(dumger):
     await dumger.edit("⊙ 𝐈𝐍𝐅𝐎 ⊙\n
-                      \n⊙ .dc ⊙ .speed ⊙ .w ⊙ .sys ⊙ .bv ⊙ .pip ⊙ .who ⊙ .sleep ⊙\
-                      \n⊙ .com ⊙ .sup ⊙ .rp ⊙ .dvc ⊙ .u ⊙ .cn ⊙ .spc ⊙ .git ⊙ .co ⊙\
+                      \n⊙ .dc ⊙ .speed ⊙ .w ⊙ .sys ⊙ .pip ⊙ .who ⊙ .com ⊙\
+                      \n⊙ .sup ⊙ .rp ⊙ .dvc  ⊙ .cn ⊙ .spc ⊙ .git ⊙ .co ⊙\
+		      \n⊙ .u ⊙ .t ⊙ .bv ⊙ .sleep ⊙ .shutdown ⊙ .restart ⊙\
                       \n⊙ Help : .h 𝐈𝐍𝐅𝐎 for Details ⊙")
 
 CMD_HELP.update({
@@ -101,48 +103,50 @@ CMD_HELP.update({
 	\n⊙ .dc Datacentre ⊙ .speed Test ⊙ .w Weather ⊙ .sys System ⊙\
 	\n⊙ .bv Version ⊙ .who Whois ⊙ .co Count Username ⊙ .git Search ⊙\
 	\n⊙ .pip Search ⊙ .cn Codename ⊙ .dvc Device ⊙ .spc Specs ⊙\
-	\n⊙ .sleep Bot ⊙ .com Community ⊙ .sup Support ⊙ .u Update ⊙"})
+	\n⊙ .sleep Bot ⊙ .com Community ⊙ .sup Support ⊙ .u Update ⊙\
+	\n⊙ .shutdown BOT ⊙ .restart BOT ⊙ .t Terminal ⊙"})
 
 @register(outgoing=True, pattern="^.apps$")
 async def dumcer(dumder):
     await dumder.edit("⊙ 𝐀𝐏𝐏𝐒 ⊙\n
-                      \n⊙ .i ⊙ .g ⊙ .im ⊙ .wi ⊙ .ca ⊙ .cu ⊙ .ud ⊙\
-                      \n⊙ .t ⊙ .tt ⊙ .tr ⊙ .la ⊙ .y ⊙ .rb ⊙ .ss ⊙\
+                      \n⊙ .i ⊙ .g ⊙ .im ⊙ .wi ⊙ .cu ⊙ .ud ⊙\
+                      \n⊙ .tt ⊙ .tr ⊙ .la ⊙ .y ⊙ .ss ⊙\
                       \n⊙ Help : .h 𝐀𝐏𝐏𝐒 for Details ⊙")
 
 CMD_HELP.update({
 	"apps":
 	"⊙ 𝐀𝐏𝐏𝐒 ⊙\n
 	\n⊙ .i Image ⊙ .g Google ⊙ .im Imdb ⊙ .wi Wikipedia ⊙\
-	\n⊙ .y YouTube ⊙ .cu Currency ⊙ .ud Dictionary ⊙ .t Terminal ⊙\
+	\n⊙ .y YouTube ⊙ .cu Currency ⊙ .ud Dictionary ⊙\
 	\n⊙ .tt Text To Speech ⊙ .tr Translate ⊙ .la Language ⊙\
-	\n⊙ .rb Remove BG ⊙ .ca Carbon ⊙ .ss ScreenShot ⊙"})
+	\n⊙ .ss ScreenShot ⊙"})
                       
 @register(outgoing=True, pattern="^.chats$")
 async def dumver(dumyer):
     await dumyer.edit("⊙ 𝐂𝐇𝐀𝐓𝐒 ⊙\n
-                      \n⊙ .sn ⊙ .si ⊙ .rs ⊙ .pu ⊙ .d ⊙ .sd ⊙ .sw ⊙ .cw ⊙\
-                      \n⊙ .rw ⊙ .notes ⊙ .clear ⊙ .save ⊙ .rmn ⊙ .app ⊙\
-                      \n⊙ .dap ⊙ .bl ⊙ .ubl ⊙ .fi ⊙ .st ⊙ .fs ⊙ .rmf ⊙\
+                      \n⊙ .pu ⊙ .purgeme ⊙ .d ⊙ .sd ⊙\
+                      \n⊙ .app ⊙ .dap ⊙ .bl ⊙ .ubl ⊙\
                       \n⊙ Help : .h 𝐂𝐇𝐀𝐓𝐒 for Details ⊙")
 
 CMD_HELP.update({
     "chats":
 	"⊙ 𝐂𝐇𝐀𝐓𝐒 ⊙\n
-	
-	\n⊙ .pu Purge ⊙ .d Delete ⊙ .sd Self Destruction ⊙\
-	
-	
-	\n⊙ .app Approves PM ⊙ .dap Disapproves PM ⊙ .bl Blocks PM ⊙ ubl Unblocks PM ⊙"})
-	
+	\n⊙ .pu Purge ⊙ .purgeme Purge Me\
+	\n⊙ .d Delete ⊙ .sd Self Destruction ⊙\
+	\n⊙ .app Approves PM ⊙ .dap Disapproves PM ⊙\
+	\n⊙ .bl Blocks PM ⊙ .ubl Unblocks PM ⊙"})
                       
 @register(outgoing=True, pattern="^.notes$")
 async def dumqer(dumker):
-    await dumker.edit("
+    await dumker.edit("⊙ 𝐍𝐎𝐓𝐄𝐒 ⊙\n
+		      \n⊙ .notes ⊙ .clear ⊙ .save ⊙ .rmn ⊙ .sw ⊙ .cw ⊙ .rw ⊙\
+		      \n⊙ .fi ⊙ .st ⊙ .fs ⊙ .rmf ⊙ .sn ⊙ .si ⊙ .rs ⊙\
+		      \n⊙ Help : .h 𝐍𝐎𝐓𝐄𝐒 for Details ⊙")
+
 CMD_HELP.update({
     "notes":
-    "
+    "⊙ 𝐍𝐎𝐓𝐄𝐒 ⊙\n
+    \n⊙ .fi Filter ⊙ .st Stop Filter ⊙ .fs List Filters ⊙ .rmf Remove Bot Filters ⊙\
     \n⊙ .notes Notes ⊙ .clear Notes ⊙ .save Notes ⊙ .rmn Removes All Bot Notes ⊙\
     \n⊙ .sw Set Welcome ⊙ .cw Check Welcome ⊙ .rw Remove Welcome ⊙\
-    \n⊙ .sn Snip ⊙ .si Snips ⊙ .rs Remove Snips ⊙\
-    \n⊙ .fi Filter ⊙ .st Stop Filter ⊙ .fs List Filters ⊙ .rmf Remove Bot Filters ⊙"})
+    \n⊙ .sn Snip ⊙ .si Snips ⊙ .rs Remove Snips ⊙"})
