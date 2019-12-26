@@ -919,7 +919,7 @@ async def dumper(dumber):
     
 CMD_HELP.update({
   "admin":
-  "⊙ 𝐀𝐃𝐌𝐈𝐍 ⊙\n
+  "⊙ 𝐀𝐃𝐌𝐈𝐍 ⊙\n\
   \n⊙ .ads .us : Admins & Users Lists ⊙ .b .ub : Ban & Unban ⊙\
   \n⊙ .k : Kick ⊙ .pin : Pin Messages ⊙ .m .um : Mute & Unmute ⊙\
   \n⊙ .pro .dem : Promote & Demote ⊙ .zo : Scan & Clean Zombies ⊙\
@@ -932,7 +932,7 @@ async def dumoer(dumocer):
     
 CMD_HELP.update({
 	"download":
-	"⊙ 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 ⊙\n
+	"⊙ 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 ⊙\n\
 	\n⊙ .dw Download ⊙ .upd Uploadir ⊙ .up Upload ⊙ .uas Upload as ⊙ .at Torrent ⊙\
 	\n⊙ .au URL ⊙ .am Magnet ⊙ .ac Clear ⊙ .ap Pause ⊙ .ar Resume ⊙ .aw Show ⊙\
 	\n⊙ .gd Upload to GD ⊙ .li Files on GD ⊙ .sgd Set GD ⊙ .ra Rip Audio ⊙ .rv Rip Video ⊙\
@@ -940,7 +940,7 @@ CMD_HELP.update({
 
 @register(outgoing=True, pattern="^.sgd$")
 async def dumier(dumoler):
-    await dumoler.edit("⊙ 𝐆𝐃𝐑𝐈𝐕𝐄 ⊙\n
+    await dumoler.edit("⊙ 𝐆𝐃𝐑𝐈𝐕𝐄 ⊙\n\
 		       \n⊙ .gd <file_path / reply / URL|file_name> ⊙\
 		       \n⊙ Usage: Uploads the file in reply, URL or file path in server to your GDrive ⊙\
 		       \n⊙ .li <query> ⊙\
@@ -960,11 +960,11 @@ async def dumeer(dumwer):
 
 CMD_HELP.update({
   "memes":
-  "⊙ 𝐌𝐄𝐌𝐄𝐒 ⊙\n
-	\n⊙ .rpf Lydia reply ⊙ .acf Lydia add ⊙ .rcf Lydia Remove ⊙ .ly Fake Link ⊙\
-	\n⊙ .ty Type ⊙ .sl Slaps ⊙ .str Stretch ⊙ .f Big f**k ⊙ .hi Say Hai ⊙\
-	\n⊙ .ka Kang Stickers ⊙ .stk Stickers Info ⊙ .rb Remove BG ⊙ .ca Carbon ⊙\
-	\n⊙ .oub OpenUserBot ⊙ .shalom Shalom ⊙"})
+  "⊙ 𝐌𝐄𝐌𝐄𝐒 ⊙\n\
+  \n⊙ .rpf Lydia reply ⊙ .acf Lydia add ⊙ .rcf Lydia Remove ⊙ .ly Fake Link ⊙\
+  \n⊙ .ty Type ⊙ .sl Slaps ⊙ .str Stretch ⊙ .f Big f**k ⊙ .hi Say Hai ⊙\
+  \n⊙ .ka Kang Stickers ⊙ .stk Stickers Info ⊙ .rb Remove BG ⊙ .ca Carbon ⊙\
+  \n⊙ .oub OpenUserBot ⊙ .shalom Shalom ⊙"})
 
 @register(outgoing=True, pattern="^.info$")
 async def dumler(dumger):
@@ -972,7 +972,7 @@ async def dumler(dumger):
 
 CMD_HELP.update({
   "info":
-	"⊙ 𝐈𝐍𝐅𝐎 ⊙\n
+	"⊙ 𝐈𝐍𝐅𝐎 ⊙\n\
 	\n⊙ .dc Datacentre ⊙ .speed Test ⊙ .w Weather ⊙ .sys System ⊙\
 	\n⊙ .bv Version ⊙ .who Whois ⊙ .co Count Username ⊙ .git Search ⊙\
 	\n⊙ .pip Search ⊙ .cn Codename ⊙ .dvc Device ⊙ .spc Specs ⊙\
@@ -985,7 +985,7 @@ async def dumcer(dumder):
 
 CMD_HELP.update({
 	"apps":
-	"⊙ 𝐀𝐏𝐏𝐒 ⊙\n
+	"⊙ 𝐀𝐏𝐏𝐒 ⊙\n\
 	\n⊙ .i Image ⊙ .g Google ⊙ .im Imdb ⊙ .wi Wikipedia ⊙\
 	\n⊙ .y YouTube ⊙ .cu Currency ⊙ .ud Dictionary ⊙\
 	\n⊙ .tt Text To Speech ⊙ .tr Translate ⊙ .la Language ⊙\
@@ -997,7 +997,7 @@ async def dumver(dumyer):
 
 CMD_HELP.update({
   "chats":
-	"⊙ 𝐂𝐇𝐀𝐓𝐒 ⊙\n
+	"⊙ 𝐂𝐇𝐀𝐓𝐒 ⊙\n\
 	\n⊙ .pu Purge ⊙ .purgeme Purge Me ⊙\
 	\n⊙ .d Delete ⊙ .sd Self Destruction ⊙\
 	\n⊙ .app Approves PM ⊙ .dap Disapproves PM ⊙\
@@ -1009,7 +1009,7 @@ async def dumqer(dumker):
 
 CMD_HELP.update({
     "notes":
-    "⊙ 𝐍𝐎𝐓𝐄𝐒 ⊙\n
+    "⊙ 𝐍𝐎𝐓𝐄𝐒 ⊙\n\
     \n⊙ .fi Filter ⊙ .st Stop Filter ⊙ .fs List Filters ⊙ .rmf Remove Bot Filters ⊙\
     \n⊙ .notes Notes ⊙ .clear Notes ⊙ .save Notes ⊙ .rmn Removes All Bot Notes ⊙\
     \n⊙ .sw Set Welcome ⊙ .cw Check Welcome ⊙ .rw Remove Welcome ⊙\
