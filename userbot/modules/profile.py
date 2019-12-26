@@ -177,33 +177,3 @@ async def remove_profilepic(delpfp):
     await delpfp.edit(
         f"Successfully deleted {len(input_photos)} profile picture(s).")
 		
-@register(outgoing=True, pattern="^.info$")
-async def dumler(dumger):
-    await dumger.edit("⊙ 𝐈𝐍𝐅𝐎 ⊙ :\n⊙ .dc ⊙ .speed ⊙ .w ⊙ .sys ⊙ .bv ⊙ .pip ⊙ .who ⊙ .sleep ⊙\n⊙ .com ⊙ .sup ⊙ .rp ⊙ .dvc ⊙ .u ⊙ .cn ⊙ .spc ⊙ .git ⊙ .co ⊙\n⊙ Help : .h 𝐈𝐍𝐅𝐎 for Details ⊙")
-
-CMD_HELP.update({
-    "info":
-	"⊙ 𝐈𝐍𝐅𝐎 ⊙ :\
-	\n⊙ .dc Datacentre ⊙ .speed Test ⊙ .w Weather ⊙ .sys System ⊙\
-	\n⊙ .bv Version ⊙ .who Whois ⊙ .co Count Username ⊙ .git Search ⊙\
-	\n⊙ .pip Search ⊙ .cn Codename ⊙ .dvc Device ⊙ .spc Specs ⊙\
-	\n⊙ .sleep Bot ⊙ .com Community ⊙ .sup Support ⊙ .u Update ⊙"
-	})
-
-"""CMD_HELP.update({
-    "profile":
-    ".username <new_username>\
-\nUsage: Changes your Telegram username.\
-\n\n.name <firstname> or .name <firstname> <lastname>\
-\nUsage: Changes your Telegram name.(First and last name will get split by the first space)\
-\n\n.setpfp\
-\nUsage: Reply with .setpfp to an image to change your Telegram profie picture.\
-\n\n.setbio <new_bio>\
-\nUsage: Changes your Telegram bio.\
-\n\n.delpfp or .delpfp <number>/<all>\
-\nUsage: Deletes your Telegram profile picture(s).\
-\n\n.reserved\
-\nUsage: Shows usernames reserved by you.\
-\n\n.count\
-\nUsage: Counts your groups, chats, bots etc..."
-})"""
