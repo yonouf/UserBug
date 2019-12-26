@@ -439,31 +439,3 @@ async def gdrive_search(http, search_query):
     msg = f"**GDrive Query**:\n{search_query}\n**Results**\n{res}"
     return msg
 
-@register(outgoing=True, pattern="^.download$")
-async def dumoer(dumocer):
-    await dumocer.edit("⊙ 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 ⊙ :\n⊙ .gd ⊙ .li ⊙ .di ⊙ .am ⊙ .at ⊙ .sgd ⊙ .au ⊙ .ac ⊙ .ap ⊙\n⊙ .ar ⊙ .aw ⊙ .dw ⊙ .upd ⊙ .up ⊙ .uas ⊙ .ra ⊙ .rv ⊙\n⊙ Help : .h 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 for Details ⊙")
-
-CMD_HELP.update({
-	"download":
-	"⊙ 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 ⊙ :\
-	\n⊙ .dw Download ⊙ .upd Uploadir ⊙ .up Upload ⊙ .uas Upload as ⊙ .at Torrent ⊙\
-	\n⊙ .au URL ⊙ .am Magnet ⊙ .ac Clear ⊙ .ap Pause ⊙ .ar Resume ⊙ .aw Show ⊙\
-	\n⊙ .gd Upload to GD ⊙ .li Files on GD ⊙ .sgd Set GD ⊙ .ra Rip Audio ⊙ .rv Rip Video ⊙\
-	\n⊙ .di Direct URLs GDrive Mega CMail Yandex AFH Zippy MF SF OSDN GitHub ⊙"
-	})
-
-@register(outgoing=True, pattern="^.sgd$")
-async def dumier(dumoler):
-    await dumoler.edit("⊙ 𝐆𝐃𝐑𝐈𝐕𝐄 ⊙ :\
-		       \n⊙ .gd <file_path / reply / URL|file_name> ⊙\
-		       \nUsage: Uploads the file in reply, URL or file path in server to your GDrive ⊙\
-		       \n⊙ .li <query> ⊙\
-		       \n⊙ Usage: Looks for files and folders in your GDrive ⊙\
-		       \n⊙ .gsetf <GDrive Folder URL> ⊙\
-		       \nUsage: Sets the folder to upload new files to ⊙\
-		       \n⊙ .gsetclear ⊙\
-		       \nUsage: Reverts to default upload destination ⊙\
-		       \n⊙ .gfolder ⊙\
-		       \nUsage: Shows your current upload destination/folder ⊙\
-		       \n⊙ .ggd <path_to_folder_in_server> ⊙\
-		       \nUsage: Uploads all the files in the directory to a folder in GDrive ⊙")
