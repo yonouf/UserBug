@@ -135,7 +135,7 @@ async def type_afk_is_not_true(notafk):
     global AFKREASON
     if ISAFK:
         ISAFK = False
-        await notafk.respond("Now...I'm here.")
+        #await notafk.respond("Now...I'm here.")
         await sleep(2)
         if BOTLOG:
             await notafk.client.send_message(
