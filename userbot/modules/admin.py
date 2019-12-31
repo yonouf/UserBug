@@ -1005,7 +1005,7 @@ CMD_HELP.update({
 
 @register(outgoing=True, pattern="^.note$")
 async def dumqer(dumker):
-    await dumker.edit("⊙ 𝐍𝐎𝐓𝐄 ⊙\n\n⊙ .notes ⊙ .clear ⊙ .save ⊙ .rmn ⊙ .sw ⊙ .cw ⊙ .rw ⊙\n⊙ .fi ⊙ .st ⊙ .fs ⊙ .rmf ⊙ .sn ⊙ .si ⊙ .rs ⊙\n⊙ Help : .h 𝐍𝐎𝐓𝐄 for Details ⊙")
+    await dumker.edit("⊙ 𝐍𝐎𝐓𝐄 ⊙\n\n⊙ .notes ⊙ .clear ⊙ .save ⊙ .rmn ⊙ .sw ⊙ .cw ⊙ .rw ⊙\n⊙ .fi ⊙ .st ⊙ .fs ⊙ .rmf ⊙ .sn ⊙ .si ⊙ .rs ⊙ .tl ⊙\n⊙ Help : .h 𝐍𝐎𝐓𝐄 for Details ⊙")
 
 CMD_HELP.update({
     "note":
@@ -1013,4 +1013,4 @@ CMD_HELP.update({
     \n⊙ .fi Filter ⊙ .st Stop Filter ⊙ .fs List Filters ⊙ .rmf Remove Bot Filters ⊙\
     \n⊙ .notes Notes ⊙ .clear Notes ⊙ .save Notes ⊙ .rmn Removes All Bot Notes ⊙\
     \n⊙ .sw Set Welcome ⊙ .cw Check Welcome ⊙ .rw Remove Welcome ⊙\
-    \n⊙ .sn Snip ⊙ .si Snips ⊙ .rs Remove Snips ⊙"})
+    \n⊙ .sn Snip ⊙ .si Snips ⊙ .rs Remove Snips ⊙ .tl Telegraph ⊙"})
