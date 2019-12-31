@@ -30,7 +30,7 @@ async def telegraphs(graph):
                 )
                 end = datetime.now()
                 ms = (end - start).seconds
-                await graph.edit("Downloaded to {} in {} seconds.".format(downloaded_file_name, ms))
+                await graph.edit("[Downloaded]({}) in {} seconds.".format(downloaded_file_name, ms))
                 if downloaded_file_name.endswith((".webp")):
                     resize_image(downloaded_file_name)
                 try:
@@ -69,9 +69,9 @@ async def telegraphs(graph):
                 )
                 end = datetime.now()
                 ms = (end - start).seconds
-                await graph.edit("Pasted to https://telegra.ph/{} in {} seconds.".format(response["path"], ms), link_preview=True)
+                await graph.edit("[This](https://telegra.ph/{}) is completed in {} seconds.".format(response["path"], ms), link_preview=True)
         else:
-            await graph.edit("Reply to a message to get a permanent telegra.ph link. (Inspired by @ControllerBot)")
+            await graph.edit("xxx")
 
 
 def resize_image(image):
