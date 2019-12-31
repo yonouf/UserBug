@@ -26,6 +26,7 @@ pylast
 pySmartDL
 python-barcode
 python-dotenv
+telegraph
 youtube-dl
 pytz
 qrcode
