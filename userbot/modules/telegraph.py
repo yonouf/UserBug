@@ -69,7 +69,7 @@ async def telegraphs(graph):
                 )
                 end = datetime.now()
                 ms = (end - start).seconds
-                await graph.edit("[This](https://telegra.ph/{}) is completed in {} seconds.".format(response["path"], ms), link_preview=True)
+                await graph.edit("[This](https://telegra.ph/{}) is completed in {} seconds.".format(response["path"], ms), link_preview=False)
         else:
             await graph.edit("xxx")
 
