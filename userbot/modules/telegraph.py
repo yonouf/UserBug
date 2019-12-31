@@ -11,7 +11,7 @@ r = telegraph.create_account(short_name=TELEGRAPH_SHORT_NAME)
 auth_url = r["auth_url"]
 
 
-@register(outgoing=True, pattern="^.tl (media|text)$")
+@register(outgoing=True, pattern="^.tl (m|t)$")
 async def telegraphs(graph):
     """ For .telegraph command, upload media & text to telegraph site. """
     if not graph.text[0].isalpha() and graph.text[0] not in ("/", "#", "@", "!"):
@@ -23,14 +23,14 @@ async def telegraphs(graph):
             start = datetime.now()
             r_message = await graph.get_reply_message()
             input_str = graph.pattern_match.group(1)
-            if input_str == "media":
+            if input_str == "m":
                 downloaded_file_name = await bot.download_media(
                     r_message,
                     TEMP_DOWNLOAD_DIRECTORY
                 )
                 end = datetime.now()
                 ms = (end - start).seconds
-                await graph.edit("[Downloaded]({}) in {} seconds.".format(downloaded_file_name, ms))
+                await graph.edit("This [Files]({}) Downloaded in {} seconds.".format(downloaded_file_name, ms))
                 if downloaded_file_name.endswith((".webp")):
                     resize_image(downloaded_file_name)
                 try:
@@ -43,8 +43,8 @@ async def telegraphs(graph):
                     end = datetime.now()
                     ms_two = (end - start).seconds
                     os.remove(downloaded_file_name)
-                    await graph.edit("Uploaded to https://telegra.ph{} in {} seconds.".format(media_urls[0], (ms + ms_two)), link_preview=False)
-            elif input_str == "text":
+                    await graph.edit("This [Files](https://telegra.ph{}) Uploaded in {} seconds.".format(media_urls[0], (ms + ms_two)), link_preview=False)
+            elif input_str == "t":
                 user_object = await bot.get_entity(r_message.from_id)
                 title_of_page = user_object.first_name # + " " + user_object.last_name
                 # apparently, all Users do not have last_name field
@@ -69,9 +69,9 @@ async def telegraphs(graph):
                 )
                 end = datetime.now()
                 ms = (end - start).seconds
-                await graph.edit("[This](https://telegra.ph/{}) is completed in {} seconds.".format(response["path"], ms), link_preview=False)
+                await graph.edit("Telegraph [LINK](https://telegra.ph/{}) completed in {} seconds.".format(response["path"], ms), link_preview=False)
         else:
-            await graph.edit("xxx")
+            await graph.edit("Reply to a message to get a permanent telegra.ph link.")
 
 
 def resize_image(image):
