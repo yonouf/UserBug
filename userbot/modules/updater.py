@@ -38,7 +38,7 @@ async def upstream(ups):
     "For .update command, check if the bot is up to date, update if specified"
     await ups.edit("Loading...")
     conf = ups.pattern_match.group(1).lower()
-    off_repo = 'https://github.com/BL4CKID/NONE.git'
+    off_repo = 'https://github.com/BL4CKID/UserBug.git'
 
     try:
         txt = "Oops.. Updater Error\n**LOGTRACE:**\n"
