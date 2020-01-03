@@ -913,6 +913,14 @@ async def get_bots(show):
         )
         remove("botlist.txt")
 
+@register(outgoing=True, pattern="^.menu$")
+async def dumtyer(dumtter):
+    await dumtter.edit("⊙ Tap [𝕄𝔼ℕ𝕌](https://telegra.ph/%F0%9D%90%81%F0%9D%90%8B%F0%9D%9F%92%F0%9D%90%82%F0%9D%90%8A-%F0%9D%90%88%F0%9D%90%83-01-03-2) to See All Available Commands ⊙")
+
+CMD_HELP.update({
+	"menu":
+	"⊙ Tap [𝕄𝔼ℕ𝕌](https://telegra.ph/%F0%9D%90%81%F0%9D%90%8B%F0%9D%9F%92%F0%9D%90%82%F0%9D%90%8A-%F0%9D%90%88%F0%9D%90%83-01-03-2) to See All Available Commands ⊙"})
+
 @register(outgoing=True, pattern="^.admin$")
 async def dumper(dumber):
   await dumber.edit("⊙ 𝐀𝐃𝐌𝐈𝐍 ⊙\n\n⊙ .k ⊙ .b ⊙ .ub ⊙ .pin ⊙ .m ⊙ .um ⊙ .lo ⊙\n⊙ .ul ⊙ .pro ⊙ .dem ⊙ .zo ⊙ .ads ⊙ .us ⊙\n⊙ Help : .h 𝐀𝐃𝐌𝐈𝐍 for Details ⊙")
