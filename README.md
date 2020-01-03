@@ -6,7 +6,7 @@
 <p align="center">&nbsp;</p>
 <h2 align="center">How To Host</h2>
 <h5 align="center">The easiest way to deploy this derpfest! is click on the image below</h5>
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/mkaraniya/OpenUserBot/tree/sql-extended"> <img src="https://telegra.ph/file/e30939254c9ece5233ee0.jpg" alt="Deploy to Heroku" /></a></p>
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/BL4CKID/UserBug/tree/sql-extended"> <img src="https://telegra.ph/file/112db1b2b63b2a0ee4312.jpg" alt="Deploy to Heroku" /></a></p>
 <p align="center">&nbsp;</p>
 <h2 align="center">Credits</h2>
 <p align="center">Huge thanks to <a href="https://github.com/mkaraniya/OpenUserBot/graphs/contributors">everyone</a> who have helped make this userbot awesome!!</p>
@@ -18,3 +18,5 @@
 <p align="center">&nbsp;</p>
 <h2 align="center">License</h2>
 <p align="center"><a href="https://github.com/mkaraniya/OpenUserBot/blob/sql-extended/LICENSE">Raphielscape Public License</a> - Version 1.c, June 2019</p>
+<h2 align="center">NOTES</h2>
+<p align="center">I'm not a Creator. Thanks to all CREATOR of userbot. Regards <a href="https://t.me/BL4CK_ID">𝐁𝐋𝟒𝐂𝐊_𝐈𝐃 </p>
